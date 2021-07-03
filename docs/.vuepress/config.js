@@ -19,7 +19,7 @@ module.exports = {
 
         lastUpdated: '更新时间', // string | boolean
         // 假如你的文档仓库和项目本身不在一个仓库：
-        docsRepo: 'awei922/bookrss.github.io',
+        docsRepo: 'awei922/blogs',
         // 假如文档不是放在仓库的根目录下：
         docsDir: 'docs',
         // 假如文档放在一个特定的分支下：
