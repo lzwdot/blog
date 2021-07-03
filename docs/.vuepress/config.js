@@ -2,6 +2,7 @@ const { getNavbar } = require('./src/navbar')
 const { getSidebar } = require('./src/sidebar')
 
 module.exports = {
+    base: "./",
     lang: 'zh-CN',
     title: '订阅RSS',
     description: '分享所知道的',
