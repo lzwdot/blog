@@ -1,0 +1,35 @@
+---
+ title: vuejs 常见问题
+---
+
+# vuejs 常见问题
+
+[v-show 和 v-if 的区别](/archives/27125)    
+[为何在 v-for 中用 key](/archives/27127)    
+[描述 Vue 组件生命周期（包括父子组件）](/archives/27128)    
+[Vue 组件如何通讯（常见）](/archives/27129)    
+[描述组件渲染和更新的过程](/archives/27131)    
+[双向数据绑定 v-model 的实现原理](/archives/27132)    
+[对 MVVM 的理解](/archives/27134)    
+[computed 有何特点](/archives/27137)    
+[为何组件 data 必须是一个函数？](/archives/27138)    
+[ajax 请求应该放在哪个生命周期](/archives/27139)    
+[如何将组件所有 props 传递给子组件？](/archives/27141)    
+[如何自己实现 v-model](/archives/27142)    
+[多个组件有相同的逻辑，如何抽离？](/archives/27143)    
+[何时要使用异步组件？](/archives/27144)    
+[何时需要使用 keep-alive ？](/archives/27145)    
+[何时需要使用 beforeDestory ?](/archives/27147)    
+[什么是作用域插槽](/archives/27148)    
+[Vuex 中 action 和 mutation 有何区别](/archives/27150)    
+[Vue-router 常用的路由模式](/archives/27151)    
+[如何配置 Vue-router 异步加载](/archives/27152)    
+[请 vnode 描述一个 DOM 结构](/archives/27153)    
+[监听 data 变化的核心 API 是什么](/archives/27154)    
+[Vue 如何监听数组变化](/archives/27156)    
+[请描述响应式原理](/archives/27157)    
+[diff 算法的时间复杂度](/archives/27158)    
+[简述 diff 算法过程](/archives/27159)    
+[Vue 为何是异步渲染，$nextTick 何用？](/archives/27161)    
+[Vue 常见性能优化方式](/archives/27163)    
+[Vue 和 React 的区别](/archives/27958)    
