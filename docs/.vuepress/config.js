@@ -6,7 +6,7 @@ const feed_options = {
 };
 
 module.exports = {
-    base: "/blogs/",
+    base: '/',
     lang: 'zh-CN',
     title: '订阅RSS',
     description: '分享所知道的',
@@ -16,6 +16,7 @@ module.exports = {
         ['link', { rel: 'icon', href: '/logo.png' }]
     ],
 
+    theme:'@vuepress/theme-default',
     themeConfig: {
         logo: '/logo.png', // logo
 
