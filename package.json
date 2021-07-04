@@ -1,5 +1,5 @@
 {
-  "name": "bookrss",
+  "name": "blogs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/awei922/awei922.github.io.git"
+    "url": "git+https://github.com/awei922/blogs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/awei922/awei922.github.io/issues"
+    "url": "https://github.com/awei922/blogs/issues"
   },
-  "homepage": "https://github.com/awei922/awei922.github.io#readme",
+  "homepage": "https://github.com/awei922/blogs#readme",
   "devDependencies": {
     "vuepress": "^1.8.2",
     "vuepress-plugin-fulltext-search": "^2.2.1"   
