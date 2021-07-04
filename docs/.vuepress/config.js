@@ -1,8 +1,12 @@
 const { getNavbar } = require('./src/navbar')
 const { getSidebar } = require('./src/sidebar')
 
+const feed_options = {
+    canonical_base: 'https://awei922.github.io',
+};
+
 module.exports = {
-    base: "./",
+    base: "/blogs/",
     lang: 'zh-CN',
     title: '订阅RSS',
     description: '分享所知道的',
@@ -31,8 +35,7 @@ module.exports = {
         editLinkText: '编辑页面'
     },
     plugins: [
-        [
-            'fulltext-search'
-        ],
+        ['fulltext-search'],
+        ['feed', feed_options]
     ]
 }

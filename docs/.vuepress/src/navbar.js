@@ -1,5 +1,5 @@
 const navTree = [
-    { text: '博客', link: '/blogs/' },
+    { text: '文章', link: '/posts/' },
     { text: '学习', link: '/learns/' },
     { text: '关于', link: '/about' }
 ]
