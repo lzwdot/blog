@@ -1,4 +1,14 @@
 {
+    "/codes/algorithm/": [
+        {
+            "title": "数据结构与算法",
+            "collapsable": false,
+            "children": [
+                "27959.md",
+                "27960.md"
+            ]
+        }
+    ],
     "/learns/dev-prod-env/": [
         {
             "title": "开发运行环境",

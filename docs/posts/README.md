@@ -1,8 +1,8 @@
 ---
- title: 导航
+ title: 文章
 ---
 
-# 导航
+# 文章
 
 [Composer](/posts/composer)    
 [Git](/posts/git)    

@@ -1,8 +1,9 @@
-// tool.js
+// sidebar.js
 
 const fs = require('fs');
-const path = require('path')
 const matter = require('gray-matter');
+const path = require('path')
+
 const docPath = path.join(__dirname, '../../') // 获取文档目录
 
 /**

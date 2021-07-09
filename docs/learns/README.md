@@ -1,8 +1,8 @@
 ---
- title: 导航
+ title: 学习
 ---
 
-# 导航
+# 学习
 
 [开发运行环境](/learns/dev-prod-env)    
 [html/css 基础问题](/learns/html-css)    
