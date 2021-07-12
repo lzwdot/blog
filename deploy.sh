@@ -3,7 +3,7 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-# 提交当前文件变化
+# 发布当前文件夹
 git init
 git add -A
 git commit -m 'update'
