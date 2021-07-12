@@ -8,6 +8,7 @@ git init
 git add -A
 git commit -m 'update'
 git push
+git push -f git@github.com:awei922/blogs.git master
 
 # 生成静态文件
 npm run build
