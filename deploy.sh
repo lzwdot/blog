@@ -3,8 +3,14 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+# 提交当前文件变化
+git init
+git add -A
+git commit -m 'update'
+git push
+
 # 生成静态文件
-npm run docs:build
+npm run build
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist

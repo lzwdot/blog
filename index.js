@@ -89,8 +89,6 @@ function createMd(dirname, title) {
     const path = `${docPath}/${dirname}`
     const filePath = `${path}/${maxId}.md`
 
-    console.log(maxId)
-
     const content = `---\n title: ${title}\n permalink: "/archives/${maxId}"\n---\n\n# ${title}\n\n`
 
     // 创建文件夹的 readme 文件

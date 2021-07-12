@@ -184,7 +184,7 @@ function createSidebar(dirTree) {
                 sidebar.push({
                     title: title || curNode.name,
                     collapsable: false,
-                    children: children
+                    children: children.sort((a,b)=>b-a)
                 })
 
                 // 该路径下的目录
