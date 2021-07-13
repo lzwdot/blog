@@ -18,7 +18,8 @@ module.exports = {
 
     // header 标签内的
     head: [
-        ['link', { rel: 'icon', href: '/logo.png' }]
+        ['link', { rel: 'icon', href: '/logo.png' }],
+        ['script', { src: 'https://unpkg.com/@antv/g2plot@2.3.19/dist/g2plot.min.js' }]
     ],
 
     themeConfig: {

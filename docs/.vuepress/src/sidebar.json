@@ -4,7 +4,17 @@
             "title": "数据结构与算法",
             "collapsable": false,
             "children": [
-                "27969.md"
+                "27969.md",
+                "27970.md"
+            ]
+        }
+    ],
+    "/codes/chart/": [
+        {
+            "title": "数据可视化",
+            "collapsable": false,
+            "children": [
+                "27971.md"
             ]
         }
     ],

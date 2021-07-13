@@ -7,9 +7,18 @@
                 "name": "algorithm",
                 "data": [
                     "27969.md",
+                    "27970.md",
                     "README.md"
                 ],
                 "path": "/codes/algorithm"
+            },
+            {
+                "name": "chart",
+                "data": [
+                    "27971.md",
+                    "README.md"
+                ],
+                "path": "/codes/chart"
             },
             "README.md"
         ],
