@@ -1,10 +1,6 @@
 const { getNavbar } = require('./src/navbar')
 const { getSidebar } = require('./src/sidebar')
 
-const feed_options = {
-    canonical_base: 'https://awei922.github.io',
-};
-
 module.exports = {
     locales: {
         // 键名是该语言所属的子路径
@@ -42,6 +38,6 @@ module.exports = {
     },
     plugins: [
         ['fulltext-search'],
-        ['feed', feed_options]
+        [ 'demo-block']
     ]
 }
