@@ -38,6 +38,6 @@ module.exports = {
     },
     plugins: [
         ['fulltext-search'],
-        [ 'demo-block']
+        ['demo-block']
     ]
 }
