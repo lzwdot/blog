@@ -19,22 +19,27 @@ export default {
   },
   data() {
     return {
-      height: "500px",
+      height: null,
     };
   },
   mounted() {
-    const iframe = document.querySelectorAll("iframe")[0].contentWindow
-    this.height = iframe.document.body.scrollHeight; // 高度等于内容高度
 
-    // 把 slot 内容写入 iframe 里面
     this.$nextTick(() => {
+      const iframe = document.querySelectorAll("iframe")[0].contentWindow
+      this.height = iframe.document.body.scrollHeight + 50; // 高度等于内容高度      
+
+      // 把 slot 内容写入 iframe 里面
       const html = this.$slots.default[0].elm.innerText
       iframe.document.write(html);
+
+      // 设置样式
+      iframe.document.body.style.margin = 0
+      iframe.document.body.style.padding = 0
     })
   },
 };
 </script>
-<style scoped>
+<style scoped> 
 summary {
   background: #eee;
   height: 30px;

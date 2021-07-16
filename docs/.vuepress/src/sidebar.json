@@ -19,6 +19,15 @@
             ]
         }
     ],
+    "/codes/web-components/": [
+        {
+            "title": "Web Components",
+            "collapsable": false,
+            "children": [
+                "27982.md"
+            ]
+        }
+    ],
     "/learns/dev-prod-env/": [
         {
             "title": "开发运行环境",
