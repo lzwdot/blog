@@ -1,8 +1,8 @@
 <template>
   <div>
+    <code>源码预览</code>
     <iframe :src="url" :height="height" frameborder="0" scrolling="no" allowfullscreen="true" width="100%"></iframe>
-
-    <details open>
+    <details>
       <summary>查看源码</summary>
       <slot></slot>
     </details>
@@ -18,37 +18,52 @@ export default {
     },
   },
   data() {
-    return { 
-      height: null,
+    return {
+      height: '',
     };
   },
   mounted() {
+    const iframe = document.querySelectorAll("iframe")[0].contentWindow
+    // 把 slot 内容写入 iframe 里面
+    const html = this.$slots.default[0].elm.innerText
+    iframe.document.write(html);
 
+    // 设置样式
+    iframe.document.body.style.margin = 0
+    iframe.document.body.style.padding = 0
+
+    // 复原一下
+    this.height = ''
     this.$nextTick(() => {
-      const iframe = document.querySelectorAll("iframe")[0].contentWindow
-      this.height = iframe.document.body.scrollHeight + 50; // 高度等于内容高度      
-
-      // 把 slot 内容写入 iframe 里面
-      const html = this.$slots.default[0].elm.innerText
-      iframe.document.write(html);
-
-      // 设置样式
-      iframe.document.body.style.margin = 0
-      iframe.document.body.style.padding = 0
+      this.height = iframe.document.body.scrollHeight; // 高度等于内容高度
     })
   },
 };
 </script>
-<style scoped> 
+<style scoped>
+iframe {
+  /* 网格效果 */
+  background-image: linear-gradient(to right, #eee 1px, transparent 1px),
+    linear-gradient(to bottom, #eee 1px, transparent 1px);
+  /* 网格大小 */
+  background-size: 10px 10px;
+  border: 1px solid #eee;
+  border-left: none;
+  border-top: none;
+  box-sizing: border-box;
+}
+
 summary {
   background: #eee;
   height: 30px;
   line-height: 30px;
   padding-left: 10px;
 }
+
 details .extra-class {
   border-radius: 0 0 6px 6px;
 }
+
 details pre {
   border-radius: 0 0 6px 6px;
   margin-top: 0 !important;

@@ -20,7 +20,14 @@
   },
   "homepage": "https://github.com/awei922/blogs#readme",
   "devDependencies": {
-    "vuepress": "^1.8.2",  
+    "@vuepress/plugin-active-header-links": "^1.8.2",
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "@vuepress/plugin-blog": "^1.9.4",
+    "@vuepress/plugin-medium-zoom": "^1.8.2",
+    "@vuepress/plugin-nprogress": "^1.8.2",
+    "@vuepress/plugin-pwa": "^1.8.2",
+    "@vuepress/plugin-register-components": "^1.8.2",
+    "vuepress": "^1.8.2",
     "vuepress-plugin-fulltext-search": "^2.2.1"
   }
 }

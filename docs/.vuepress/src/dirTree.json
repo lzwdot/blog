@@ -13,13 +13,17 @@
                 "path": "/codes/algorithm"
             },
             {
-                "name": "chart",
+                "name": "charts",
                 "data": [
                     "27971.md",
+                    "27972.md",
+                    "27973.md",
+                    "27975.md",
+                    "27976.md",
                     "27981.md",
                     "README.md"
                 ],
-                "path": "/codes/chart"
+                "path": "/codes/charts"
             },
             "README.md",
             {
