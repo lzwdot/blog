@@ -22,7 +22,17 @@ module.exports = {
         ['link', { rel: 'apple-touch-icon', href: '/logo.png' }],
         ['link', { rel: 'mask-icon', href: '/logo.png', color: '#3eaf7c' }],
         ['meta', { name: 'msapplication-TileImage', content: '/logo.png' }],
-        ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+        ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+        ["script", {},
+            //百度统计
+            `var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?96d91412aff9543cd8e022f381d8bf1c";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();`
+        ]
     ],
 
     themeConfig: {
@@ -51,6 +61,7 @@ module.exports = {
         ['@vuepress/blog'],
         ['@vuepress/medium-zoom'],
         ['@vuepress/nprogress'],
+        ['@vuepress/register-components']
         ['@vuepress/pwa', {
             serviceWorker: true,
             updatePopup: true
@@ -58,7 +69,6 @@ module.exports = {
         ['@vuepress/active-header-links', {
             sidebarLinkSelector: '.sidebar-link',
             headerAnchorSelector: '.header-anchor'
-        }],
-        ['@vuepress/register-components']
+        }],        
     ]
 }
