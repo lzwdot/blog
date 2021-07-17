@@ -1,7 +1,15 @@
 <template>
   <div>
     <code>源码预览</code>
-    <iframe :src="url" :height="height" frameborder="0" scrolling="no" allowfullscreen="true" width="100%"></iframe>
+    <iframe
+      ref="iframe"
+      :src="url"
+      :height="height"
+      frameborder="0"
+      scrolling="no"
+      allowfullscreen="true"
+      width="100%"
+    ></iframe>
     <details>
       <summary>查看源码</summary>
       <slot></slot>
@@ -13,34 +21,31 @@ export default {
   name: "html-demo",
   props: {
     url: {
-      default: '/html-demo.html',
-      type: String
+      default: "",
+      type: String,
     },
   },
   data() {
     return {
-      height: '',
+      height: "",
     };
   },
   mounted() {
-    const iframe = document.querySelectorAll("iframe")[0].contentWindow
-    // 把 slot 内容写入 iframe 里面
-    const html = this.$slots.default[0].elm.innerText
-    iframe.document.write(html);
+    const iframe = this.$refs.iframe.contentWindow;
 
-    // 设置样式
-    iframe.document.body.style.margin = 0
-    iframe.document.body.style.padding = 0
-   
+    // 把 slot 内容写入 iframe 里面
+    const content = this.$slots.default[0].elm.innerText;
+    iframe.document.write(content);
+
     this.$nextTick(() => {
       // 高度等于内容高度
-      this.height = iframe.document.body.scrollHeight; 
-      
-      // 再复原一下
+      this.height = iframe.document.body.scrollHeight;
+
+      // 再修复一下
       setTimeout(() => {
-        this.height = iframe.document.body.scrollHeight; 
-      }, 300)
-    })
+        this.height = iframe.document.body.scrollHeight;
+      }, 300);
+    });
   },
 };
 </script>
@@ -49,8 +54,11 @@ iframe {
   /* 网格效果 */
   background-image: linear-gradient(to right, #eee 1px, transparent 1px),
     linear-gradient(to bottom, #eee 1px, transparent 1px);
+
   /* 网格大小 */
   background-size: 10px 10px;
+
+  /* 设置右边和底部边框 */
   border: 1px solid #eee;
   border-left: none;
   border-top: none;
