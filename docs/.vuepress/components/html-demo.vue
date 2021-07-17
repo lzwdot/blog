@@ -31,11 +31,15 @@ export default {
     // 设置样式
     iframe.document.body.style.margin = 0
     iframe.document.body.style.padding = 0
-
-    // 复原一下
-    this.height = ''
+   
     this.$nextTick(() => {
-      this.height = iframe.document.body.scrollHeight; // 高度等于内容高度
+      // 高度等于内容高度
+      this.height = iframe.document.body.scrollHeight; 
+      
+      // 再复原一下
+      setTimeout(() => {
+        this.height = iframe.document.body.scrollHeight; 
+      }, 300)
     })
   },
 };
