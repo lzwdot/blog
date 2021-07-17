@@ -34,7 +34,7 @@ function writeReadMe(path, content) {
         // 加上 Front Matter
         if (frontMatter && frontMatter.data) {
             const { title } = frontMatter.data
-            content = title ? `---\n title: ${title}\n---\n\n# ${title}\n\n${content}` : content
+            content = title ? `---\n title: "${title}"\n---\n\n# ${title}\n\n${content}` : content
         }
 
         // 删除 README.md 文件

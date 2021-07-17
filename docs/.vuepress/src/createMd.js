@@ -1,5 +1,6 @@
 const fs = require('fs');
 const matter = require('gray-matter');
+const moment = require('moment')
 const path = require('path')
 
 const docPath = path.join(__dirname, '../../') // 获取文档目录
@@ -88,8 +89,9 @@ function createMd(dirname, title) {
     const maxId = getMaxId()+1
     const path = `${docPath}/${dirname}`
     const filePath = `${path}/${maxId}.md`
+    const data = moment().format('YYYY-MM-DD HH:mm:ss');
 
-    const content = `---\n title: ${title}\n permalink: "/archives/${maxId}"\n---\n\n# ${title}\n\n`
+    const content = `---\n title: "${title}"\n permalink: "/archives/${maxId}"\n data: "${data}"\n---\n\n# ${title}\n\n`
 
     // 创建文件夹的 readme 文件
     writeReadMe(path)
