@@ -1,3 +1,11 @@
 {
-    
+    "name": "订阅RSS",   
+    "description": "分享所知道的",
+    "icons": [
+        {
+            "src": "/logo.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        }
+    ]
 }

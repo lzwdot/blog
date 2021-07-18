@@ -1,5 +1,5 @@
 ---
- title: vuejs 原理解说
+ title: "vuejs 原理解说"
 ---
 
 # vuejs 原理解说

@@ -1,5 +1,5 @@
 ---
- title: Laravel
+ title: "Laravel"
 ---
 
 # Laravel

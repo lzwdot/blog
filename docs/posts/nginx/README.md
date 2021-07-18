@@ -1,5 +1,5 @@
 ---
- title: Nginx
+ title: "Nginx"
 ---
 
 # Nginx

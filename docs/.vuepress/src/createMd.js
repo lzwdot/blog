@@ -81,17 +81,19 @@ function writeReadMe(path) {
 
 /**
  * 新建 md 文档
- * 
  * @param {*} dirname 
  * @param {*} title 
+ * @param {*} author 
  */
-function createMd(dirname, title) {
-    const maxId = getMaxId()+1
+function createMd(dirname, title, author = 'A.wei') {
+    const maxId = getMaxId() + 1
     const path = `${docPath}/${dirname}`
-    const filePath = `${path}/${maxId}.md`
-    const data = moment().format('YYYY-MM-DD HH:mm:ss');
+    const filePath = `${path}/${maxId}.md`   
 
-    const content = `---\n title: "${title}"\n permalink: "/archives/${maxId}"\n data: "${data}"\n---\n\n# ${title}\n\n`
+    const data = moment().format('YYYY-MM-DD HH:mm:ss');
+    const tags = `\n  - "${dirname.split('/').join('"\n  - "')}"`
+
+    const content = `---\n title: "${title}"\n permalink: "/archives/${maxId}"\n data: "${data}"\n author: "${author}"\n tags: ${tags}\n---\n\n# ${title}\n\n`
 
     // 创建文件夹的 readme 文件
     writeReadMe(path)

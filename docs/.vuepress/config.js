@@ -2,6 +2,7 @@ const { getNavbar } = require('./src/navbar')
 const { getSidebar } = require('./src/sidebar')
 
 module.exports = {
+    title: '订阅RSS',
     locales: {
         // 键名是该语言所属的子路径
         // 作为特例，默认语言可以使用 '/' 作为其路径。
@@ -34,7 +35,8 @@ module.exports = {
             })();`
         ]
     ],
-
+  
+    // 主题配置
     themeConfig: {
         logo: '/logo.png', // logo
 
@@ -69,6 +71,6 @@ module.exports = {
         ['@vuepress/active-header-links', {
             sidebarLinkSelector: '.sidebar-link',
             headerAnchorSelector: '.header-anchor'
-        }],        
+        }],
     ]
 }
