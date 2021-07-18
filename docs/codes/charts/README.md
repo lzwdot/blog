@@ -10,3 +10,4 @@
 [zrender 入门](/archives/27975)    
 [d3 入门](/archives/27976)    
 [antv-g2 入门](/archives/27981)    
+[antv-g6 入门](/archives/27983)    
