@@ -35,7 +35,7 @@ module.exports = {
             })();`
         ]
     ],
-  
+
     // 主题配置
     themeConfig: {
         nav: getNavbar(), // 导航栏
@@ -70,5 +70,10 @@ module.exports = {
             sidebarLinkSelector: '.sidebar-link',
             headerAnchorSelector: '.header-anchor'
         }],
+        ['@vuepress/last-updated', {            
+            dateOptions: {
+                hour12: false
+            }
+        }]
     ]
 }
