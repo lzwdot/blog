@@ -31,19 +31,21 @@ export default {
     };
   },
   mounted() {
-    const iframe = this.$refs.iframe.contentWindow;
+    const iframe = this.$refs.iframe.contentWindow.document;
 
     // 把 slot 内容写入 iframe 里面
     const content = this.$slots.default[0].elm.innerText;
-    iframe.document.write(content);
+    iframe.open();
+    iframe.write(content);
+    iframe.close();
 
     this.$nextTick(() => {
       // 高度等于内容高度
-      this.height = iframe.document.body.scrollHeight;
+      this.height = iframe.body.scrollHeight;
 
       // 再修复一下
       setTimeout(() => {
-        this.height = iframe.document.body.scrollHeight;
+        this.height = iframe.body.scrollHeight;
       }, 300);
     });
   },

@@ -1,7 +1,7 @@
 ---
 home: true
-heroImage: null
-heroText: 订阅RSS
+heroImage: /logo.png
+heroText: null
 tagline: 分享所知道的
 actionText: 开始阅读 →
 actionLink: /posts/
