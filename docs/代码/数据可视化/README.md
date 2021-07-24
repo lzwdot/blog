@@ -1,6 +1,6 @@
 ---
  title: "数据可视化"
- permalink: "undefined"
+ permalink: "/codes/charts"
 ---
 
 # 数据可视化
