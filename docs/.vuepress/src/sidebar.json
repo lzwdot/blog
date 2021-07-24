@@ -440,7 +440,7 @@
             "children": [
                 "MySQL字符集修改为utf8mb4.md",
                 "selectforupdate-lockinsharemode的使用.md",
-                "解决MySQL服务器进程CPU占用100%的问题.md",
+                "解决MySQL服务器进程CPU占用百分之百的问题.md",
                 "MySQL总结常用优化问题.md",
                 "超卖现象的解决方案.md"
             ]
