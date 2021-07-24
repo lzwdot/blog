@@ -61,7 +61,7 @@ module.exports = {
         ['@vuepress/blog'],
         ['@vuepress/medium-zoom'],
         ['@vuepress/nprogress'],
-        ['@vuepress/register-components']
+        ['@vuepress/register-components'],
         ['@vuepress/pwa', {
             serviceWorker: true,
             updatePopup: true
@@ -70,7 +70,7 @@ module.exports = {
             sidebarLinkSelector: '.sidebar-link',
             headerAnchorSelector: '.header-anchor'
         }],
-        ['@vuepress/last-updated', {            
+        ['@vuepress/last-updated', {
             dateOptions: {
                 hour12: false
             }
