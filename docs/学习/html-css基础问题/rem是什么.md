@@ -18,6 +18,7 @@ rem 是一个长度单位
 - em， 相对长度单位，相对于父元素，不常用
 - rem，相对长度单位，相对于根元素，常用于响应式布局
 
+``` html
 <style type="text/css">  
     html {  
         font-size: 100px;  
@@ -41,3 +42,4 @@ rem 是一个长度单位
 <div style="width: 3rem;">  
     this is div3  
 </div>
+```
