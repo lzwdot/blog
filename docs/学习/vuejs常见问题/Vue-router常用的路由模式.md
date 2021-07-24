@@ -1,0 +1,17 @@
+---
+title: "Vue-router 常用的路由模式"
+permalink: "/archives/27151"
+date: "2020-12-10 14:39:35"
+categories: 
+  - "vuejs 常见问题"
+  - "默认"
+tags: 
+  - "vuejs 常见问题"
+  - "默认"
+---
+
+# Vue-router 常用的路由模式
+
+- hash 默认
+- H5 history （需要服务端支持）
+- 两者比较，参考：[参考：archives/27122/](archives/27122/)

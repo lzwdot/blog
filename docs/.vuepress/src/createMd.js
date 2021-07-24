@@ -9,11 +9,10 @@ const docPath = path.join(__dirname, '../../') // 获取文档目录
 
 
 
-const dirPath = `codes/charts`
+const dirPath = `代码/数据可视化`
 const title = '标题'
 
 createMd(dirPath, title)
-
 
 
 /*******新建文章 -end*******/
@@ -40,8 +39,13 @@ function getMaxId() {
             // 是目录，排除：.开头的 && node_modules && build && images
             if (isDir && !/^\./.test(item) && item !== 'node_modules' && item !== 'build' && item !== 'images') {
                 recursion(`${path}/${item}`) //遍历目录循环
-            } else { // 是 .md 文件，交换最大 id 值
-                if (/^\d+\.md$/.test(item)) maxId = Math.max(maxId, item.split('.')[0])
+            } else {
+                // 是 .md 文件，排除 .DS_Store & README.md & about.md
+                if (item !== '.DS_Store' && item.includes('.md') && !item.toUpperCase().includes('README') && !item.includes('about')) {
+                    const frontMatter = matter.read(`${curPath}/${item}`)
+                    const { permalink } = frontMatter.data
+                    maxId = Math.max(maxId, permalink ? permalink.split('/')[2] : 0)
+                }
             }
         })
 
@@ -88,7 +92,7 @@ function writeReadMe(path) {
 function createMd(dirname, title, author = 'A.wei') {
     const maxId = getMaxId() + 1
     const path = `${docPath}/${dirname}`
-    const filePath = `${path}/${maxId}.md`   
+    const filePath = `${path}/${title}.md`
 
     const data = moment().format('YYYY-MM-DD HH:mm:ss');
     const tags = `\n  - "${dirname.split('/').join('"\n  - "')}"`

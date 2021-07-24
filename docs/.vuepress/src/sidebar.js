@@ -33,8 +33,8 @@ function writeReadMe(path, content) {
 
         // 加上 Front Matter
         if (frontMatter && frontMatter.data) {
-            const { title } = frontMatter.data
-            content = title ? `---\n title: "${title}"\n---\n\n# ${title}\n\n${content}` : content
+            const { title, permalink } = frontMatter.data
+            content = title ? `---\n title: "${title}"\n permalink: "${permalink}"\n---\n\n# ${title}\n\n${content}` : content
         }
 
         // 删除 README.md 文件
@@ -86,6 +86,30 @@ function buildMdLink(filePath) {
 }
 
 /**
+ * 根据 permalink 正序排序
+ * @param {*} path 
+ * @param {*} data 
+ * @returns 
+ */
+function sortByPermalink(path, data) {
+    data.sort((a, b) => {      
+        const frontMatterA = matter.read(`${path}/${a}`)
+        const frontMatterB = matter.read(`${path}/${b}`)
+
+        const { permalink: permalinkA } = frontMatterA.data
+        const { permalink: permalinkB } = frontMatterB.data
+
+        if (permalinkA && permalinkB) {
+            return permalinkA.split('/')[2] - permalinkB.split('/')[2]
+        }
+
+        return false
+    })
+
+    return data
+}
+
+/**
  * 遍历文件夹，生成 真实文件对象树
  * @returns  { name: '文件夹名称', data: [ {...}, {...} ], path: '路径'}
  */
@@ -111,10 +135,17 @@ function buildDirTree() {
                     data: recursion(dirPath), //遍历目录循环
                     path: dirPath
                 })
-            } else { // 是 .md 文件，排除 .DS_Store
-                if (item !== '.DS_Store' && item.includes('.md')) res.push(item);
+            } else { // 是 .md 文件，排除 .DS_Store & README.md & about.md
+                if (item !== '.DS_Store' && item.includes('.md') && !item.toUpperCase().includes('README') && !item.includes('about')){
+                    res.push(item)
+                }
             }
         })
+
+        //如果是 md 文件排序      
+        if (typeof res[0] === 'string' && res[0].includes('.md') && res.length > 1) {
+            return sortByPermalink(curPath, res)
+        }
 
         return res;
     }
@@ -154,10 +185,10 @@ function createSidebar(dirTree) {
                     // 目录存在，且不为 readme 文件
                     if (curNode.data[j].path) {
                         // 获取子文件夹 readme 内容
-                        const { title } = getReadMe(`${rootPath}/${curNode.data[j].path}`)
+                        const { title, permalink } = getReadMe(`${rootPath}/${curNode.data[j].path}`)
 
                         // markdown 链接语法
-                        content += `[${title}](${curNode.data[j].path})    \n`
+                        content += `[${title ? title : curNode.data[j].name}](${permalink ? permalink : curNode.data[j].path})    \n`
                     }
                 }
 
@@ -168,6 +199,7 @@ function createSidebar(dirTree) {
                 let content = ''
                 for (let j = 0; j < curNode.data.length; j++) {
                     // 文件存在，且不为 readme 文件
+
                     if (!curNode.data[j].toUpperCase().includes('README')) {
                         // markdown 链接语法
                         content += buildMdLink(`${rootPath}/${curNode.path}/${curNode.data[j]}`)
@@ -184,7 +216,7 @@ function createSidebar(dirTree) {
                 sidebar.push({
                     title: title || curNode.name,
                     collapsable: false,
-                    children: children.sort((a,b)=>b-a)
+                    children: sortByPermalink(curPath, children) //排序
                 })
 
                 // 该路径下的目录
