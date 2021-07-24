@@ -1,5 +1,5 @@
 ---
- title: "Git"
+ title: "其他"
  permalink: "/posts/others"
 ---
 
