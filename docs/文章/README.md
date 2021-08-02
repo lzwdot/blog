@@ -14,6 +14,6 @@
 [MySQL](/posts/mysql)    
 [Nginx](/posts/nginx)    
 [PHP应用](/posts/php-usage)    
-[Git](/posts/others)    
+[其他](/posts/others)    
 [转载](/posts/reprinted)    
 [随笔](/posts/notes)    

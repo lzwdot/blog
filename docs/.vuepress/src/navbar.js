@@ -3,7 +3,7 @@ const navTree = [
     { text: '学习', link: '/learns/' },
     { text: '代码', link: '/codes/' },
     { text: '关于', link: '/about' },
-    { text: 'GitHub', link: 'https://awei922.github.io/blogs/' }
+    { text: 'GitHub', link: 'https://awei922.github.io/' }
 ]
 
 function getNavbar() {
