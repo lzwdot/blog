@@ -544,6 +544,7 @@ export const themeData = {
   "openInNewWindow": "在新窗口打开",
   "toggleDarkMode": "切换夜间模式",
   "lastUpdatedText": "更新时间",
+  "contributorsText": "投稿人",
   "locales": {
     "/": {
       "selectLanguageName": "English"
@@ -557,6 +558,5 @@ export const themeData = {
   "sidebarDepth": 2,
   "editLink": true,
   "lastUpdated": true,
-  "contributors": true,
-  "contributorsText": "Contributors"
+  "contributors": true
 }
