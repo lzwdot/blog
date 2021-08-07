@@ -544,7 +544,7 @@ export const themeData = {
   "openInNewWindow": "在新窗口打开",
   "toggleDarkMode": "切换夜间模式",
   "lastUpdatedText": "更新时间",
-  "contributorsText": "投稿人",
+  "contributorsText": "贡献者",
   "locales": {
     "/": {
       "selectLanguageName": "English"
