@@ -50,6 +50,7 @@ module.exports = {
         toggleDarkMode: '切换夜间模式',
 
         lastUpdatedText: '更新时间',
+        contributorsText: '投稿人',
 
         // 主题插件配置
         themePlugins: {
