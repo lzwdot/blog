@@ -20,7 +20,7 @@ export const data = {
   "headers": [],
   "filePathRelative": "learns/js-web-api/26186.md",
   "git": {
-    "updatedTime": 1628320079000,
+    "updatedTime": 1628320654000,
     "contributors": [
       {
         "name": "lzw",
@@ -30,7 +30,7 @@ export const data = {
       {
         "name": "A.wei",
         "email": "lzw22@qq.com",
-        "commits": 1
+        "commits": 2
       }
     ]
   }

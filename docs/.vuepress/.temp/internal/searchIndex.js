@@ -133,83 +133,6 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "常用的 git 命令",
-    "headers": [],
-    "path": "/learns/dev-prod-env/26337.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "移动端 h5 如何抓包网络请求",
-    "headers": [],
-    "path": "/learns/dev-prod-env/26347.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "如何配置 webpack 和 babel",
-    "headers": [],
-    "path": "/learns/dev-prod-env/26350.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "前端用到的 linux 常用命令有哪些",
-    "headers": [],
-    "path": "/learns/dev-prod-env/26372.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "从输入 url 到渲染出页面的整个过程",
-    "headers": [],
-    "path": "/learns/dev-prod-env/26378.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "window.onload 和 DOMContentLoaded 的区别",
-    "headers": [],
-    "path": "/learns/dev-prod-env/26380.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "前端性能优化有哪些方式",
-    "headers": [],
-    "path": "/learns/dev-prod-env/26438.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "手写防抖 debounce",
-    "headers": [],
-    "path": "/learns/dev-prod-env/26473.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "手写节流 throttle",
-    "headers": [],
-    "path": "/learns/dev-prod-env/26484.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "常见的 web 前端攻击方式有哪些？",
-    "headers": [],
-    "path": "/learns/dev-prod-env/26487.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "开发运行环境",
-    "headers": [],
-    "path": "/learns/dev-prod-env/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
     "title": "如何理解 HTML 语义化？",
     "headers": [],
     "path": "/learns/html-css/25179.html",
@@ -304,6 +227,83 @@ export const searchIndex = [
     "title": "html/css 基础问题",
     "headers": [],
     "path": "/learns/html-css/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "常用的 git 命令",
+    "headers": [],
+    "path": "/learns/dev-prod-env/26337.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "移动端 h5 如何抓包网络请求",
+    "headers": [],
+    "path": "/learns/dev-prod-env/26347.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "如何配置 webpack 和 babel",
+    "headers": [],
+    "path": "/learns/dev-prod-env/26350.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "前端用到的 linux 常用命令有哪些",
+    "headers": [],
+    "path": "/learns/dev-prod-env/26372.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "从输入 url 到渲染出页面的整个过程",
+    "headers": [],
+    "path": "/learns/dev-prod-env/26378.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "window.onload 和 DOMContentLoaded 的区别",
+    "headers": [],
+    "path": "/learns/dev-prod-env/26380.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "前端性能优化有哪些方式",
+    "headers": [],
+    "path": "/learns/dev-prod-env/26438.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "手写防抖 debounce",
+    "headers": [],
+    "path": "/learns/dev-prod-env/26473.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "手写节流 throttle",
+    "headers": [],
+    "path": "/learns/dev-prod-env/26484.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "常见的 web 前端攻击方式有哪些？",
+    "headers": [],
+    "path": "/learns/dev-prod-env/26487.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "开发运行环境",
+    "headers": [],
+    "path": "/learns/dev-prod-env/",
     "pathLocale": "/",
     "extraFields": []
   },
