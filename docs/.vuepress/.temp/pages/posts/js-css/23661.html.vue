@@ -190,7 +190,7 @@ module<span class="token punctuation">.</span>exports<span class="token operator
     el<span class="token operator">:</span><span class="token string">'#app'</span><span class="token punctuation">,</span>
     <span class="token function-variable function">render</span><span class="token operator">:</span><span class="token parameter">h</span><span class="token operator">=></span><span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span> 
-</code></pre></div><p>重启服务，在浏览器中可以看到页面的 <div id="app"> 已经被组件替换了：</p>
+</code></pre></div><p>重启服务，在浏览器中可以看到页面的 <code>&lt;div id=&quot;app&quot;&gt;</code> 已经被组件替换了：</p>
 <div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code><span class="token operator">&lt;</span>div data<span class="token operator">-</span>v<span class="token operator">-</span><span class="token number">381730</span>fa<span class="token operator">></span>hello vue<span class="token punctuation">.</span>js<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span> 
 </code></pre></div><p>对应的main.css为：</p>
 <div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code>div<span class="token punctuation">[</span>data<span class="token operator">-</span>v<span class="token operator">-</span><span class="token number">381730</span>fa<span class="token punctuation">]</span><span class="token punctuation">{</span>

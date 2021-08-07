@@ -18,7 +18,7 @@ export const themeData = {
     },
     {
       "text": "GitHub",
-      "link": "https://awei922.github.io/"
+      "link": "https://awei922.github.io/blogs/"
     }
   ],
   "sidebar": {
