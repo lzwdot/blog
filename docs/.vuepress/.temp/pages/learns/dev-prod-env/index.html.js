@@ -8,18 +8,20 @@ export const data = {
   },
   "excerpt": "",
   "headers": [],
-  "filePathRelative": "learns/dev-prod-env/README.md"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
+  "filePathRelative": "learns/dev-prod-env/README.md",
+  "git": {
+    "updatedTime": 1628320079000,
+    "contributors": [
+      {
+        "name": "lzw",
+        "email": "lzw22@qq.com",
+        "commits": 3
+      },
+      {
+        "name": "A.wei",
+        "email": "lzw22@qq.com",
+        "commits": 1
+      }
+    ]
   }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

@@ -9,18 +9,25 @@ export const data = {
   },
   "excerpt": "",
   "headers": [],
-  "filePathRelative": "codes/algorithm/27969.md"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
+  "filePathRelative": "codes/algorithm/27969.md",
+  "git": {
+    "updatedTime": 1628320079000,
+    "contributors": [
+      {
+        "name": "lzw",
+        "email": "lzw22@qq.com",
+        "commits": 3
+      },
+      {
+        "name": "awei",
+        "email": "bob.922@qq.com",
+        "commits": 2
+      },
+      {
+        "name": "A.wei",
+        "email": "lzw22@qq.com",
+        "commits": 1
+      }
+    ]
   }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

@@ -47,18 +47,20 @@ export const data = {
       "children": []
     }
   ],
-  "filePathRelative": "posts/js-css/23661.md"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
+  "filePathRelative": "posts/js-css/23661.md",
+  "git": {
+    "updatedTime": 1628320411000,
+    "contributors": [
+      {
+        "name": "lzw",
+        "email": "lzw22@qq.com",
+        "commits": 3
+      },
+      {
+        "name": "A.wei",
+        "email": "lzw22@qq.com",
+        "commits": 2
+      }
+    ]
   }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

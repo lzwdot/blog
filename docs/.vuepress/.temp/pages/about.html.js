@@ -15,18 +15,15 @@ export const data = {
       "children": []
     }
   ],
-  "filePathRelative": "about.md"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
+  "filePathRelative": "about.md",
+  "git": {
+    "updatedTime": 1625378087000,
+    "contributors": [
+      {
+        "name": "lzw",
+        "email": "lzw22@qq.com",
+        "commits": 2
+      }
+    ]
   }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

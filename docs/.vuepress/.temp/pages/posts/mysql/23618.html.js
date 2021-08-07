@@ -71,18 +71,20 @@ export const data = {
       "children": []
     }
   ],
-  "filePathRelative": "posts/mysql/23618.md"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
+  "filePathRelative": "posts/mysql/23618.md",
+  "git": {
+    "updatedTime": 1628320079000,
+    "contributors": [
+      {
+        "name": "lzw",
+        "email": "lzw22@qq.com",
+        "commits": 3
+      },
+      {
+        "name": "A.wei",
+        "email": "lzw22@qq.com",
+        "commits": 1
+      }
+    ]
   }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

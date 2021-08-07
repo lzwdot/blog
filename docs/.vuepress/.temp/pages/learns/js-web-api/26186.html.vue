@@ -9,11 +9,8 @@
 <ul>
 <li>图片可能防盗链</li>
 <li>可用于统计打点，可使用第三方统计服务</li>
-<li>
-<link /> <script /> 可以使用 CDN，CDN 一般都是外域
-</li>
-<li>
-</li>
+<li><code>&lt;link /&gt; &lt;script /&gt;</code> 可以使用 CDN，CDN 一般都是外域</li>
+<li><code>&lt;script /&gt;</code> 可实现 JSONP</li>
 </ul>
 <p>跨域</p>
 <ul>
@@ -22,10 +19,9 @@
 </ul>
 <p>JSONP 跨域方式</p>
 <ul>
-<li>
-</li>
+<li><code>&lt;script /&gt;</code> 可绕过跨域限制</li>
 <li>服务器可以任意动态拼接数据返回</li>
-<li>所以，<script /> 就可以获得跨域的数据，只要服务器愿意返回</li>
+<li>所以，<code>&lt;script /&gt;</code> 就可以获得跨域的数据，只要服务器愿意返回</li>
 </ul>
 <p>演示，准备一个 http://test.com/test/jsonp.php：</p>
 <div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code>echo $_GET<span class="token punctuation">[</span><span class="token string">'callback'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token string">'({name: "zhangsan"})'</span><span class="token punctuation">;</span>
@@ -45,7 +41,3 @@ response<span class="token punctuation">.</span><span class="token function">set
 response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Credentials"</span><span class="token punctuation">,</span> <span class="token string">"true"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div><p>代理 - 比如使用 Nginx，webpack等代理</p>
 </template>
-
-<script /> 可实现 JSONP
-
-<script /> 可绕过跨域限制
