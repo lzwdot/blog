@@ -9,7 +9,7 @@ const docPath = path.join(__dirname, '../../') // 获取文档目录
 
 
 
-const dirPath = `代码/数据可视化`
+const dirPath = `test`
 const title = '标题'
 
 createMd(dirPath, title)
@@ -43,8 +43,8 @@ function getMaxId() {
                 // 是 .md 文件，排除 .DS_Store & README.md & about.md
                 if (item !== '.DS_Store' && item.includes('.md') && !item.toUpperCase().includes('README') && !item.includes('about')) {
                     const frontMatter = matter.read(`${curPath}/${item}`)
-                    const { permalink } = frontMatter.data
-                    maxId = Math.max(maxId, permalink ? permalink.split('/')[2] : 0)
+                    const { ID } = frontMatter.data
+                    maxId = Math.max(maxId, ID)
                 }
             }
         })
@@ -92,12 +92,12 @@ function writeReadMe(path) {
 function createMd(dirname, title, author = 'A.wei') {
     const maxId = getMaxId() + 1
     const path = `${docPath}/${dirname}`
-    const filePath = `${path}/${title}.md`
+    const filePath = `${path}/${maxId}.md`
 
     const data = moment().format('YYYY-MM-DD HH:mm:ss');
     const tags = `\n  - "${dirname.split('/').join('"\n  - "')}"`
 
-    const content = `---\n title: "${title}"\n permalink: "/archives/${maxId}"\n data: "${data}"\n author: "${author}"\n tags: ${tags}\n---\n\n# ${title}\n\n`
+    const content = `---\n title: "${title}"\n ID: "${maxId}"\n data: "${data}"\n author: "${author}"\n tags: ${categories}\n tags: ${tags}\n---\n\n# ${title}\n\n`
 
     // 创建文件夹的 readme 文件
     writeReadMe(path)

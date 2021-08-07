@@ -1,0 +1,51 @@
+<template><h1 id="原生js操作cookie-有效期至晚上23点59分59秒" tabindex="-1"><a class="header-anchor" href="#原生js操作cookie-有效期至晚上23点59分59秒" aria-hidden="true">#</a> 原生js操作cookie，有效期至晚上23点59分59秒</h1>
+<p>现在遇到一个每日可以投票的功能，想用cookie来控制，那么有效期至晚上23点59分59秒，下面的代码可以搞定</p>
+<p><strong>设置cookie</strong></p>
+<div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ * 添加cookie
+ * <span class="token keyword">@param</span> <span class="token parameter">cname</span>
+ * <span class="token keyword">@param</span> <span class="token parameter">cvalue</span>
+ * <span class="token keyword">@param</span> <span class="token parameter">exdays</span>
+ */</span>
+<span class="token keyword">function</span> <span class="token function">setCookie</span><span class="token punctuation">(</span><span class="token parameter">cname<span class="token punctuation">,</span> cvalue<span class="token punctuation">,</span> exdays</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>_d <span class="token operator">=</span> d<span class="token punctuation">;</span>
+    <span class="token comment">//设置23:59:59过期</span>
+    _d<span class="token punctuation">.</span><span class="token function">setHours</span><span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span>_d<span class="token punctuation">.</span><span class="token function">setMinutes</span><span class="token punctuation">(</span><span class="token number">59</span><span class="token punctuation">)</span><span class="token punctuation">;</span>_d<span class="token punctuation">.</span><span class="token function">setSeconds</span><span class="token punctuation">(</span><span class="token number">59</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    d<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>exdays<span class="token operator">*</span><span class="token number">24</span><span class="token operator">*</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> expires <span class="token operator">=</span> <span class="token string">"expires="</span><span class="token operator">+</span>d<span class="token punctuation">.</span><span class="token function">toUTCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> cname <span class="token operator">+</span> <span class="token string">"="</span> <span class="token operator">+</span> cvalue <span class="token operator">+</span> <span class="token string">"; "</span> <span class="token operator">+</span> expires<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>获取cookie</strong></p>
+<div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ * 获取cookie
+ * <span class="token keyword">@param</span> <span class="token parameter">cname</span>
+ * <span class="token keyword">@returns</span> <span class="token class-name"><span class="token punctuation">{</span><span class="token operator">*</span><span class="token punctuation">}</span></span>
+ */</span>
+<span class="token keyword">function</span> <span class="token function">getCookie</span><span class="token punctuation">(</span><span class="token parameter">cname</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name <span class="token operator">=</span> cname <span class="token operator">+</span> <span class="token string">"="</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> ca <span class="token operator">=</span> document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">';'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>ca<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> c <span class="token operator">=</span> ca<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> c<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>name<span class="token punctuation">.</span>length<span class="token punctuation">,</span>c<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>删除cookie</strong></p>
+<div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ * 删除cookie
+ * <span class="token keyword">@param</span> <span class="token parameter">cname</span>
+ */</span>
+<span class="token keyword">function</span> <span class="token function">delCookie</span><span class="token punctuation">(</span><span class="token parameter">cname</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> exp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    exp<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>exp<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span>cookie<span class="token operator">=</span> cname <span class="token operator">+</span> <span class="token string">"=cookie; expires="</span><span class="token operator">+</span>exp<span class="token punctuation">.</span><span class="token function">toGMTString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote>
+<p>根据代码网上代码修改</p>
+</blockquote>
+<p><strong>js.cookie</strong></p>
+<p><a href="https://github.com/js-cookie/js-cookie" target="_blank" rel="noopener noreferrer">https://github.com/js-cookie/js-cookie<OutboundLink/></a></p>
+<div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code>Cookies<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> expires<span class="token operator">:</span> <span class="token number">365</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Cookies<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// => 'value'</span>
+Cookies<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></template>

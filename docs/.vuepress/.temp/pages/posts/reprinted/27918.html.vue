@@ -1,0 +1,255 @@
+<template><h1 id="来自网上的一份-js-问题" tabindex="-1"><a class="header-anchor" href="#来自网上的一份-js-问题" aria-hidden="true">#</a> 来自网上的一份 js 问题</h1>
+<p>从 7 月尾到 9 月尾，面试时长 2 个月（因为中间穿插了校招，所以时间有所拖长），7 轮面<br>
+试，其中 5 轮技术面，1 轮 GM，1 轮 hr。<br>
+下面只提供题目，答案就自己查找吧，毕竟查找答案也是学习的一个过程！</p>
+<p>一面-技术面<br>
+晚上，视频面试，属于同部门的同事。</p>
+<p>前端知识<br>
+dom 树节点和渲染树节点一一对应吗，有什么是 dom 树会有，渲染树不会有的节点<br>
+CSS 会阻塞 dom 解析吗？</p>
+<p>https://www.cnblogs.com/gavinjay/p/13985499.html</p>
+<p>requestIdleCallback 是干什么用的 <a href="https://www.cnblogs.com/goloving/p/14074006.html" target="_blank" rel="noopener noreferrer">https://www.cnblogs.com/goloving/p/14074006.html<OutboundLink/></a></p>
+<p>浏览器的渲染原理<br>
+浏览器的渲染过程<br>
+关键渲染路径详述 https://blog.csdn.net/ligang2585116/article/details/98469361<br>
+避免回流的方式</p>
+<p>https://www.cnblogs.com/chenyoumei/p/9156849.html</p>
+<p>跨域的方式 /archives/26186</p>
+<p>前端的网络安全如何防御（xss，csrf） /archives/26487</p>
+<p>cookies 的保护方式 https://www.cnblogs.com/malimalihong95/articles/11103399.html</p>
+<p>浏览器的缓存机制 /archives/26288<br>
+什么文件用强缓存，什么文件用协商缓存</p>
+<p><a href="https://www.cnblogs.com/qiaodongdong/articles/13384357.html" target="_blank" rel="noopener noreferrer">https://www.cnblogs.com/qiaodongdong/articles/13384357.html<OutboundLink/></a></p>
+<p>React-Native 的原理，优缺点<br>
+react 的虚拟 dom 和 diff 描述<br>
+react 渲染优化（class，hook）<br>
+react 的 context 的使用场景<br>
+node 和后端知识</p>
+<p>mysql 和 mongo 的区别，使用情景 https://www.cnblogs.com/knuzy/p/9608363.html</p>
+<p>node 有什么情况会导致内存溢出</p>
+<p>node 的内存分配</p>
+<p>event loop（浏览器和 node） /archives/25763</p>
+<p>开放性题目<br>
+首屏优化方案 <a href="https://zhuanlan.zhihu.com/p/88639980?utm_source=wechat_session" target="_blank" rel="noopener noreferrer">https://zhuanlan.zhihu.com/p/88639980<OutboundLink/></a><br>
+在 App 中如何实现前端资源离线缓存（方案）http://www.alloyteam.com/2013/12/web-cache-6-hybrid-app-tailored-cache/</p>
+<p>算法<br>
+const arr = [101,19,12,51,32,7,103,8];<br>
+1.找出连续最大升序的数量</p>
+<div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">longestConsecutive</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">]</span>   <span class="token comment">// 去重 </span>
+    nums<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//  排序</span>
+
+    nums<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>arr <span class="token operator">=</span> <span class="token punctuation">[</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">===</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            arr<span class="token punctuation">.</span>length <span class="token operator">></span> res<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>res <span class="token operator">=</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            arr <span class="token operator">=</span> <span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    arr<span class="token punctuation">.</span>length <span class="token operator">></span> res<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>res <span class="token operator">=</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span>length
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>2.找出不连续最大升序的数量</p>
+<div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">disLongestConsecutive</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">]</span>   <span class="token comment">// 去重 </span>
+    nums<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//  排序</span>
+
+    nums<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>res <span class="token operator">=</span> <span class="token punctuation">[</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">[</span>res<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">!=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>            
+        <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span>    
+
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span>length
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>二面-技术面<br>
+晚上，视频面试，属于其他部门同事。</p>
+<p>前端知识<br>
+浏览器的输入 url 后的过程 /archives/26378</p>
+<p>js 异步方式 https://www.jb51.net/article/161414.htm</p>
+<p>promise.resolve 是干嘛的 https://www.cnblogs.com/mengff/p/11016128.html<br>
+promise.then 如何实现链式调用 <a href="https://www.jianshu.com/p/3c19070c8eb8" target="_blank" rel="noopener noreferrer">https://www.jianshu.com/p/3c19070c8eb8<OutboundLink/></a><br>
+promise.then 不返还一个 promise 还能用 then 吗 https://segmentfault.com/q/1010000022049517<br>
+promise.finally 的作用，如何自己实现 finally https://blog.csdn.net/zl13015214442/article/details/96744447<br>
+promise 原理 https://www.jianshu.com/p/fc5030e725ae</p>
+<p>webpack 的异步加载如何实现<br>
+webpack 的分包策略</p>
+<p><a href="https://www.cnblogs.com/goloving/p/14030945.html" target="_blank" rel="noopener noreferrer">https://www.cnblogs.com/goloving/p/14030945.html<OutboundLink/></a></p>
+<p>跨域方式有什么<br>
+jsonp 的原理<br>
+csrf 防御手段 /archives/26487</p>
+<p>cookie 的 samesite 属性作用 http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html</p>
+<p>js 对象循环引用会导致什么问题 https://zhuanlan.zhihu.com/p/102029144</p>
+<p>react 如何阻止原生默认事件<br>
+react 的 fiber 节点树是什么数据结构，为什么要用这样的数据结构<br>
+react 异步渲染原理，优先级如何划分<br>
+react hook 有自己做一些自定义的 hook 吗<br>
+react key 的原理<br>
+react 如何实现函数式调用组件，toast.show()<br>
+react 新增了什么生命周和删除了什么生命周期，为什么要删除<br>
+node 后端知识<br>
+node 对于 option 请求如何处理<br>
+node 如何处理 cors 跨域</p>
+<p>ES modules 和 commonjs 的区别 https://zhuanlan.zhihu.com/p/219806376</p>
+<p>node 的 event loop 和浏览器的区别 https://www.cnblogs.com/xuzhudong/p/8711069.html</p>
+<p>dns 查询过程，dns 用什么协议发起 dns 查询的 https://www.cnblogs.com/gopark/p/8430916.html</p>
+<p>tcp 和 udp 区别<br>
+tcp 的三次握手和四次挥手</p>
+<p><a href="https://blog.csdn.net/sifanchao/article/details/82285018" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/sifanchao/article/details/82285018<OutboundLink/></a></p>
+<p>协商缓存和强缓存的区别 /archives/26288<br>
+https 协议握手大概过程 /archives/24523</p>
+<p>对称加密和非对称加密的区别 https://www.php.cn/faq/465668.html<br>
+非对称加密，私钥和公钥的区别 https://www.cnblogs.com/moonfans/p/3939335.html<br>
+https 证书的作用 https://www.runoob.com/w3cnote/https-ssl-intro.html</p>
+<p>其他<br>
+如何埋点，为什么用 1*1 像素的 gif 图片做上报 https://www.cnblogs.com/yf-html/p/14468900.html<br>
+如何定义首屏 https://www.cnblogs.com/longm/p/7382163.html</p>
+<p>算法</p>
+<p>// 从扑克牌中随机抽 5 张牌，判断是不是一个顺子，即这 5 张牌是不是连续的。2～10 为<br>
+数字本身，A 为 1，J 为 11，Q 为 12，K 为 13，而大、小王为<br>
+0 ，可以看成任意数字。A 不<br>
+能视为 14。// 示例 1:// 输入: [1,2,3,4,5]// 输出: True<br>
+//<br>
+示例 2://<br>
+输入: [0,0,1,2,5]//<br>
+输出: True<br>
+//<br>
+限制：//<br>
+数组长度为 5 //<br>
+数组的数取值为 [0, 13] .</p>
+<div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">isStraight</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>nums <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> nums<span class="token punctuation">.</span>length <span class="token operator">!=</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span>
+
+  <span class="token keyword">const</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span>length
+  <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> zeroNums <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 0 的个数</span>
+  <span class="token keyword">let</span> diffNums <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 相差的值</span>
+
+  <span class="token comment">// 排序</span>
+  res <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">-</span> b <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      zeroNums<span class="token operator">++</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">===</span> res<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      res<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>diffNums <span class="token operator">+=</span> <span class="token punctuation">(</span>res<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> res<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> zeroNums <span class="token operator">>=</span> diffNums
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>三面-技术面<br>
+早上，视频面试，leader 面试<br>
+前端知识<br>
+绑定事件有多少种方式<br>
+事件触发的流程，捕获和冒泡<br>
+捕获阶段能终止吗<br>
+终止冒泡阶段有哪些 https://segmentfault.com/a/1190000018254460</p>
+<p><a href="https://blog.csdn.net/aitangyong/article/details/43231111" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/aitangyong/article/details/43231111<OutboundLink/></a></p>
+<p>如果实现 one 绑定事件 https://blog.csdn.net/weixin_30532759/article/details/99518967<br>
+事件委托的原理 /archives/26594<br>
+event.target 和 event.currtager 的区别 https://www.cnblogs.com/yewenxiang/p/6171411.html<br>
+浏览器显示一个图片有什么方式 （img标签，css中background-image，canvas，svg）<br>
+如何获取 url 中的?后的参数 <a href="/archives/26695" target="_blank" rel="noopener noreferrer">/archives/26695<OutboundLink/></a><br>
+浏览器的内存回收机制 标记清除还是引用计数？ https://blog.csdn.net/weixin_45284354/article/details/112485682<br>
+如何解决跨域 /archives/26186<br>
+什么是简单请求什么复杂请求 https://www.cnblogs.com/goloving/p/14525157.html<br>
+const 和 let 有什么区别 /archives/26500<br>
+ES6 常用的 api 有哪些 （let const 模板字符 解构赋值 箭头函数 剩余参数 扩展运算符 symbol set map class promise async ）https://segmentfault.com/a/1190000023261941<br>
+数组断引用的方式有什么 /archives/26564<br>
+Base64 图片有什么问题 https://www.zhihu.com/question/31155574<br>
+node 后端知识<br>
+Http 强缓存和协商缓存用的是什么字段，整体流程是怎样 /archives/26288<br>
+Https 原理Https 第一次请求会携带什么 （客户端支持加密协议及版本，SSL TLS）https://www.cnblogs.com/liyuhui-Z/p/7844880.html<br>
+Ca 证书的内容是什么 https://blog.csdn.net/qq_23901487/article/details/72730330<br>
+Https2.0 的特性 https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/232#issuecomment-516664634<br>
+xss 攻击原理的防御方式<br>
+Csrf 攻击原理和防御方式 /archives/26487</p>
+<p>二进制分帧的具体是什么 https://blog.csdn.net/u011904605/article/details/53012844<br>
+Keep alive 和多路复用的区别 https://jishuin.proginn.com/p/763bfbd5a2d7<br>
+Option 请求的作用 https://www.cnblogs.com/kaiqinzhang/p/12090285.html<br>
+Node gc 方式<br>
+新生代和老生代的区别<br>
+新生代内存地址移动到老生代内存地址的过程</p>
+<p>https://juejin.cn/post/6897554152147451917</p>
+<p>开放问题<br>
+长列表优化方案 https://www.dazhuanlan.com/2020/01/20/5e252286ce97b/<br>
+首屏优化方案 https://zhuanlan.zhihu.com/p/88639980?utm_source=wechat_session<br>
+Node 如何保证第三方接口的稳定性</p>
+<p>四面-GM 面<br>
+浏览器从写入 url 到加载完毕的流程<br>
+浏览器白屏原因 https://mayouchen.blog.csdn.net/article/details/79214773<br>
+页面打开后 cpu 和内存快速增长，如何定位问题，可能有什么问题 https://www.cnblogs.com/jxl1996/p/10245832.html<br>
+长列表优化，以及长列表中，如果带搜索功能如何实现 （后端搜索，js搜索算法）</p>
+<p>五面-技术委员会技术面<br>
+最新规定 9 级及以上级别需要 1-5 轮的技术委员会进行加面。<br>
+最满意的项目列举 2 个<br>
+为什么使用 RN （React Native）<br>
+有 100 匹马，场地只有 4 条跑道，得出最快的 4 只马需要多少轮 Lam：100 匹马，4 个赛道，<br>
+找出跑最快的 4 匹马。（计时：8轮，https://blog.csdn.net/qq_44756792/article/details/103851500）</p>
+<p>已知函数 fn1 会随机返回 1-5 的整数，要求基于 fn1 编写 fn2，要随机生成 1-7，fn2 内不能使<br>
+用系统的随机 api，只能调用 fn1 获取随机数</p>
+<p>六面-技术委员会技术面<br>
+前端的未来发展的一些思考<br>
+Serverless 的优缺点，前端的应用范围<br>
+页面性能优化<br>
+做过的专项的架构图</p>
+<p>七面-HR 面<br>
+为什么离职<br>
+你现在公司最有成就感的项目是什么<br>
+你现在公司最有挑战的项目是什么，你是如果解决难题的<br>
+期望薪酬<br>
+因为我以前有其他公司的工作经验，所以需要做性格测试，之后就是等出薪酬方案和 hr 沟<br>
+通，然后发 offer，offer 后进入背调，一切通过后进入入职预约流程，之后就等待入职咯~~~。<br>
+总体感受<br>
+现在前端除了一些基本的面试知识外，明显感觉到算法的考虑在逐步加强，所以也总结一些<br>
+重点的考点吧。一些很基本的原理我就不写了，什么闭包，什么原型链<br>
+对 JavaScript 的 Api 可以手写。<br>
+bind<br>
+new<br>
+promise<br>
+…..<br>
+浏览器的加载原理，回流重绘，url 输入后的流程，关键渲染路径等….<br>
+框架的原理，了解你最常用的框架的内部原理以及实现，包括思想等。<br>
+浏览器和 node 的 GC 原理<br>
+浏览器和 node 之间 eventLoop 的区别<br>
+webpack 的基本原理<br>
+数据库，redis，nginx 的一些基本概念以及基本原理和优化。对于前端页面的优化方案，包括首屏加载，资源整合，网络优化，长列表优化等<br>
+网络安全，xss，csrf，cookies 保护等<br>
+网络知识<br>
+tcp<br>
+https 和 http<br>
+dns<br>
+udp<br>
+算法和数据结构<br>
+基本常用排序<br>
+链表操作<br>
+树结构操作<br>
+贪心算法<br>
+回溯算法<br>
+双指针操作<br>
+哈希表<br>
+动态规划（一般为加分题）<br>
+整个面试过程，主要缺点可能是面试时间太长了，前前后后收到 offer 用了 2 个多月，面试<br>
+者需要比较耐心吧。面试的难度还是需要看面试官给你的压力大不大，基本上面试的内容都<br>
+会比较细，当中有一些关于我自己本身项目上的一些问题并没有写出来。但是基本围绕的点<br>
+就是介绍你的项目，用到的技术，为什么用这个技术，解决什么问题，最终结果。如果你简<br>
+历里面的内容你不是很熟悉，那么建议你别写，或者略微带过，不要给面试官带来过大的期<br>
+望。我们对于简历上写到的内容，一定弄清楚每个技术的优缺点，尽可能了解原理和优化方<br>
+案，不要只为用而用，大厂一般比较在意一个面试者自己的思考能力。</p>
+</template>

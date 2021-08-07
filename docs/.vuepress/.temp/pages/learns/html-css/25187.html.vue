@@ -1,0 +1,55 @@
+<template><h1 id="margin-负值问题" tabindex="-1"><a class="header-anchor" href="#margin-负值问题" aria-hidden="true">#</a> margin 负值问题</h1>
+<ul>
+<li>margin-top 和 margin-left 负值，元素向上、向左移动</li>
+<li>margin-right 负值，右侧元素左移，自身不受影响</li>
+<li>margin-bottom 负值，下侧元素上移，自身不受影响</li>
+</ul>
+<p>用于测试 margin top bottom 的负数情况</p>  
+<div class="container">  
+    <div class="item border-blue" style="margin-bottom: -10px">  
+        this is item 1  
+    </div>  
+    <div class="item border-red" style="margin-top: -10px">  
+        this is item 2  
+    </div>  
+</div>  
+<p>用于测试 margin left right 的负数情况</p>  
+<div class="container clearfix">  
+    <div class="item border-blue float-left" style="margin-right: -10px">  
+        this is item 3  
+    </div>  
+    <div class="item border-red float-left" style="margin-left: -10px">  
+        this is item 4  
+    </div>  
+</div>
+</template>
+
+<style>  
+    body {  
+        margin: 20px;  
+    }  
+  
+    .float-left {  
+        float: left;  
+    }  
+    .clearfix:after {  
+        content: '';  
+        display: table;  
+        clear: both;  
+    }  
+  
+    .container {  
+        border: 1px solid #ccc;  
+        padding: 10px;  
+    }  
+    .container .item {  
+        width: 100px;  
+        height: 100px;  
+    }  
+    .container .border-blue {  
+        border: 1px solid blue;  
+    }  
+    .container .border-red {  
+        border: 1px solid red;  
+    }  
+</style>  

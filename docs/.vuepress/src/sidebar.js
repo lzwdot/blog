@@ -33,8 +33,8 @@ function writeReadMe(path, content) {
 
         // 加上 Front Matter
         if (frontMatter && frontMatter.data) {
-            const { title, permalink } = frontMatter.data
-            content = title ? `---\n title: "${title}"\n permalink: "${permalink}"\n---\n\n# ${title}\n\n${content}` : content
+            const { title } = frontMatter.data
+            content = title ? `---\n title: "${title}"\n---\n\n# ${title}\n\n${content}` : content
         }
 
         // 删除 README.md 文件
@@ -67,40 +67,42 @@ function getReadMe(path) {
 }
 
 
+
 /**
  * 生成md文件格式链接
  * @param {*} filePath 
+ * @param {*} link 
  * @returns 
  */
-function buildMdLink(filePath) {
+function buildMdLink(filePath, link) {
     let content = ''
     let frontMatter = matter.read(filePath);
 
     // 拼接成链接
     if (frontMatter && frontMatter.data) {
-        const { title, permalink } = frontMatter.data
-        content += `[${title}](${permalink})    \n`
+        const { title } = frontMatter.data
+        content += `[${title}](${link})    \n`
     }
 
     return content;
 }
 
 /**
- * 根据 permalink 正序排序
+ * 根据 ID 正序排序
  * @param {*} path 
  * @param {*} data 
  * @returns 
  */
-function sortByPermalink(path, data) {
-    data.sort((a, b) => {      
+function sortById(path, data) {
+    data.sort((a, b) => {
         const frontMatterA = matter.read(`${path}/${a}`)
         const frontMatterB = matter.read(`${path}/${b}`)
 
-        const { permalink: permalinkA } = frontMatterA.data
-        const { permalink: permalinkB } = frontMatterB.data
+        const { ID: idA } = frontMatterA.data
+        const { ID: idB } = frontMatterB.data
 
-        if (permalinkA && permalinkB) {
-            return permalinkA.split('/')[2] - permalinkB.split('/')[2]
+        if (idA && idB) {
+            return idA - idB
         }
 
         return false
@@ -136,7 +138,7 @@ function buildDirTree() {
                     path: dirPath
                 })
             } else { // 是 .md 文件，排除 .DS_Store & README.md & about.md
-                if (item !== '.DS_Store' && item.includes('.md') && !item.toUpperCase().includes('README') && !item.includes('about')){
+                if (item !== '.DS_Store' && item.includes('.md') && !item.toUpperCase().includes('README') && !item.includes('about')) {
                     res.push(item)
                 }
             }
@@ -144,7 +146,7 @@ function buildDirTree() {
 
         //如果是 md 文件排序      
         if (typeof res[0] === 'string' && res[0].includes('.md') && res.length > 1) {
-            return sortByPermalink(curPath, res)
+            return sortById(curPath, res)
         }
 
         return res;
@@ -159,9 +161,10 @@ function buildDirTree() {
 /**
  * 生成侧边栏
  * @param {*} dirTree 
+ * @param {*} baseUrl 
  * @returns 
  */
-function createSidebar(dirTree) {
+function createSidebar(dirTree,baseUrl) {
     const rootPath = docPath// 当前目录的绝对路径      
     const sidebarData = {}
 
@@ -185,10 +188,10 @@ function createSidebar(dirTree) {
                     // 目录存在，且不为 readme 文件
                     if (curNode.data[j].path) {
                         // 获取子文件夹 readme 内容
-                        const { title, permalink } = getReadMe(`${rootPath}/${curNode.data[j].path}`)
+                        const { title } = getReadMe(`${rootPath}/${curNode.data[j].path}`)
 
                         // markdown 链接语法
-                        content += `[${title ? title : curNode.data[j].name}](${permalink ? permalink : curNode.data[j].path})    \n`
+                        content += `[${title ? title : curNode.data[j].name}](/${baseUrl}${curNode.data[j].path})    \n`
                     }
                 }
 
@@ -201,11 +204,12 @@ function createSidebar(dirTree) {
                     // 文件存在，且不为 readme 文件
 
                     if (!curNode.data[j].toUpperCase().includes('README')) {
+                        const _path = `${curNode.path}/${curNode.data[j]}`
                         // markdown 链接语法
-                        content += buildMdLink(`${rootPath}/${curNode.path}/${curNode.data[j]}`)
+                        content += buildMdLink(`${rootPath}/${_path}`, `/${baseUrl}${_path}`)
 
                         // 推入文件构成目录
-                        children.push(`${curNode.data[j]}`)
+                        children.push(`${_path}`)
                     }
                 }
                 // 写入内容到 readme 文件                
@@ -214,9 +218,8 @@ function createSidebar(dirTree) {
                 // 获取文件夹 readme 内容
                 const { title } = getReadMe(curPath)
                 sidebar.push({
-                    title: title || curNode.name,
-                    collapsable: false,
-                    children: sortByPermalink(curPath, children) //排序
+                    text: title || curNode.name,
+                    children: sortById(rootPath, children)  //排序
                 })
 
                 // 该路径下的目录
@@ -235,11 +238,11 @@ function createSidebar(dirTree) {
  * 生成侧边栏
  * @returns 
  */
-function getSidebar() {
+function getSidebar(baseUrl) {
     // 目录树
     dirTree = buildDirTree()
-
-    return createSidebar(dirTree);
+    // 侧边栏菜单
+    return createSidebar(dirTree, baseUrl);
 }
 
 module.exports = {

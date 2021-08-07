@@ -1,0 +1,12 @@
+<template><h1 id="实现类似-vue-js-模板字符串替换" tabindex="-1"><a class="header-anchor" href="#实现类似-vue-js-模板字符串替换" aria-hidden="true">#</a> 实现类似 vue.js 模板字符串替换</h1>
+<p>实现一个 <code>render(template, context)</code> 方法，将 以<code>{{}}</code> 包括的变量替换</p>
+<div class="language-javascript ext-js"><pre v-pre class="language-javascript"><code><span class="token keyword">var</span> template <span class="token operator">=</span><span class="token string">"我叫{{name}}，今年{{age}}岁"</span>
+<span class="token keyword">var</span> context <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">'bob'</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">29</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">render</span><span class="token punctuation">(</span><span class="token parameter">template<span class="token punctuation">,</span>context</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> template<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">{{(.*?)}}</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">match<span class="token punctuation">,</span>key</span><span class="token punctuation">)</span><span class="token operator">=></span>context<span class="token punctuation">[</span>key<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">render</span><span class="token punctuation">(</span>template<span class="token punctuation">,</span>context<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><blockquote>
+<p>结果：我叫bob，今年29岁</p>
+</blockquote>
+</template>
