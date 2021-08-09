@@ -10,7 +10,7 @@ cn="$GIT_COMMITTER_NAME"
 
 cm="$GIT_COMMITTER_EMAIL"
 
-if [ "$GIT_COMMITTER_EMAIL" = "[lzw22@qq.com]" ]
+if [ "$GIT_COMMITTER_EMAIL" = "[liuzhiwei3220@hydee.cn]" ]
 
 then
 
