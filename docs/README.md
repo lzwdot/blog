@@ -1,8 +1,7 @@
 ---
 navbar: false
 home: true
-heroImage: /logo.png
-heroText: null
+title: '首页'
 actions:
   # - text: GO →
   #   link: /posts/

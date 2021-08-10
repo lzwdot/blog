@@ -18,8 +18,8 @@ module.exports = {
 
     // header 标签内的
     head: [
-        ['link', { rel: 'icon', href: '/favicon.ico' }],
-        ['link', { rel: 'manifest', href: '/manifest.json' }],
+        ['link', { rel: 'icon', href: '/blogs/favicon.ico' }],
+        ['link', { rel: 'manifest', href: '/blogs/manifest.json' }],
         ["script", {},
             //百度统计
             `var _hmt = _hmt || [];
