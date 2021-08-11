@@ -4,4 +4,4 @@
 
 # 其他
 
-[【急】域名转让](/blogs/posts/others/23553.md)    
+[【急】域名转让](/posts/others/23553.md)    

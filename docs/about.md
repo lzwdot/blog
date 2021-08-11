@@ -2,7 +2,7 @@
 title: 关于
 ---
 
-订阅RSS，网址：bookrss.com，是由 A.wei 建立的技术博客， 不涉及商业目的。
+BookRSS，网址：bookrss.com，是由 A.wei 建立的技术博客， 不涉及商业目的。
 
 ## 关于A.wei
 

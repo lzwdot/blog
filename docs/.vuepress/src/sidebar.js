@@ -191,7 +191,7 @@ function createSidebar(dirTree,baseUrl) {
                         const { title } = getReadMe(`${rootPath}/${curNode.data[j].path}`)
 
                         // markdown 链接语法
-                        content += `[${title ? title : curNode.data[j].name}](/${baseUrl}${curNode.data[j].path})    \n`
+                        content += `[${title ? title : curNode.data[j].name}](${baseUrl}${curNode.data[j].path})    \n`
                     }
                 }
 
@@ -206,7 +206,7 @@ function createSidebar(dirTree,baseUrl) {
                     if (!curNode.data[j].toUpperCase().includes('README')) {
                         const _path = `${curNode.path}/${curNode.data[j]}`
                         // markdown 链接语法
-                        content += buildMdLink(`${rootPath}/${_path}`, `/${baseUrl}${_path}`)
+                        content += buildMdLink(`${rootPath}/${_path}`, `${baseUrl}${_path}`)
 
                         // 推入文件构成目录
                         children.push(`${_path}`)

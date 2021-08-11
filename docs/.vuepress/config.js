@@ -3,23 +3,23 @@ const path = require('path')
 const { getNavbar } = require('./src/navbar')
 const { getSidebar } = require('./src/sidebar')
 
-const baseUrl = 'blogs'
+const baseUrl = ''
 
 module.exports = {
     // 站点配置
-    base: `/${baseUrl}/`,
+    base: `${baseUrl}/`,
     locales: {
         '/': {
             lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性 
-            title: '订阅RSS',
+            title: 'BookRSS',
             description: '知识就是力量',
         }
     },
 
     // header 标签内的
     head: [
-        ['link', { rel: 'icon', href: '/blogs/favicon.ico' }],
-        ['link', { rel: 'manifest', href: '/blogs/manifest.json' }],
+        ['link', { rel: 'icon', href: `${baseUrl}/favicon.ico` }],
+        ['link', { rel: 'manifest', href: `${baseUrl}/manifest.json` }],
         ["script", {},
             //百度统计
             `var _hmt = _hmt || [];

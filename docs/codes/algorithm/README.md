@@ -4,5 +4,5 @@
 
 # 数据结构与算法
 
-[LeetCode：133. 克隆图](/blogs/codes/algorithm/27969.md)    
-[JavaScript 实现：最小堆类](/blogs/codes/algorithm/27970.md)    
+[LeetCode：133. 克隆图](/codes/algorithm/27969.md)    
+[JavaScript 实现：最小堆类](/codes/algorithm/27970.md)    
