@@ -3,7 +3,7 @@ const path = require('path')
 const { getNavbar } = require('./src/navbar')
 const { getSidebar } = require('./src/sidebar')
 
-const baseUrl = ''
+const baseUrl = '/blogs'
 
 module.exports = {
     // 站点配置
@@ -34,7 +34,7 @@ module.exports = {
 
     // 主题配置
     themeConfig: {
-        navbar: getNavbar(), // 导航栏
+        navbar: getNavbar(baseUrl), // 导航栏
         sidebar: getSidebar(baseUrl), // 侧边栏
 
         // 编辑此页链接
