@@ -80,6 +80,7 @@ module.exports = {
                     placeholder: '搜索', // 搜索框在不同 locales 下的文字
                 }
             },
+            getExtraFields: (page) => page.frontmatter.ID ? [page.frontmatter.ID] : [], // 允许搜索 Frontmatter 中的 `ID`
         }],
         ['@vuepress/register-components', {
             // 该目录下匹配 componentsPatterns 的文件会被自动注册为 Vue 组件。

@@ -4,4 +4,4 @@
 
 # Web Components
 
-[Web Components 入门](/codes/web-components/27982.md)    
+[Web Components 入门](/blogs/codes/web-components/27982.md)    
