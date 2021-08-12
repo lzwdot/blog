@@ -45,13 +45,23 @@ jobs:
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
+      # - name: Deploy to GitHub Pages
+        # uses: crazy-max/ghaction-github-pages@v2
+        # with:
           # 部署到 gh-pages 分支
-          target_branch: gh-pages
+          # target_branch: gh-pages
           # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/.vuepress/dist
-        env:
+          # build_dir: docs/.vuepress/dist
+        # env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # 发布到 github.io/master
+      - name: Deploy to github.io
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: awei922/awei922.github.io
+          publish_branch: master  # default: gh-pages
+          publish_dir: docs/.vuepress/dist
+    

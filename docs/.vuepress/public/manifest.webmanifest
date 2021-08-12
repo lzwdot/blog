@@ -1,6 +1,11 @@
 {
     "name": "图书RSS",
-    "short_name": "RSS",
+    "short_name": "RSS",   
+    "description": "图书RSS",
+    "start_url": "/index.html",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +18,5 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    
 }
