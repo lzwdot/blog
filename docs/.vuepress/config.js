@@ -93,7 +93,7 @@ module.exports = {
             componentsDir: path.resolve(__dirname, './components'),
         }],
         ['@vuepress/pwa', {
-            skipWaiting: false, //设置 skipWaiting: true ，这将在新的 Service Worker 就绪之后立即激活它
+            skipWaiting: false, // 设置 skipWaiting: true ，这将在新的 Service Worker 就绪之后立即激活它
         }],
         ['@vuepress/plugin-pwa-popup', {
             locales: {
