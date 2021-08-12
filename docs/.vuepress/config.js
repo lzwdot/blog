@@ -92,16 +92,17 @@ module.exports = {
             // 该目录下匹配 componentsPatterns 的文件会被自动注册为 Vue 组件。
             componentsDir: path.resolve(__dirname, './components'),
         }],
-        ['@vuepress/pwa', {
-            skipWaiting: false, // 设置 skipWaiting: true ，这将在新的 Service Worker 就绪之后立即激活它
-        }],
-        ['@vuepress/plugin-pwa-popup', {
-            locales: {
-                '/': {
-                    message: '发现新内容可用',
-                    buttonText: '刷新',
-                },
-            },
-        }],
+       
+        // ['@vuepress/plugin-pwa',{
+        //     skipWaiting: false, // 设置 skipWaiting: true ，这将在新的 Service Worker 就绪之后立即激活它
+        // }], 
+        // ['@vuepress/plugin-pwa-popup', {
+        //     locales: {
+        //         '/': {
+        //             message: '发现新内容可用',
+        //             buttonText: '刷新',
+        //         },
+        //     },
+        // }],
     ]
 }
