@@ -11,7 +11,7 @@ module.exports = {
     locales: {
         '/': {
             lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性 
-            title: '图书RSS',
+            title: 'GravataR',
             description: '知识就是力量',
         }
     },
@@ -21,10 +21,11 @@ module.exports = {
         ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: `${baseUrl}/apple-touch-icon.png` }],
         ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: `${baseUrl}/favicon-32x32.png` }],
         ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: `${baseUrl}/favicon-16x16.png` }],
-        ['link', { rel: 'manifest', href: `${baseUrl}/manifest.webmanifest` }],
+        ['link', { rel: 'manifest', href: `${baseUrl}/site.webmanifest` }],
         ['link', { rel: 'mask-icon', href: `${baseUrl}/safari-pinned-tab.svg`, color: '#5bbad5' }],
         ['meta', { name: 'msapplication-TileColor', content: '#da532c' }],
         ['meta', { name: 'theme-color', content: '#ffffff' }],
+
         ["script", {},
             //百度统计
             `var _hmt = _hmt || [];
@@ -79,18 +80,19 @@ module.exports = {
     // 插件配置
     plugins: [
         ['@vuepress/plugin-search', {
-            maxSuggestions: 20, // 指定搜索结果的最大条数
             locales: {
                 '/': {
                     placeholder: '搜索', // 搜索框在不同 locales 下的文字
                 }
-            },
+            }, 
+            maxSuggestions: 20, // 指定搜索结果的最大条数                     
+            isSearchable: (page) => page.path !== '/',  // 排除首页
             getExtraFields: (page) => page.frontmatter.ID ? [page.frontmatter.ID] : [], // 允许搜索 Frontmatter 中的 `ID`
         }],
         ['@vuepress/register-components', {
             // 该目录下匹配 componentsPatterns 的文件会被自动注册为 Vue 组件。
             componentsDir: path.resolve(__dirname, './components'),
-        }],       
+        }],
         // ['@vuepress/pwa',{
         //     skipWaiting: false, // 设置 skipWaiting: true ，这将在新的 Service Worker 就绪之后立即激活它
         // }], 
