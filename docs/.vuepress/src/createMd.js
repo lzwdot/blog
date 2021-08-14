@@ -9,7 +9,7 @@ const docPath = path.join(__dirname, '../../') // 获取文档目录
 
 
 
-const dirPath = `test`
+const dirPath = `tools`
 const title = '标题'
 
 createMd(dirPath, title)
@@ -64,7 +64,7 @@ function getMaxId() {
 function writeReadMe(path) {
     const filePath = `${path}/README.md`
 
-    let content = `---\n title: 导航 \n---\n\n# 导航\n\n`
+    let content = `---\n title: "导航" \n---\n\n# 导航\n\n`
     // 先删除文件，重建
     if (fs.existsSync(filePath)) {
         const frontMatter = matter.read(filePath);
@@ -72,7 +72,7 @@ function writeReadMe(path) {
         // 加上 Front Matter
         if (frontMatter && frontMatter.data) {
             const { title } = frontMatter.data
-            content = title ? `---\n title: ${title}\n---\n\n# ${title}\n\n` : content
+            content = title ? `---\n title: "${title}"\n---\n\n# ${title}\n\n` : content
         }
 
         // 删除 README.md 文件
@@ -97,7 +97,7 @@ function createMd(dirname, title, author = 'A.wei') {
     const data = moment().format('YYYY-MM-DD HH:mm:ss');
     const tags = `\n  - "${dirname.split('/').join('"\n  - "')}"`
 
-    const content = `---\n title: "${title}"\n ID: "${maxId}"\n data: "${data}"\n author: "${author}"\n tags: ${categories}\n tags: ${tags}\n---\n\n# ${title}\n\n`
+    const content = `---\n title: "${title}"\n ID: "${maxId}"\n data: "${data}"\n author: "${author}"\n categories: ${tags}\n tags: ${tags}\n---\n\n# ${title}\n\n`
 
     // 创建文件夹的 readme 文件
     writeReadMe(path)

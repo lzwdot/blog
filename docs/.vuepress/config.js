@@ -60,7 +60,7 @@ module.exports = {
 
         // 主题插件配置
         themePlugins: {
-            git: process.env.NODE_ENV === 'development' ? true : true // 启用 git 插件
+            git: process.env.NODE_ENV === 'development' ? false : true // 启用 git 插件
         },
     },
 

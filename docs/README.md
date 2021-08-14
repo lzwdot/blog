@@ -1,7 +1,8 @@
 ---
-navbar: false
 home: true
 title: '首页'
+heroImage: /favicon.ico
+heroText: null
 actions:
   # - text: GO →
   #   link: /posts/
@@ -20,4 +21,10 @@ footer: ©2021<a href="/">GravataR.</a><a href="http://www.beian.miit.gov.cn" ta
 <SearchBox />
 
 #          
-#     
+#    
+
+<style>
+  .no-sidebar .navbar .search-box{
+    display:none
+  }
+</style>

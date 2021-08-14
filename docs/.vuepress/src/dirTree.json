@@ -497,5 +497,12 @@
             }
         ],
         "path": "/posts"
+    },
+    {
+        "name": "tools",
+        "data": [
+            "27984.md"
+        ],
+        "path": "/tools"
     }
 ]

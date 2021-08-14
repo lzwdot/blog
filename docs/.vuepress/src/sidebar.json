@@ -508,5 +508,13 @@
                 "/posts/reprinted/27918.md"
             ]
         }
+    ],
+    "/tools/": [
+        {
+            "text": "工具",
+            "children": [
+                "/tools/27984.md"
+            ]
+        }
     ]
 }
