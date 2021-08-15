@@ -93,9 +93,9 @@ module.exports = {
             // 该目录下匹配 componentsPatterns 的文件会被自动注册为 Vue 组件。
             componentsDir: path.resolve(__dirname, './components'),
         }],
-        ['@vuepress/pwa',{
-            skipWaiting: false, // 设置 skipWaiting: false 配合 plugin-pwa-popup
-        }], 
+        // ['@vuepress/pwa',{
+        //     skipWaiting: false, // 设置 skipWaiting: false 配合 plugin-pwa-popup
+        // }], 
         ['@vuepress/plugin-pwa'],
         ['@vuepress/plugin-pwa-popup', {
             locales: {
