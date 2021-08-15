@@ -1,20 +1,20 @@
----
- title: "通过JSON数据获取Keys"
- ID: "27984"
- data: "2021-08-14 15:56:47"
- author: "A.wei"
- categories: 
-  - "tools"
- tags: 
-  - "tools"
----
-
-## 请输入 JSON 格式的数据  
-
-<div>
-  <textarea ref="textarea_27984" cols="30" rows="10" placeholder="JSON 数据"></textarea>
-  <pre><code ref="formSetCode_27984"></code></pre>
-</div>
+<template>
+  <h2 id="请输入-json-格式的数据" tabindex="-1">
+    <a class="header-anchor" href="#请输入-json-格式的数据" aria-hidden="true"
+      >#</a
+    >
+    请输入 JSON 格式的数据
+  </h2>
+  <div>
+    <textarea
+      ref="textarea_27984"
+      cols="30"
+      rows="10"
+      placeholder="JSON 数据"
+    ></textarea>
+    <pre><code ref="formSetCode_27984"></code></pre>
+  </div>
+</template>
 
 <script>
   import { ref,onMounted} from 'vue'
