@@ -94,7 +94,7 @@ module.exports = {
             componentsDir: path.resolve(__dirname, './components'),
         }],
         ['@vuepress/pwa',{
-            skipWaiting: false, // 设置 skipWaiting: false 配合 plugin-pwa-popup
+            skipWaiting: false, // 设置 skipWaiting: false 配合 plugin-pwa-popup 使用
         }], 
         ['@vuepress/plugin-pwa'],
         ['@vuepress/plugin-pwa-popup', {
