@@ -2,9 +2,9 @@
  title: "Nginx"
 ---
 
-# Nginx
+## Nginx
 
-[单域名（localhost）下访问多个laravel 项目](/posts/nginx/17121.md)    
-[如何禁用http的delete put trace 方法](/posts/nginx/22650.md)    
-[Nginx 常用参数配置](/posts/nginx/23915.md)    
-[Nginx 域名子目录重定向其他目录](/posts/nginx/24990.md)    
+- [单域名（localhost）下访问多个laravel 项目](/posts/nginx/17121.md)    
+- [如何禁用http的delete put trace 方法](/posts/nginx/22650.md)    
+- [Nginx 常用参数配置](/posts/nginx/23915.md)    
+- [Nginx 域名子目录重定向其他目录](/posts/nginx/24990.md)    

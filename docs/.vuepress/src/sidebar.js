@@ -34,7 +34,7 @@ function writeReadMe(path, content) {
         // 加上 Front Matter
         if (frontMatter && frontMatter.data) {
             const { title } = frontMatter.data
-            content = title ? `---\n title: "${title}"\n---\n\n# ${title}\n\n${content}` : content
+            content = title ? `---\n title: "${title}"\n---\n\n## ${title}\n\n${content}` : content
         }
 
         // 删除 README.md 文件
@@ -66,8 +66,6 @@ function getReadMe(path) {
     return res
 }
 
-
-
 /**
  * 生成md文件格式链接
  * @param {*} filePath 
@@ -81,7 +79,7 @@ function buildMdLink(filePath, link) {
     // 拼接成链接
     if (frontMatter && frontMatter.data) {
         const { title } = frontMatter.data
-        content += `[${title}](${link})    \n`
+        content += `- [${title}](${link})    \n`
     }
 
     return content;
@@ -185,13 +183,11 @@ function createSidebar(dirTree,baseUrl) {
                 // 获取到该文件夹的子文件夹 readme 内容，做成类似分类目录
                 let content = ''
                 for (let j = 0; j < curNode.data.length; j++) {
-                    // 目录存在，且不为 readme 文件
-                    if (curNode.data[j].path) {
-                        // 获取子文件夹 readme 内容
-                        const { title } = getReadMe(`${rootPath}/${curNode.data[j].path}`)
-
-                        // markdown 链接语法
-                        content += `[${title ? title : curNode.data[j].name}](${baseUrl}${curNode.data[j].path})    \n`
+                    const _path = curNode.data[j].path
+                    // 目录存在
+                    if (_path) { 
+                        // markdown 链接语法                       
+                        content += buildMdLink(`${rootPath}/${_path}/README.md`, `${baseUrl}${_path}`)
                     }
                 }
 
@@ -202,7 +198,6 @@ function createSidebar(dirTree,baseUrl) {
                 let content = ''
                 for (let j = 0; j < curNode.data.length; j++) {
                     // 文件存在，且不为 readme 文件
-
                     if (!curNode.data[j].toUpperCase().includes('README')) {
                         const _path = `${curNode.path}/${curNode.data[j]}`
                         // markdown 链接语法
