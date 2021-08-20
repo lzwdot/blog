@@ -7,7 +7,7 @@ set -e
 git init
 git add -A
 git commit -m 'update'
-git push -f git@github.com:awei922/blogs.git master
+git push -f origin master
 
 # 生成静态文件
 # npm run docs:build
