@@ -4,8 +4,8 @@
 
 ## Go使用
 
-- [各大Go Module代理仓库服务](/posts/go-usage/24541.md)    
-- [GoLand 下载和激活](/posts/go-usage/24549.md)    
-- [在 window 下 go run 执行很慢](/posts/go-usage/24552.md)    
-- [go 解析多层级 json 后嵌套 map 的取值问题](/posts/go-usage/24560.md)    
-- [windows下go编译成linux可执行文件](/posts/go-usage/24599.md)    
+<i class="el-icon-document"></i> [各大Go Module代理仓库服务](/posts/go-usage/24541.md)    
+<i class="el-icon-document"></i> [GoLand 下载和激活](/posts/go-usage/24549.md)    
+<i class="el-icon-document"></i> [在 window 下 go run 执行很慢](/posts/go-usage/24552.md)    
+<i class="el-icon-document"></i> [go 解析多层级 json 后嵌套 map 的取值问题](/posts/go-usage/24560.md)    
+<i class="el-icon-document"></i> [windows下go编译成linux可执行文件](/posts/go-usage/24599.md)    

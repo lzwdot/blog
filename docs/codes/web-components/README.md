@@ -4,4 +4,4 @@
 
 ## Web Components
 
-- [Web Components 入门](/codes/web-components/27982.md)    
+<i class="el-icon-document"></i> [Web Components 入门](/codes/web-components/27982.md)    
