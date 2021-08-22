@@ -18,6 +18,7 @@ module.exports = {
 
     // header 标签内的
     head: [
+        ['link', { rel: 'stylesheet',  href: `//unpkg.com/element-ui@2.15.5/lib/theme-chalk/index.css` }],
         ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: `${baseUrl}/apple-touch-icon.png` }],
         ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: `${baseUrl}/favicon-32x32.png` }],
         ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: `${baseUrl}/favicon-16x16.png` }],

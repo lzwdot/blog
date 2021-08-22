@@ -1,21 +1,11 @@
 <template>
   <div>
-    <el-input v-model="str_27985" placeholder="请输入内容"></el-input>
-    <el-table
-      stripe
-      :data="tableData"
-      :show-header="showHeader"
-      style="width: 100%">
-      <el-table-column
-        prop="label"
-        width="100px"
-      >
-      </el-table-column>
-      <el-table-column
-        prop="value"
-      >
-      </el-table-column>
-    </el-table>
+    <el-checkbox-group v-model="checkList">
+      <el-checkbox label="1">A-Z</el-checkbox>
+      <el-checkbox label="2">a-z</el-checkbox>
+      <el-checkbox label="3">0-9</el-checkbox>
+      <el-checkbox label="4">.@$!%*#_~?&^</el-checkbox>
+    </el-checkbox-group>
   </div>
 </template>
 
@@ -25,37 +15,43 @@ import md5 from 'crypto-js/md5'
 export default {
   data() {
     return {
-      showHeader:false,
-      str_27985:'',
-      tableData: [{
-        label: '字符串',
-        value: '',
-      }, {
-        label: '16位 小写',
-        value: '',
-      }, {
-        label: '16位 大写',
-        value: '',
-      }, {
-        label: '32位 小写',
-        value: '',
-      }, {
-        label: '32位 大写',
-        value: '',
-      }]
+      checkList: [],
     }
   },
   watch: {
-    str_27985(newVal,oldVal) {
-      const _newVal = newVal
-      const _md5Val = _newVal ? md5(_newVal).toString() : ''
-
-      this.tableData[0]['value'] = _newVal
-      this.tableData[1]['value'] = _md5Val.substring(8,24).toLowerCase()
-      this.tableData[2]['value'] = _md5Val.substring(8,24).toUpperCase()
-      this.tableData[3]['value'] = _md5Val.toLowerCase()
-      this.tableData[4]['value'] = _md5Val.toUpperCase()
+    checkList(newVal) {
+      console.log(newVal)
     }
+  },
+  methods: {
+    checkPassWord(value) {
+      // 0： 表示第一个级别
+      // 1：表示第二个级别
+      // 2：表示第三个级别
+      // 3： 表示第四个级别
+      // 4：表示第五个级别
+      var arr = [], array = [1, 2, 3, 4];
+      if (value.length < 6) {//最初级别
+        return 0;
+      }
+      if (/\d/.test(value)) {//如果用户输入的密码 包含了数字
+        arr.push(1);
+      }
+      if (/[a-z]/.test(value)) {//如果用户输入的密码 包含了小写的a到z
+        arr.push(2);
+      }
+      if (/[A-Z]/.test(value)) {//如果用户输入的密码 包含了大写的A到Z
+        arr.push(3);
+      }
+      if (/\W/.test(value)) {//如果是非数字 字母 下划线
+        arr.push(4);
+      }
+      for (var i = 0; i < array.length; i++) {
+        if (arr.indexOf(array[i]) == -1) {
+          return array[i];
+        }
+      }
+    },
   }
 }
 </script>
