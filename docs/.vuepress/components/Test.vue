@@ -27,11 +27,11 @@
     </el-row>
     <el-row>
       <el-col :span="4">
-        <div class="grid-content">生产结果</div>
+        <div class="grid-content">强度评估</div>
       </el-col>
       <el-col :span="20">
         <div class="grid-content">
-          <el-input v-model="pwdValue" placeholder="随机密码">
+          <el-input v-model="pwdValue" placeholder="输入字符" @click="inputSelect" ref="pwdValue">
             <template #append>
               <el-rate
                 v-model="scoreValue"
@@ -43,11 +43,15 @@
             </template>
           </el-input>
         </div>
-
-        <el-alert v-show="scoreLabel"
+        <el-alert v-if="scoreLabel"
                   :closable="closable"
                   :title="scoreLabel"
                   type="success">
+        </el-alert>
+        <el-alert v-else
+                  :closable="closable"
+                  title="可以选择字符，生成随机密码"
+                  type="info">
         </el-alert>
       </el-col>
     </el-row>
@@ -60,7 +64,7 @@ import zxcvbn from 'zxcvbn'
 export default {
   data() {
     return {
-      checkList: ['1', '2', '3'],
+      checkList: [],
       sliderValue: 16,
       scoreValue: 0,
       scoreLabel: '',
@@ -74,38 +78,49 @@ export default {
     },
     sliderValue(newVal) {
       this.makePassWord()
-
+    },
+    pwdValue(newVal) {
+      this.passwordStrength()
     }
   },
   methods: {
+    inputSelect() {
+      this.$refs.pwdValue.select()
+    },
     makePassWord() {
-      const scoreLabel = ['太容易猜到了吧', '很容易就猜到了', '还是有点容易猜', '安全比较难猜到', '非常安全难猜到']
       const lowerCase = 'abcdefghijklmnopqrstuvwxyz'
       const upCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
       const number = '1234567890'
       const special = '!@#$%^&*'
 
-      let str = ''
-      if (this.checkList.includes('1')) str += lowerCase
-      if (this.checkList.includes('2')) str += upCase
-      if (this.checkList.includes('3')) str += number
-      if (this.checkList.includes('4')) str += special
+      let randStr = ''
+      if (this.checkList.includes('1')) randStr += lowerCase
+      if (this.checkList.includes('2')) randStr += upCase
+      if (this.checkList.includes('3')) randStr += number
+      if (this.checkList.includes('4')) randStr += special
 
-      let length = str.length
-      let res = ''
-      for (let i = 0; i < this.sliderValue && str; i++) {
-        res += str[Math.floor(Math.random() * length)]
+      let length = randStr.length
+      let pwdStr = ''
+      for (let i = 0; i < this.sliderValue && randStr; i++) {
+        pwdStr += randStr[Math.floor(Math.random() * length)]
       }
 
-      const score = this.checkPassWord(res)
-      this.pwdValue = res
-      this.scoreValue = score
-      this.scoreLabel = scoreLabel[score - 1]
+      this.pwdValue = pwdStr
     },
+
+    passwordStrength() {
+      const scoreLabel = ['太容易猜到了吧', '很容易就猜到了', '可以不容易猜了', '安全比较难猜到', '很安全很难猜到']
+      const pwdStr = this.pwdValue
+      const {score, guesses} = this.checkPassWord(pwdStr)
+
+      this.scoreValue = pwdStr ? score + 1 : 0
+      this.scoreLabel = pwdStr ? `这个密码${scoreLabel[score]}，评估：一般破解${this.formatTime(guesses)}，超级爆破的话可能${this.formatTime(guesses / 10e9)}` : ''
+    },
+
     checkPassWord(value) {
       try {
-        console.log(zxcvbn(value))
-        return value ? zxcvbn(value).score : 0
+        // console.log(zxcvbn(value))
+        return value ? zxcvbn(value) : 0
       } catch (err) {
         console.error(err)
       }
@@ -115,39 +130,79 @@ export default {
       // 2：还是有点容易猜
       // 3：安全比较难猜到
       // 4：非常安全难猜到
-      var arr = [], array = [1, 2, 3, 4];
-      if (value.length < 6) {//最初级别
-        return 0;
-      }
+      let score = 0 //最初级别
       if (/\d/.test(value)) {//如果用户输入的密码 包含了数字
-        arr.push(1);
+        score = 1
       }
       if (/[a-z]/.test(value)) {//如果用户输入的密码 包含了小写的a到z
-        arr.push(2);
+        score = 2
       }
       if (/[A-Z]/.test(value)) {//如果用户输入的密码 包含了大写的A到Z
-        arr.push(3);
+        score = 3
       }
       if (/\W/.test(value)) {//如果是非数字 字母 下划线
-        arr.push(4);
+        score = 4
       }
-      for (let i = 0; i < array.length; i++) {
-        if (arr.indexOf(array[i]) == -1) {
-          return array[i];
-        }
-      }
+      return {score, guesses: 1}
     },
+
     formatTime(str) {
-      const mistiming = Math.abs(str)
-      const arrR = ['年', '个月', '星期', '天', '小时', '分钟', '秒'];
-      const arrN = [31536000, 2592000, 604800, 86400, 3600, 60, 1];
-      for (let i = 0; i < 7; i++) {
-        let inm = Math.floor(mistiming / arrN[i])
-        if (inm != 0) {
-          return inm + arrR[i]
+      const seconds = Math.abs(str)
+      const arrN = ['上万', '上千', '几百', '几十', '几', '一']
+      const arrR = ['估计要%年', '也要%个月', '需要%星期', '只要%天', '只要%小时', '就%分钟', '就%秒', '不到1秒'];
+      const arrT = [31536000, 2592000, 604800, 86400, 3600, 60, 1];
+
+      let time = '', index = arrT.length
+      for (let i = 0; i < arrT.length; i++) {
+        time = seconds / arrT[i]
+        if (time >= 1) {
+          time = Math.round(time)
+          index = i
+          break
         }
       }
+
+      // 如果是年
+      if (index === 0) {
+        switch (true) {
+          case time > 10000:
+            time = arrN[0];
+            break
+          case time > 1000:
+            time = arrN[1];
+            break
+          case time > 100:
+            time = arrN[2];
+            break
+          case time > 10:
+            time = arrN[3];
+            break
+          case time > 1:
+            time = arrN[4];
+            break
+          default:
+            time = arrN[5];
+            break
+        }
+      }
+
+      return arrR[index].replace('%', time)
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.el-row {
+  border: 1px solid #ccc;
+  padding: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.el-col {
+  border-radius: 4px;
+}
+</style>
