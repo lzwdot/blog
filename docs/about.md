@@ -10,5 +10,5 @@ GravataR，网址：GravataR.CN，是由 A.wei 建立的技术博客， 不涉�
 
 邮箱：[发送邮件](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=kf3r5qOj0eDgv-L_-A)   
 QQ：[QQ交谈](http://wpa.qq.com/msgrd?v=3&amp;uin=506892568&amp;site=qq&amp;menu=yes)      
-GitHub：[打开GitHub](https://github.com/awei922)    
+GitHub：[打开GitHub](https://github.com/adotwei)    
  

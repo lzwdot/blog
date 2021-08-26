@@ -61,7 +61,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: awei922/awei922.github.io
+          external_repository: adotwei/adotwei.github.io
           publish_branch: master  # default: gh-pages
           publish_dir: docs/.vuepress/dist
     

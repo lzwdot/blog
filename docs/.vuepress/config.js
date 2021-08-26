@@ -46,7 +46,7 @@ module.exports = {
 
         // 编辑此页链接
         editLinkText: '编辑页面',
-        docsRepo: 'awei922/blogs',
+        docsRepo: 'adotwei/blogs',
         docsDir: 'docs',
         docsBranch: 'master',
 
