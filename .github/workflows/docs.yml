@@ -64,5 +64,5 @@ jobs:
           external_repository: adotwei/adotwei.github.io
           publish_branch: master  # default: gh-pages
           publish_dir: docs/.vuepress/dist
-          cname: adotwei.com
+          # cname: adotwei.com
     
