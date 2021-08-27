@@ -11,7 +11,7 @@ module.exports = {
     locales: {
         '/': {
             lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性 
-            title: 'GravataR',
+            title: 'AdotWei',
             description: '知识就是力量',
         }
     },

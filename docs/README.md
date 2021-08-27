@@ -15,7 +15,7 @@ features:
 - title: null
   details: null
 footerHtml: true  
-footer: ©2021<a href="/">GravataR.</a><a href="http://www.beian.miit.gov.cn" target="_blank" rel="nofollow">粤ICP备14048036号.</a>
+footer: MIT Licensed | Copyright © 2021-present <a href="/">AdotWei</a>
 ---
 
 <SearchBox />
