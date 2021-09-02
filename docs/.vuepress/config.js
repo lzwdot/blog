@@ -11,7 +11,7 @@ module.exports = {
     locales: {
         '/': {
             lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性 
-            title: 'AdotWei',
+            title: 'LzwDot',
             description: '知识就是力量',
         }
     },
@@ -46,7 +46,7 @@ module.exports = {
 
         // 编辑此页链接
         editLinkText: '编辑页面',
-        docsRepo: 'adotwei/blogs',
+        docsRepo: 'lzwdot/blogs',
         docsDir: 'docs',
         docsBranch: 'master',
 
