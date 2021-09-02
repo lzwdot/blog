@@ -15,7 +15,7 @@ features:
 - title: null
   details: null
 footerHtml: true  
-footer: MIT Licensed | Copyright © 2021-present <a href="/">lzw.</a>
+footer: MIT Licensed | Copyright © 2021-present <a href="/">Lzw.</a>
 ---
 
 <SearchBox />
