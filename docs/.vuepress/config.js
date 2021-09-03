@@ -12,7 +12,7 @@ module.exports = {
         '/': {
             lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性 
             title: 'LzwDot',
-            description: '知识就是力量',
+            description: '代码如诗',
         }
     },
 
