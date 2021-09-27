@@ -20,88 +20,85 @@ createMd(dirPath, title)
 
 /**
  * 获取最大的文章 id
- * @returns 
+ * @returns
  */
 function getMaxId() {
-    const rootPath = docPath// 当前目录的绝对路径  
-    let maxId = 0// 最大的文章 id
+  const rootPath = docPath// 当前目录的绝对路径
+  let maxId = 0// 最大的文章 id
 
-    function recursion(path) {
-        const curPath = `${rootPath}/${path}` // 当前目录
-        const dirs = fs.readdirSync(curPath) //所有目录和文件
-        const res = []
+  function recursion(path) {
+    const curPath = `${rootPath}/${path}` // 当前目录
+    const dirs = fs.readdirSync(curPath) //所有目录和文件
+    const res = []
 
-        // 目录循环
-        dirs.forEach(item => {
-            // 文件状态
-            let isDir = fs.statSync(`${curPath}/${item}`).isDirectory()
+    // 目录循环
+    dirs.forEach(item => {
+      // 文件状态
+      let isDir = fs.statSync(`${curPath}/${item}`).isDirectory()
 
-            // 是目录，排除：.开头的 && node_modules && build && images
-            if (isDir && !/^\./.test(item) && item !== 'node_modules' && item !== 'build' && item !== 'images') {
-                recursion(`${path}/${item}`) //遍历目录循环
-            } else {
-                // 是 .md 文件，排除 .DS_Store & README.md & about.md
-                if (item !== '.DS_Store' && item.includes('.md') && !item.toUpperCase().includes('README') && !item.includes('about')) {
-                    const frontMatter = matter.read(`${curPath}/${item}`)
-                    const { ID } = frontMatter.data
-                    maxId = Math.max(maxId, ID)
-                }
-            }
-        })
+      // 是目录，排除：.开头的 && node_modules && build && images && pages
+      if (isDir && !/^\.|page|public|image/.test(item)) {
+        recursion(`${path}/${item}`) //遍历目录循环
+      } else {
+        // 是 .md 文件，排除 .DS_Store & README.md & about.md
+        if (item.includes('.md') && !/^\.|index|README/.test(item)) {
+          const frontMatter = matter.read(`${curPath}/${item}`)
+          const {ID} = frontMatter.data
+          maxId = Math.max(maxId, ID)
+        }
+      }
+    })
 
-        return res;
-    }
+    return res;
+  }
 
-    recursion('')
+  recursion('')
 
-    return maxId
+  return maxId
 }
 
 /**
  * 创建 README.md 文件
- * @param {*} path 
+ * @param {*} path
  */
 function writeReadMe(path) {
-    const filePath = `${path}/README.md`
+  const filePath = `${path}/README.md`
 
-    let content = `---\n title: "导航" \n---\n\n# 导航\n\n`
-    // 先删除文件，重建
-    if (fs.existsSync(filePath)) {
-        const frontMatter = matter.read(filePath);
+  let content = ''
+  // 先删除文件，重建
+  if (fs.existsSync(filePath)) {
+    const frontMatter = matter.read(filePath);
+    const {title} = frontMatter.data
 
-        // 加上 Front Matter
-        if (frontMatter && frontMatter.data) {
-            const { title } = frontMatter.data
-            content = title ? `---\n title: "${title}"\n---\n\n# ${title}\n\n` : content
-        }
+    content = matter.stringify(`# ${title || '导航'}\n\n${content}`, frontMatter.data)
 
-        // 删除 README.md 文件
-        fs.unlinkSync(filePath)
-    }
+    // 删除 README.md 文件
+    fs.unlinkSync(filePath)
+  }
 
-    // 写入内容
-    fs.writeFileSync(filePath, content)
+  // 写入内容
+  fs.writeFileSync(filePath, content)
 }
 
 /**
  * 新建 md 文档
- * @param {*} dirname 
- * @param {*} title 
- * @param {*} author 
+ * @param {*} dirname
+ * @param {*} title
+ * @param {*} author
  */
-function createMd(dirname, title, author = 'A.wei') {
-    const maxId = getMaxId() + 1
-    const path = `${docPath}/${dirname}`
-    const filePath = `${path}/${maxId}.md`
+function createMd(dirname, title, author = 'lzw.') {
+  const maxId = getMaxId() + 1
+  const path = `${docPath}/${dirname}`
+  const filePath = `${path}/${maxId}.md`
 
-    const data = moment().format('YYYY-MM-DD HH:mm:ss');
-    const tags = `\n  - "${dirname.split('/').join('"\n  - "')}"`
+  const date = moment().format('YYYY-MM-DD HH:mm:ss');
+  const tags = `\n  - "${dirname.split('/').join('"\n  - "')}"`
 
-    const content = `---\n title: "${title}"\n ID: "${maxId}"\n data: "${data}"\n author: "${author}"\n categories: ${tags}\n tags: ${tags}\n---\n\n# ${title}\n\n`
+  const content = `---\n title: "${title}"\n ID: "${maxId}"\n date: "${date}"\n author: "${author}"\n categories: ${tags}\n tags: ${tags}\n---\n\n# ${title}\n\n`
 
-    // 创建文件夹的 readme 文件
-    writeReadMe(path)
+  // 创建文件夹的 readme 文件
+  writeReadMe(path)
 
-    //创建 md 文件
-    fs.writeFileSync(filePath, content)
+  //创建 md 文件
+  fs.writeFileSync(filePath, content)
 }
