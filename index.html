@@ -5,35 +5,110 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>代码测试</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div id="app">
-        <button id="run">运行</button>
-        <button id="stop">停止</button>
-      </div>
-      <script>
-        const arr = []
-        for (let i = 0; i < 200000; i++) {
-          arr.push(i)
-        }
-        let newArr = []
-  
-        function run() {
-          newArr = newArr.concat(arr)
-        }
-  
-        let clearRun
-  
-        document.querySelector('#run').onclick = function() {
-          clearRun = setInterval(() => {
-            run()
-          }, 1000)
-        }
-  
-        document.querySelector('#stop').onclick = function() {
-          clearInterval(clearRun)
-        }
-      </script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+<div id="app" class="container">
+    <canvas width="310" height="155" id="canvas"></canvas>
+    <canvas id="block"></canvas>
+    <div class="bar">
+        <div class="icon" id="icon">→</div>
+        <span class="bar-text" id="barText">向右滑动滑块填充拼图</span>
+    </div>
+</div>
+<script>
+  const canvas = document.getElementById('canvas')
+  const block = document.getElementById('block')
+  const icon = document.getElementById('icon')
+  const app = document.getElementById('app')
+  const barText = document.getElementById('barText')
+
+  const canvas_ctx = canvas.getContext('2d')
+  const block_ctx = block.getContext('2d')
+  const img = document.createElement('img')
+  let x = 150
+  let y = 40
+  const w = 42
+  const r = 10
+  const PI = Math.PI
+
+
+  img.src = './index.jpg'
+  img.onload = function () {
+    canvas_ctx.drawImage(img, 0, 0, 310, 155)
+    block_ctx.drawImage(img, 0, 0, 310, 155)
+    const _w = w + r * 2
+    const _y = y - r * 2 + 2
+    const imageData = block_ctx.getImageData(x, _y, _w, _w)
+    block.width = _w
+    block.height = 150
+    block_ctx.putImageData(imageData, 0, _y)
+  }
+
+  function draw(ctx, operation) {
+    ctx.beginPath()
+    ctx.moveTo(x, y)
+    // 绘制上面的圆形轨迹
+    ctx.lineTo(x + w / 2, y)
+    ctx.arc(x + w / 2, y - r + 2, r, 0, 2 * PI)
+    ctx.lineTo(x + w / 2, y)
+    // 绘制左边的圆形轨迹
+    ctx.lineTo(x + w, y)
+    ctx.lineTo(x + w, y + w / 2)
+    ctx.arc(x + w + r - 2, y + w / 2, r, 0, 2 * PI)
+    ctx.lineTo(x + w, y + w / 2)
+    // 绘制矩形轨迹
+    ctx.lineTo(x + w, y + w)
+    ctx.lineTo(x, y + w)
+    // 回到原点
+    ctx.lineTo(x, y)
+    ctx.fillStyle = '#fff'
+    ctx[operation]() //裁剪
+    ctx.beginPath()
+    // 绘制左边凹进去的半圆
+    ctx.arc(x, y + w / 2, r, 1.5 * PI, 0.5 * PI)
+    ctx.globalCompositeOperation = 'xor'
+    ctx.fill()
+  }
+
+  draw(canvas_ctx, 'fill')
+  draw(block_ctx, 'clip')
+
+  let oX = 0
+  let oY = 0
+  icon.addEventListener('mousemove', function (e) {
+    oX = e.x, oY = e.y
+    document.addEventListener('mousemove', drag)
+  })
+  document.addEventListener('mouseup', function () {
+    const left = parseInt(block.style.left)
+    if (Math.abs(left - x) < 10) {
+      icon.innerHTML = '√'
+    } else {
+      icon.innerHTML = '×'
+      setTimeout(function () {
+        reset()
+        icon.innerHTML = '→'
+      }, 1000)
+    }
+    document.removeEventListener('mousemove', drag)
+  })
+
+  function drag(e) {
+    const mX = e.x - oX
+    const mY = e.y - oY
+    if (mX < 0 || mX + 38 >= 310) return false
+    icon.style.left = mX + 'px'
+    block.style.left = (310 - 40 - 20) / (310 - 40) * mX + 'px'
+    barText.setAttribute('hidden', 'hidden')
+  }
+
+  function reset() {
+    block.style.left = 0
+    icon.style.left = 0
+    // x = Math.round(Math.random() * 170 + 70)
+    // y = Math.round(Math.random() * 15 + 70)
+  }
+</script>
 </body>
 </html>

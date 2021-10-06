@@ -1,0 +1,38 @@
+body {
+  width: 500px;
+  margin: 100px auto;
+}
+.container {
+  position: relative;
+}
+#block {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bar{
+  position: relative;
+  text-align: center;
+  width: 310px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 15px;
+  background: #f7f9fa;
+  color: #45494c;
+  border: 1px solid #e4e7eb;
+}
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+  cursor: pointer;
+  transition: background .2s linear;
+}
+.icon:hover {
+  background: #1991FA;
+  color: white;
+}
