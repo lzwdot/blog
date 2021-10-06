@@ -3,6 +3,7 @@
 const fs = require('fs');
 const matter = require('gray-matter');
 const path = require('path')
+const moment = require('moment')
 
 const docPath = path.join(__dirname, '../../') // 获取文档目录
 
@@ -20,6 +21,86 @@ function writeFile(filePath, content) {
 }
 
 /**
+ * 创建 archive 文件
+ * @param {*} path
+ * @param {*} content
+ */
+function writeArchive(path, archives, baseUrl) {
+  const filePath = `${path}/pages/archive.md`
+  const data = sortByDate(path, archives)
+
+  let content = ''
+  let archiveYear = ''
+  let recentPosts = ''
+  // 归档循环
+  data.forEach((item, index) => {
+    const _path = `${path}/${item}`
+    const {date} = matter.read(_path).data;
+    const curYear = moment(date).format('YYYY')
+
+    // 归档年
+    if (archiveYear !== curYear) {
+      content += `## <span class="center">${curYear} 年</span>   \n`
+      archiveYear = curYear
+    }
+    // 最新文章
+    if (index < 10) {
+      recentPosts += buildMdLink(_path, `${baseUrl}${item}`, `- <span class="date">${moment(date).format('YYYY年MM月DD日')}</span>&raquo;`)
+      recentPosts += index === 9 ? `- [更多文章](${baseUrl}pages/archive)   \n` : ''
+    }
+
+    content += buildMdLink(_path, `${baseUrl}${item}`, '-', `<span class="date">（${moment(date).format('YYYY.MM.DD')}）</span>    \n`)
+  })
+
+  // 先删除文件，重建
+  if (fs.existsSync(filePath)) {
+    const frontMatter = matter.read(filePath);
+    const {title} = frontMatter.data
+
+    content = matter.stringify(`# ${title || '文章'}\n\n${content}`, frontMatter.data)
+
+    // 删除 README.md 文件
+    fs.unlinkSync(filePath)
+  }
+
+  // 写入内容
+  fs.writeFileSync(filePath, content)
+
+  // 写入最新文章
+  writeReadMe(path, recentPosts)
+}
+
+/**
+ * 创建 category 文件
+ * @param {*} path
+ * @param {*} content
+ */
+function writeCategory(path, categories, baseUrl) {
+  const filePath = `${path}/pages/category.md`
+  const tagColor = ['success', 'info', 'warning', 'danger']
+
+  let content = ''
+  // 循环
+  categories.forEach((item, index) => {
+    content += buildMdLink(`${path}/${item}/README.md`, `${baseUrl}${item}`, `<span class="el-tag el-tag--${tagColor[index % 4]}">`, '</span>')
+  })
+
+  // 先删除文件，重建
+  if (fs.existsSync(filePath)) {
+    const frontMatter = matter.read(filePath);
+    const {title} = frontMatter.data
+
+    content = matter.stringify(`# ${title || '文章'}\n\n${content}`, frontMatter.data)
+
+    // 删除 README.md 文件
+    fs.unlinkSync(filePath)
+  }
+
+  // 写入内容
+  fs.writeFileSync(filePath, content)
+}
+
+/**
  * 创建 README.md 文件
  * @param {*} path
  * @param {*} content
@@ -30,12 +111,9 @@ function writeReadMe(path, content) {
   // 先删除文件，重建
   if (fs.existsSync(filePath)) {
     const frontMatter = matter.read(filePath);
+    const {title} = frontMatter.data
 
-    // 加上 Front Matter
-    if (frontMatter && frontMatter.data) {
-      const {title} = frontMatter.data
-      content = title ? `---\n title: "${title}"\n---\n\n## ${title}\n\n${content}` : content
-    }
+    content = matter.stringify(`# ${title || '文章'}\n\n${content}`, frontMatter.data)
 
     // 删除 README.md 文件
     fs.unlinkSync(filePath)
@@ -70,17 +148,18 @@ function getReadMe(path) {
  * 生成md文件格式链接
  * @param filePath
  * @param link
- * @param icon
+ * @param prefix
+ * @param suffix
  * @returns {string}
  */
-function buildMdLink(filePath, link, icon) {
+function buildMdLink(filePath, link, prefix = '-', suffix = '    \n') {
   let content = ''
   let frontMatter = matter.read(filePath);
 
   // 拼接成链接
   if (frontMatter && frontMatter.data) {
     const {title} = frontMatter.data
-    content += `${icon ?? '-'} [${title}](${link})    \n`
+    content += `${prefix} [${title}](${link})${suffix}`
   }
 
   return content;
@@ -111,6 +190,30 @@ function sortById(path, data) {
 }
 
 /**
+ * 根据 date 倒序排序
+ * @param {*} path
+ * @param {*} data
+ * @returns
+ */
+function sortByDate(path, data) {
+  data.sort((a, b) => {
+    const frontMatterA = matter.read(`${path}/${a}`)
+    const frontMatterB = matter.read(`${path}/${b}`)
+
+    const {date: dateA} = frontMatterA.data
+    const {date: dateB} = frontMatterB.data
+
+    if (dateA && dateB) {
+      return new Date(dateB).getTime() - new Date(dateA).getTime()
+    }
+
+    return false
+  })
+
+  return data
+}
+
+/**
  * 遍历文件夹，生成 真实文件对象树
  * @returns  { name: '文件夹名称', data: [ {...}, {...} ], path: '路径'}
  */
@@ -127,8 +230,8 @@ function buildDirTree() {
       // 文件状态
       let isDir = fs.statSync(`${curPath}/${item}`).isDirectory()
 
-      // 是目录，排除：.开头的 && node_modules && build && images
-      if (isDir && !/^\./.test(item) && item !== 'node_modules' && item !== 'build' && item !== 'images') {
+      // 是目录，排除：.开头的 && node_modules && build && images && pages
+      if (isDir && !/^\.|page|public|image/.test(item)) {
         const dirPath = `${path}/${item}`
 
         res.push({
@@ -137,7 +240,7 @@ function buildDirTree() {
           path: dirPath
         })
       } else { // 是 .md 文件，排除 .DS_Store & README.md & about.md
-        if (item !== '.DS_Store' && item.includes('.md') && !item.toUpperCase().includes('README') && !item.includes('about')) {
+        if (item.includes('.md') && !/^\.|index|README/.test(item)) {
           res.push(item)
         }
       }
@@ -165,7 +268,9 @@ function buildDirTree() {
  */
 function createSidebar(dirTree, baseUrl) {
   const rootPath = docPath// 当前目录的绝对路径
-  const sidebarData = {}
+  const sidebarData = {} // 边栏目录
+  const categories = [] // 类别
+  const archives = [] // 归档
 
   function recursion(tree) {
 
@@ -188,7 +293,7 @@ function createSidebar(dirTree, baseUrl) {
           // 目录存在
           if (_path) {
             // markdown 链接语法
-            content += buildMdLink(`${rootPath}/${_path}/README.md`, `${baseUrl}${_path}`, '<i class="el-icon-folder"></i>')
+            content += buildMdLink(`${rootPath}/${_path}/README.md`, `${baseUrl}${_path}`)
           }
         }
 
@@ -202,12 +307,19 @@ function createSidebar(dirTree, baseUrl) {
           if (!curNode.data[j].toUpperCase().includes('README')) {
             const _path = `${curNode.path}/${curNode.data[j]}`
             // markdown 链接语法
-            content += buildMdLink(`${rootPath}/${_path}`, `${baseUrl}${_path}`, '<i class="el-icon-document"></i>')
+            content += buildMdLink(`${rootPath}/${_path}`, `${baseUrl}${_path}`)
 
             // 推入文件构成目录
             children.push(`${_path}`)
+
+            // 归档数组
+            archives.push(`${_path}`)
           }
         }
+
+        // 文件的父级目录插入到分类数组
+        categories.push(`${curNode.path}`)
+
         // 写入内容到 readme 文件
         writeReadMe(curPath, content)
 
@@ -225,7 +337,13 @@ function createSidebar(dirTree, baseUrl) {
   }
 
   recursion(dirTree)
+  // 写入json
   writeFile(`${path.join(__dirname)}/sidebar.json`, JSON.stringify(sidebarData, null, 4))
+
+  // 写入归档
+  writeArchive(rootPath, archives, baseUrl)
+  // 写入分类
+  writeCategory(rootPath, categories, baseUrl)
 
   return sidebarData
 }

@@ -2,7 +2,7 @@
 title: 关于
 ---
 
-LzwDot，网址：LzwDot.COM，是由 lzw 建立的技术博客， 不涉及商业目的。
+LzwDot笔记是由 lzw 建立的技术站点， 不涉及商业目的。
 
 ## 关于 lzw
 

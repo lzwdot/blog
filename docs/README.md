@@ -1,30 +1,29 @@
 ---
 home: true
-title: '首页'
+title: 首页
 heroImage: /favicon.ico
 heroText: null
-actions:
-  # - text: GO →
-  #   link: /posts/
-  #   type: primary
+actions: null
 features:
-- title: null
-  details: null
-- title: null
-  details: null
-- title: null
-  details: null
-footerHtml: true  
+  - title: null
+    details: null
+  - title: null
+    details: null
+  - title: null
+    details: null
+footerHtml: true
 footer: MIT Licensed | Copyright © 2021-present <a href="/">Lzw.</a>
 ---
+# 首页
 
-<SearchBox />
-
-#          
-#    
-
-<style>
-  .no-sidebar .navbar .search-box{
-    display:none
-  }
-</style>
+- <span class="date">2021年08月21日</span>&raquo; [随机密码生成器](/tools/27986.md)    
+- <span class="date">2021年08月14日</span>&raquo; [LeetCode：133. 克隆图](/codes/algorithm/27969.md)    
+- <span class="date">2021年08月14日</span>&raquo; [JavaScript 实现：最小堆类](/codes/algorithm/27970.md)    
+- <span class="date">2021年08月14日</span>&raquo; [canvas 入门](/codes/charts/27971.md)    
+- <span class="date">2021年08月14日</span>&raquo; [canvas 图片压缩](/codes/charts/27972.md)    
+- <span class="date">2021年08月14日</span>&raquo; [svg 入门](/codes/charts/27973.md)    
+- <span class="date">2021年08月14日</span>&raquo; [zrender 入门](/codes/charts/27975.md)    
+- <span class="date">2021年08月14日</span>&raquo; [d3 入门](/codes/charts/27976.md)    
+- <span class="date">2021年08月14日</span>&raquo; [antv-g2 入门](/codes/charts/27981.md)    
+- <span class="date">2021年07月18日</span>&raquo; [antv-g6 入门](/codes/charts/27983.md)    
+- [更多文章](pages/archive)   
