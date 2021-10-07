@@ -1,38 +1,36 @@
-body {
-  width: 500px;
-  margin: 100px auto;
+.slide-jigsaw,
+.slide-jigsaw .control {
+    position: relative;
 }
-.container {
-  position: relative;
+
+.slide-jigsaw .indicator,
+.slide-jigsaw .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-#block {
-  position: absolute;
-  top: 0;
-  left: 0;
+
+.slide-jigsaw .control {
+    text-align: center;
+    width: 298px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    background-color: #f7f9fa;
+    color: #45494c;
+    border: 1px solid #e4e7eb;
 }
-.bar{
-  position: relative;
-  text-align: center;
-  width: 310px;
-  height: 40px;
-  line-height: 40px;
-  margin-top: 15px;
-  background: #f7f9fa;
-  color: #45494c;
-  border: 1px solid #e4e7eb;
+
+.slide-jigsaw .slider {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    transition: background .2s linear;
 }
-.icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  background: #fff;
-  box-shadow: 0 0 3px rgba(0,0,0,.3);
-  cursor: pointer;
-  transition: background .2s linear;
-}
-.icon:hover {
-  background: #1991FA;
-  color: white;
+
+.slide-jigsaw .slider:hover {
+    background: #1991FA;
+    color: white;
 }

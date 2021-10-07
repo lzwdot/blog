@@ -8,107 +8,173 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-<div id="app" class="container">
-    <canvas width="310" height="155" id="canvas"></canvas>
-    <canvas id="block"></canvas>
-    <div class="bar">
-        <div class="icon" id="icon">→</div>
-        <span class="bar-text" id="barText">向右滑动滑块填充拼图</span>
+<div id="slideJigsaw" class="slide-jigsaw">
+    <canvas class="panel" width="300" height="150"></canvas>
+    <div class="control">
+        <div class="indicator"></div>
+        <div class="slider">→</div>
+        <div class="tips">向右拖动滑块填充拼图</div>
     </div>
 </div>
 <script>
-  const canvas = document.getElementById('canvas')
-  const block = document.getElementById('block')
-  const icon = document.getElementById('icon')
-  const app = document.getElementById('app')
-  const barText = document.getElementById('barText')
+  const slideJigsaw = {
+    init(options) {
+      this.slideJigsaw = document.querySelector('#slideJigsaw')
 
-  const canvas_ctx = canvas.getContext('2d')
-  const block_ctx = block.getContext('2d')
-  const img = document.createElement('img')
-  let x = 150
-  let y = 40
-  const w = 42
-  const r = 10
-  const PI = Math.PI
+      // dom
+      this.panel = this.slideJigsaw.querySelector('.panel')
+      this.slider = this.slideJigsaw.querySelector('.slider')
+      this.img = document.createElement('img')
+
+      // size
+      this.w = this.panel.width
+      this.h = this.panel.height
+      this.x = this.w / 2
+      this.y = this.h / 4
+      this.l = 40
+      this.r = 10
+
+      // canvas
+      this.jigsaw = this.createCanvas()
+      this.panel_ctx = this.panel.getContext('2d')
+      this.jigsaw_ctx = this.jigsaw.getContext('2d')
+
+      // options
+      Object.assign(this, options)
+
+      this.img.onload = () => {
+        this.panel_ctx.drawImage(this.img, 0, 0, this.w, this.h)
+        this.jigsaw_ctx.drawImage(this.img, 0, 0, this.w, this.h)
+
+        const _w = this.l + this.r * 2
+        const _y = this.y - this.r * 2
+        const imageData = this.jigsaw_ctx.getImageData(this.x, _y, _w, _w)
+
+        this.jigsaw.width = _w // 不能使用 style 的 width
+        this.jigsaw_ctx.putImageData(imageData, 0, _y)
+      }
+
+      // draw
+      this.setImg('./index.jpg')
+    },
+
+    reset() {
+      this.jigsaw.style.left = this.slider.style.left = '0px'
+      this.x = Math.round(Math.random() * 170 + 70)
+      this.y = Math.round(Math.random() * 15 + 70)
+
+      this.panel_ctx.clearRect(0, 0, 310, 155)
+      this.jigsaw_ctx.clearRect(0, 0, 310, 155)
+    },
+
+    createCanvas() {
+      const canvas = document.createElement('canvas')
+
+      Object.assign(canvas.style, {
+        position: 'absolute',
+        top: this.retPx(0),
+        left: this.retPx(0)
+      })
+
+      this.slideJigsaw.append(canvas)
+      return canvas
+    },
+
+    setImg(src) {
+      this.img.src = src
+
+      this.draw(this.panel_ctx, 'fill')
+      this.draw(this.jigsaw_ctx, 'clip')
+
+      // 各种事件
+      this.bindEvents()
+    },
 
 
-  img.src = './index.jpg'
-  img.onload = function () {
-    canvas_ctx.drawImage(img, 0, 0, 310, 155)
-    block_ctx.drawImage(img, 0, 0, 310, 155)
-    const _w = w + r * 2
-    const _y = y - r * 2 + 2
-    const imageData = block_ctx.getImageData(x, _y, _w, _w)
-    block.width = _w
-    block.height = 150
-    block_ctx.putImageData(imageData, 0, _y)
+    draw(ctx, operation) {
+      const {x, y, l, r} = this
+      const PI = Math.PI
+
+      ctx.beginPath()
+      ctx.moveTo(x, y)
+
+      // 绘制上面的圆形轨迹（从最底下0.5转一圈回到原点2.5）
+      ctx.arc(x + l / 2, y - r + 2.5, r, (0.5 + 0.25) * PI, (2.5 - 0.25) * PI)
+      ctx.lineTo(x + l, y)
+
+      // 绘制左边的圆形轨迹 （从最左边1转一圈回到原点3）
+      ctx.arc(x + l + r - 2.5, y + l / 2, r, (1 + 0.25) * PI, (3 - 0.25) * PI)
+
+      // 绘制矩形轨迹
+      ctx.lineTo(x + l, y + l)
+      ctx.lineTo(x, y + l)
+
+      // 绘制左边凹进去的半圆（从最左边1逆时针转一圈回到原点3）
+      ctx.arc(x + r - 2.5, y + l / 2, r, (3 - 0.25) * PI, (1 + 0.25) * PI, true)
+      ctx.lineTo(x, y)
+      ctx.lineWidth = 2
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.5)' // 填充颜色
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)' // 边框颜色
+      ctx.stroke()
+      ctx.globalCompositeOperation = 'destination-over'
+
+      ctx[operation === 'fill' ? 'fill' : 'clip']() //填充 or 裁剪
+    },
+
+    bindEvents() {
+      let oX = 0
+      let oY = 0
+      let canMove = false
+
+      const dragStart = (e) => {
+        oX = e.x
+        oY = e.y
+        canMove = true
+      }
+
+      const dragMove = (e) => {
+        if (!canMove) return
+
+        const mX = e.x - oX
+        const mY = e.y - oY
+
+        if (mX < 0 || mX + this.l + this.r * 2 >= this.w) return
+
+        this.slider.style.left = this.retPx(mX)
+        this.jigsaw.style.left = this.retPx(mX)
+      }
+
+      const dragEnd = (e) => {
+        console.log(canMove)
+        if (!canMove) return
+
+        const left = parseInt(this.jigsaw.style.left)
+        if (Math.abs(left - this.x) < 10) {
+          this.slider.innerHTML = '√'
+        } else {
+          this.slider.innerHTML = '×'
+          setTimeout(() => {
+            this.reset()
+            this.slider.innerHTML = '→'
+          }, 1000)
+        }
+
+        canMove = false
+        document.removeEventListener('mousemove', dragMove)
+        document.removeEventListener('mouseup', dragEnd)
+      }
+
+      this.slider.addEventListener('mousedown', dragStart)
+      document.addEventListener('mousemove', dragMove)
+      document.addEventListener('mouseup', dragEnd)
+    },
+
+    retPx(num) {
+      return num + 'px'
+    },
   }
-
-  function draw(ctx, operation) {
-    ctx.beginPath()
-    ctx.moveTo(x, y)
-    // 绘制上面的圆形轨迹
-    ctx.lineTo(x + w / 2, y)
-    ctx.arc(x + w / 2, y - r + 2, r, 0, 2 * PI)
-    ctx.lineTo(x + w / 2, y)
-    // 绘制左边的圆形轨迹
-    ctx.lineTo(x + w, y)
-    ctx.lineTo(x + w, y + w / 2)
-    ctx.arc(x + w + r - 2, y + w / 2, r, 0, 2 * PI)
-    ctx.lineTo(x + w, y + w / 2)
-    // 绘制矩形轨迹
-    ctx.lineTo(x + w, y + w)
-    ctx.lineTo(x, y + w)
-    // 回到原点
-    ctx.lineTo(x, y)
-    ctx.fillStyle = '#fff'
-    ctx[operation]() //裁剪
-    ctx.beginPath()
-    // 绘制左边凹进去的半圆
-    ctx.arc(x, y + w / 2, r, 1.5 * PI, 0.5 * PI)
-    ctx.globalCompositeOperation = 'xor'
-    ctx.fill()
-  }
-
-  draw(canvas_ctx, 'fill')
-  draw(block_ctx, 'clip')
-
-  let oX = 0
-  let oY = 0
-  icon.addEventListener('mousemove', function (e) {
-    oX = e.x, oY = e.y
-    document.addEventListener('mousemove', drag)
-  })
-  document.addEventListener('mouseup', function () {
-    const left = parseInt(block.style.left)
-    if (Math.abs(left - x) < 10) {
-      icon.innerHTML = '√'
-    } else {
-      icon.innerHTML = '×'
-      setTimeout(function () {
-        reset()
-        icon.innerHTML = '→'
-      }, 1000)
-    }
-    document.removeEventListener('mousemove', drag)
-  })
-
-  function drag(e) {
-    const mX = e.x - oX
-    const mY = e.y - oY
-    if (mX < 0 || mX + 38 >= 310) return false
-    icon.style.left = mX + 'px'
-    block.style.left = (310 - 40 - 20) / (310 - 40) * mX + 'px'
-    barText.setAttribute('hidden', 'hidden')
-  }
-
-  function reset() {
-    block.style.left = 0
-    icon.style.left = 0
-    // x = Math.round(Math.random() * 170 + 70)
-    // y = Math.round(Math.random() * 15 + 70)
-  }
+  slideJigsaw.init()
 </script>
 </body>
 </html>
