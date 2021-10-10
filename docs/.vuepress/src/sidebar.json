@@ -22,6 +22,14 @@
             ]
         }
     ],
+    "/codes/demos/": [
+        {
+            "text": "演示",
+            "children": [
+                "/codes/demos/27987.md"
+            ]
+        }
+    ],
     "/codes/web-components/": [
         {
             "text": "Web Components",

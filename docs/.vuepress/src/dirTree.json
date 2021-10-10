@@ -24,6 +24,13 @@
                 "path": "/codes/charts"
             },
             {
+                "name": "demos",
+                "data": [
+                    "27987.md"
+                ],
+                "path": "/codes/demos"
+            },
+            {
                 "name": "web-components",
                 "data": [
                     "27982.md"

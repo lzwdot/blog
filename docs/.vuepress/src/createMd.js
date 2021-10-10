@@ -9,7 +9,7 @@ const docPath = path.join(__dirname, '../../') // 获取文档目录
 
 
 
-const dirPath = `tools`
+const dirPath = `codes/demos`
 const title = '标题'
 
 createMd(dirPath, title)
