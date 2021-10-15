@@ -46,7 +46,7 @@ function writeArchive(path, archives, baseUrl) {
     // 最新文章
     if (index < 10) {
       recentPosts += buildMdLink(_path, `${baseUrl}${item}`, `- <span class="date">${moment(date).format('YYYY年MM月DD日')}</span>&raquo;`)
-      recentPosts += index === 9 ? `- [更多文章](${baseUrl}pages/archive)   \n` : ''
+      recentPosts += index === 9 ? `- [更多文章](${baseUrl}/pages/archive)   \n` : ''
     }
 
     content += buildMdLink(_path, `${baseUrl}${item}`, '-', `<span class="date">（${moment(date).format('YYYY.MM.DD')}）</span>    \n`)

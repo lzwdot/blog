@@ -1,14 +1,21 @@
 ---
 title: 关于
 ---
+<style>
+img{
+  max-width: 300px !important;
+  border:1px solid #9B2D12;
+}
+</style>
 
-LzwDot笔记是由 lzw 建立的技术站点， 不涉及商业目的。
+# 关于
 
-## 关于 lzw
+lzw. 码农，长期从事互联网开发工作，涉及LAMP，前端，小程序等方面。爱生活，爱技术！欢迎交流，可通过以下方式联系我：
 
-码农，长期从事互联网开发工作，涉及LAMP，前端，小程序等方面。爱生活，爱技术！欢迎交流，可通过以下方式联系我：
-
-邮箱：[发送邮件](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=kf3r5qOj0eDgv-L_-A)   
-QQ：[QQ交谈](http://wpa.qq.com/msgrd?v=3&amp;uin=506892568&amp;site=qq&amp;menu=yes)      
-GitHub：[打开GitHub](https://github.com/lzwdot)    
+GitHub：[打开GitHub](https://github.com/lzwdot)  
+邮箱：[发送邮件](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kf3r5vX_5dHg4L-y-vw)   
+QQ：[QQ交谈](http://wpa.qq.com/msgrd?v=3&amp;uin=506892568&amp;site=qq&amp;menu=yes)    
+微信：    
+![微信交谈](./images/weixin.jpg)   
+  
  

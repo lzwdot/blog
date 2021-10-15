@@ -26,4 +26,4 @@ footer: MIT Licensed | Copyright © 2021-present <a href="/">Lzw.</a>
 - <span class="date">2021年08月14日</span>&raquo; [zrender 入门](/blogs/codes/charts/27975.md)    
 - <span class="date">2021年08月14日</span>&raquo; [d3 入门](/blogs/codes/charts/27976.md)    
 - <span class="date">2021年08月14日</span>&raquo; [antv-g2 入门](/blogs/codes/charts/27981.md)    
-- [更多文章](/blogspages/archive)   
+- [更多文章](/blogs/pages/archive)   
