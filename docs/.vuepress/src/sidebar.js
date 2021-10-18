@@ -6,6 +6,9 @@ const path = require('path')
 const moment = require('moment')
 
 const docPath = path.join(__dirname, '../../') // 获取文档目录
+const publicPath = path.join(__dirname, '../', 'public') // public 目录
+const srcPath = path.join(__dirname) // src 目录
+
 
 /**
  * 写入文件
@@ -18,6 +21,21 @@ function writeFile(filePath, content) {
     fs.unlinkSync(filePath)
   }
   fs.writeFileSync(filePath, content)
+}
+
+/**
+ * 复制文件
+ * @param toPath
+ * @param fromPath
+ */
+function copyFile(toPath, fromPath) {
+  if (process.env.NODE_ENV === 'development') return
+
+  // 先删除文件，重建
+  if (fs.existsSync(toPath)) {
+    fs.unlinkSync(toPath)
+  }
+  fs.writeFileSync(toPath, fs.readFileSync(fromPath))
 }
 
 /**
@@ -230,18 +248,27 @@ function buildDirTree() {
       // 文件状态
       let isDir = fs.statSync(`${curPath}/${item}`).isDirectory()
 
-      // 是目录，排除：.开头的 && node_modules && build && images && pages
-      if (isDir && !/^\.|page|public|image/.test(item)) {
+      // 是目录，排除：.开头的 && node_modules && build && pages
+      if (isDir && !/^\.|page|public/.test(item)) {
         const dirPath = `${path}/${item}`
 
-        res.push({
-          name: item,
-          data: recursion(dirPath), //遍历目录循环
-          path: dirPath
-        })
-      } else { // 是 .md 文件，排除 .DS_Store & README.md & about.md
+        // 图片文件夹
+        if (/^image/.test(item)) {
+          recursion(dirPath) //遍历目录循环
+        } else {
+          res.push({
+            name: item,
+            data: recursion(dirPath), //遍历目录循环
+            path: dirPath
+          })
+        }
+      } else {
+        // 是 .md 文件，排除 .DS_Store & README.md & about.md
         if (item.includes('.md') && !/^\.|index|README/.test(item)) {
           res.push(item)
+        } else if (/\.(jpg|png|jpeg|gif|svg)$/.test(item)) {
+          // 复制图片到 public 的 images 中
+          copyFile(`${publicPath}/images/${item}`, `${curPath}/${item}`)
         }
       }
     })
@@ -255,7 +282,7 @@ function buildDirTree() {
   }
 
   const dirTree = recursion('')
-  writeFile(`${path.join(__dirname)}/dirTree.json`, JSON.stringify(dirTree, null, 4))
+  writeFile(`${srcPath}/dirTree.json`, JSON.stringify(dirTree, null, 4))
 
   return dirTree
 }
@@ -338,7 +365,7 @@ function createSidebar(dirTree, baseUrl) {
 
   recursion(dirTree)
   // 写入json
-  writeFile(`${path.join(__dirname)}/sidebar.json`, JSON.stringify(sidebarData, null, 4))
+  writeFile(`${srcPath}/sidebar.json`, JSON.stringify(sidebarData, null, 4))
 
   // 写入归档
   writeArchive(rootPath, archives, baseUrl)
@@ -354,7 +381,9 @@ function createSidebar(dirTree, baseUrl) {
  */
 function getSidebar(baseUrl) {
   // 目录树
-  dirTree = buildDirTree()
+  const dirTree = buildDirTree()
+
+  return false;
   // 侧边栏菜单
   return createSidebar(dirTree, baseUrl);
 }

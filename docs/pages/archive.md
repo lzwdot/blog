@@ -15,7 +15,7 @@ title: 归档
 - [d3 入门](/blogs/codes/charts/27976.md)<span class="date">（2021.08.14）</span>    
 - [antv-g2 入门](/blogs/codes/charts/27981.md)<span class="date">（2021.08.14）</span>    
 - [antv-g6 入门](/blogs/codes/charts/27983.md)<span class="date">（2021.07.18）</span>    
-- [Web Components 入门](/blogs/codes/web-components/27982.md)<span class="date">（2021.10.14）</span>    
+- [Web Components 入门](/blogs/codes/web-components/27982.md)<span class="date">（2021.10.18）</span>    
 - [JS MD5加密](/blogs/tools/27985.md)<span class="date">（2021.08.20）</span>    
 - [通过JSON数据获取Keys](/blogs/tools/27984.md)<span class="date">（2021.08.14）</span>    
 - [Vue 和 React 的区别](/blogs/learns/vuejs-faq/27958.md)<span class="date">（2021.05.24）</span>    

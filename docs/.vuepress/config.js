@@ -11,8 +11,8 @@ module.exports = {
   locales: {
     '/': {
       lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
-      title: 'Lzw技术笔记',
-      description: '代码如诗',
+      title: '点滴',
+      description: 'Lzw.技术笔记',
     }
   },
 
