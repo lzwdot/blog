@@ -51,11 +51,11 @@ jobs:
           # 部署到 gh-pages 分支
           target_branch: gh-pages
           # 部署目录为 VuePress 的默认输出目录
-          build_dir: blogs
+          build_dir: docs/.vuepress/dist
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
       # 发布到 github.io/master
 #      - name: Deploy to github.io
 #        uses: peaceiris/actions-gh-pages@v3
@@ -63,6 +63,6 @@ jobs:
 #          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
 #          external_repository: lzwdot/lzwdot.github.io
 #          publish_branch: master  # default: gh-pages
-#          publish_dir: blogs
+#          publish_dir: docs/.vuepress/dist
           # cname: lzwdot.com
     

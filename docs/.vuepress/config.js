@@ -3,7 +3,7 @@ const {path} = require('@vuepress/utils')
 const {getNavbar} = require('./src/navbar')
 const {getSidebar} = require('./src/sidebar')
 
-const baseUrl = '/blogs'
+const baseUrl = GITHUB_ACTIONS ? '/blogs' : ''
 
 module.exports = {
   // 站点配置
@@ -15,7 +15,6 @@ module.exports = {
       description: 'Lzw.技术笔记',
     }
   },
-  dest: 'blogs',
 
   // header 标签内的
   head: [
