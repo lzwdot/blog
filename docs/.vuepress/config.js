@@ -3,7 +3,13 @@ const {path} = require('@vuepress/utils')
 const {getNavbar} = require('./src/navbar')
 const {getSidebar} = require('./src/sidebar')
 
-const baseUrl = GITHUB_ACTIONS ? '/blogs' : ''
+let baseUrl = '/blogs';
+
+try {
+  if (VERCEL) baseUrl = ''
+} catch (e) {
+  console.log(e);
+}
 
 module.exports = {
   // 站点配置
