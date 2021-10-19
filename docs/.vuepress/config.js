@@ -15,6 +15,7 @@ module.exports = {
       description: 'Lzw.技术笔记',
     }
   },
+  dest: 'blogs',
 
   // header 标签内的
   head: [
