@@ -248,8 +248,8 @@ function buildDirTree() {
       // 文件状态
       let isDir = fs.statSync(`${curPath}/${item}`).isDirectory()
 
-      // 是目录，排除：.开头的 && node_modules && build && pages
-      if (isDir && !/^\.|page|public/.test(item)) {
+      // 是目录，排除：.开头的 && node_modules && build
+      if (isDir && !/^\.|public/.test(item)) {
         const dirPath = `${path}/${item}`
 
         // 图片文件夹
@@ -263,8 +263,8 @@ function buildDirTree() {
           })
         }
       } else {
-        // 是 .md 文件，排除 .DS_Store & README.md & about.md
-        if (item.includes('.md') && !/^\.|index|README/.test(item)) {
+        // 是 .md 文件，排除 .DS_Store & README.md & pages 下的文件
+        if (item.includes('.md') && !/^\.|index|README|about|archive|category/.test(item)) {
           res.push(item)
         } else if (/\.(jpg|png|jpeg|gif|svg)$/.test(item)) {
           // 复制图片到 public 的 images 中
