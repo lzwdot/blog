@@ -6,7 +6,7 @@ const {getSidebar} = require('./src/sidebar')
 let baseUrl = '/blogs';
 
 try {
-  if (VERCEL) baseUrl = ''
+  if (process.env.VERCEL) baseUrl = ''
 } catch (e) {
   console.log(e);
 }
