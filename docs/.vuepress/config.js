@@ -3,7 +3,7 @@ const {path} = require('@vuepress/utils')
 const {getNavbar} = require('./src/navbar')
 const {getSidebar} = require('./src/sidebar')
 
-let baseUrl = '/blogs';
+let baseUrl = '/mdpress';
 
 try {
   if (process.env.VERCEL) baseUrl = ''
@@ -17,8 +17,8 @@ module.exports = {
   locales: {
     '/': {
       lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
-      title: '点滴',
-      description: 'Lzw.技术笔记',
+      title: "Lzw's 笔记",
+      description: '记录和分享，每天进步一点点！',
     }
   },
 

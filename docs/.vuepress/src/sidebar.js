@@ -253,7 +253,7 @@ function buildDirTree() {
         const dirPath = `${path}/${item}`
 
         // 图片文件夹
-        if (/^image/.test(item)) {
+        if (/^image|pages/.test(item)) {
           recursion(dirPath) //遍历目录循环
         } else {
           res.push({
@@ -383,7 +383,7 @@ function getSidebar(baseUrl) {
   // 目录树
   const dirTree = buildDirTree()
 
-  return false;
+  // return false;
   // 侧边栏菜单
   return createSidebar(dirTree, baseUrl);
 }
