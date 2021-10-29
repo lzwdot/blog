@@ -345,7 +345,7 @@ function createSidebar(dirTree, baseUrl) {
         }
 
         // 文件的父级目录插入到分类数组
-        categories.push(`${curNode.path}`)
+        categories.push(`${curNode.path}/`)
 
         // 写入内容到 readme 文件
         writeReadMe(curPath, content)
