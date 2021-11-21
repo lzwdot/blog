@@ -26,18 +26,7 @@
         {
             "text": "演示",
             "children": [
-                "/codes/demos/27987.md",
-                "/codes/demos/28037.md",
-                "/codes/demos/28039.md",
-                "/codes/demos/28041.md",
-                "/codes/demos/28043.md",
-                "/codes/demos/28045.md",
-                "/codes/demos/28047.md",
-                "/codes/demos/28049.md",
-                "/codes/demos/28051.md",
-                "/codes/demos/28053.md",
-                "/codes/demos/28055.md",
-                "/codes/demos/NaN.md"
+                "/codes/demos/27987.md"
             ]
         }
     ],

@@ -113,7 +113,7 @@ module.exports = {
         },
       },
     }],
-    [require('./plugins/vuepress-to-wordpress'), {
+    ['vuepress-plugin-to-wordpress', {
       ...rpcConf,
       onPrepared: (wpRpc, app) => {
         app.pages.forEach(page => {

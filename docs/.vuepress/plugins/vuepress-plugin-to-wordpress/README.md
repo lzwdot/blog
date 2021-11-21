@@ -1,6 +1,6 @@
-## Vuepress To WordPress
+## Vuepress Plugin To WordPress
 
-Vuepress To WordPress uses XmlRpc to synchronize Vuepress content to
+A plugin uses XmlRpc to synchronize Vuepress content to
 WordPress, implements all the interfaces in [XML-RPC_WordPress_API](http://codex.wordpress.org/XML-RPC_WordPress_API).
 
 ### use:

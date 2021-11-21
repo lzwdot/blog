@@ -1,0 +1,31 @@
+{
+  "name": "vuepress-plugin-to-wordpress",
+  "version": "1.0.0-beta.10",
+  "author": {
+    "name": "lzw."
+  },
+  "description": "A vuepress plugin uses XmlRpc to synchronize Vuepress content to WordPress",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "test"
+  ],
+  "keywords": [
+    "vuepress-to-wordpress"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lzwdot/mdpress/tree/main/docs/.vuepress/plugins/vuepress-to-wordpress"
+  },
+  "homepage": "https://github.com/lzwdot/mdpress/tree/main/docs/.vuepress/plugins/vuepress-to-wordpress",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lzwdot/mdpress/issues"
+  },
+  "scripts": {
+    "test": "node ./test/wordpress-test.js"
+  },
+  "devDependencies": {
+    "wordpress-rpc": "^0.1.6"
+  }
+}

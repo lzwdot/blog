@@ -1,9 +1,9 @@
-const wpApi = require('./lib/wordpress-api')
+const wpApi = require('./wordpress-api')
 
 const vuepressToWordpress = ({username, password, options, onPrepared}, app = '') => {
   const wpRpc = new wpApi(username, password, options)
   return {
-    name: 'vuepress-to-wordpress',
+    name: 'vuepress-plugin-to-wordpress',
     getWpRpc: () => {
       return wpRpc
     },

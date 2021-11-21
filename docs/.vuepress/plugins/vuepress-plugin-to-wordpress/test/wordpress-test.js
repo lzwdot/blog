@@ -6,7 +6,7 @@ const fs = require('fs')
 // Change to your configuration
 const config = {
   username: 'root',
-  password: 'T5v0ig9k6jgN*9Q@)FCUvC52',
+  password: 'root',
   options: {path: '/wordpress/xmlrpc.php'},
 }
 const wp = new WordPress(config.username, config.password, config.options);

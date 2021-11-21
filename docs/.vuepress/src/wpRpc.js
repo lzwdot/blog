@@ -2,12 +2,12 @@ const blogId = 1 // 没啥用
 
 const rpcConf = {
   username: 'root',
-  password: 'T5v0ig9k6jgN*9Q@)FCUvC52',
+  password: 'root',
   options: {path: '/wordpress/xmlrpc.php'},
 }
 
 function logCallback(error, data) {
-  console.log(require('util').inspect(error ? error.message : data, {showHidden: true, colors: true, depth: 10}));
+  console.log(require('util').inspect(error ? error : data, {showHidden: true, colors: true, depth: 10}));
 }
 
 function wpEditPost(wpRpc, page) {
@@ -56,8 +56,8 @@ function wpNewPost(wpRpc, callback) {
   let post_id = 0
   wpRpc.newPost(blogId, content).send((err, data) => {
     logCallback(err, data)
-    if (data && data.methodResponse && data.methodResponse.params) {
-      post_id = data.methodResponse.params[0]
+    if (data) {
+      post_id = data
     }
     callback(post_id)
   })

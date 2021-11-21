@@ -2,7 +2,7 @@ const fs = require('fs');
 const matter = require('gray-matter');
 const moment = require('moment')
 const path = require('path')
-const vueToWp = require('../plugins/vuepress-to-wordpress')
+const vueToWp = require('../plugins/vuepress-plugin-to-wordpress')
 const {rpcConf, wpNewPost} = require('./wpRpc')
 
 const docPath = path.join(__dirname, '../../') // 获取文档目录

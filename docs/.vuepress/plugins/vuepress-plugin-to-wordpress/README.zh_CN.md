@@ -1,6 +1,6 @@
 ## Vuepress To WordPress
 
-Vuepress To WordPress 使用 XmlRpc 方式同步 Vuepress 内容到
+插件使用 XmlRpc 方式同步 Vuepress 内容到
 WordPress，实现了 [XML-RPC_WordPress_API](http://codex.wordpress.org/XML-RPC_WordPress_API) 中所有接口.
 
 ### 使用：
