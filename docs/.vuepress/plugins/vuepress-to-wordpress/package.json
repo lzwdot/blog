@@ -1,0 +1,17 @@
+{
+  "name": "vuepress-to-wordpress",
+  "version": "1.0.0",
+  "keywords": [
+    "vuepress-to-wordpress"
+  ],
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./test/wordpress-test.js"
+  },
+  "devDependencies": {
+    "wordpress-rpc": "^0.1.6"
+  }
+}

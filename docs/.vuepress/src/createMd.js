@@ -2,12 +2,12 @@ const fs = require('fs');
 const matter = require('gray-matter');
 const moment = require('moment')
 const path = require('path')
+const vueToWp = require('../plugins/vuepress-to-wordpress')
+const {rpcConf, wpNewPost} = require('./wpRpc')
 
 const docPath = path.join(__dirname, '../../') // 获取文档目录
 
 /*******新建文章 -start*******/
-
-
 
 const dirPath = `codes/demos`
 const title = '标题'
@@ -87,18 +87,21 @@ function writeReadMe(path) {
  * @param {*} author
  */
 function createMd(dirname, title, author = 'lzw.') {
-  const maxId = getMaxId() + 1
-  const path = `${docPath}/${dirname}`
-  const filePath = `${path}/${maxId}.md`
+  wpNewPost(vueToWp({...rpcConf}).getWpRpc(), (post_id) => {
+    const maxId = post_id || getMaxId() + 1
+    const path = `${docPath}/${dirname}`
+    const filePath = `${path}/${maxId}.md`
 
-  const date = moment().format('YYYY-MM-DD HH:mm:ss');
-  const tags = `\n  - "${dirname.split('/').join('"\n  - "')}"`
+    const date = moment().format('YYYY-MM-DD HH:mm:ss');
+    const tags = `\n  - "${dirname.split('/').join('"\n  - "')}"`
 
-  const content = `---\n title: "${title}"\n ID: "${maxId}"\n date: "${date}"\n author: "${author}"\n categories: ${tags}\n tags: ${tags}\n---\n\n# ${title}\n\n`
+    const content = `---\n title: "${title}"\n ID: "${maxId}"\n date: "${date}"\n author: "${author}"\n categories: ${tags}\n tags: ${tags}\n---\n\n# ${title}\n\n`
 
-  // 创建文件夹的 readme 文件
-  writeReadMe(path)
+    // 创建文件夹的 readme 文件
+    writeReadMe(path)
 
-  //创建 md 文件
-  fs.writeFileSync(filePath, content)
+    //创建 md 文件
+    fs.writeFileSync(filePath, content)
+    console.log(require('util').inspect(filePath, {colors: true}));
+  })
 }

@@ -2,6 +2,7 @@ const {path} = require('@vuepress/utils')
 
 const {getNavbar} = require('./src/navbar')
 const {getSidebar} = require('./src/sidebar')
+const {rpcConf, wpEditPost} = require('./src/wpRpc')
 
 let baseUrl = '/mdpress';
 
@@ -112,5 +113,13 @@ module.exports = {
         },
       },
     }],
+    [require('./plugins/vuepress-to-wordpress'), {
+      ...rpcConf,
+      onPrepared: (wpRpc, app) => {
+        app.pages.forEach(page => {
+          wpEditPost(wpRpc, page)
+        })
+      }
+    }]
   ]
 }
