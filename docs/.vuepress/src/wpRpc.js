@@ -4,6 +4,7 @@ const path = require('path')
 const matter = require('gray-matter');
 const core = require('@actions/core')
 
+const sleep = (time = 0) => new Promise(resolve => setTimeout(resolve, time))
 const gitPath = path.join(__dirname, '../../../')
 const blogId = 1 // 没啥用
 const rpcConf = {
@@ -11,8 +12,7 @@ const rpcConf = {
   password: process.env.RPC_PASSWORD || core.getInput('RPC_PASSWORD') || null,
   options: eval('(' + (process.env.RPC_OPTIONS || core.getInput('RPC_OPTIONS') || null) + ')'),
 }
-logCallback('rpcConf', rpcConf)
-const sleep = (time = 0) => new Promise(resolve => setTimeout(resolve, time))
+logCallback('rpcConf', rpcConf.username)
 
 /**
  * 获取 git 中最近一次修改的文章
