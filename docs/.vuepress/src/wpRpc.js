@@ -70,8 +70,6 @@ async function wpEditPost(wpRpc, page, files = []) {
     post_author: blogId,
     post_type: 'post',
     post_status: 'publish',
-    post_format: '',
-    post_excerpt: '',
     post_content: '<![CDATA[' + post_content + ']]>',
     terms_names: {
       'category': post_category,
