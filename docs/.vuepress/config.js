@@ -2,7 +2,7 @@ const {path} = require('@vuepress/utils')
 
 const {getNavbar} = require('./src/navbar')
 const {getSidebar} = require('./src/sidebar')
-const {rpcConf, wpEditPost} = require('./src/wpRpc')
+const {rpcConf, sleep, getGitFiles, wpEditPost} = require('./src/wpRpc')
 
 let baseUrl = '/mdpress';
 
@@ -113,12 +113,18 @@ module.exports = {
         },
       },
     }],
-    ['vuepress-plugin-to-wordpress', {
+    [require('./plugins/vuepress-plugin-to-wordpress'), {
       ...rpcConf,
-      onPrepared: (wpRpc, app) => {
-        app.pages.forEach(page => {
-          wpEditPost(wpRpc, page)
-        })
+      onGenerated: (wpRpc, app) => {
+        if (!wpRpc.username) return
+
+        (async function () {
+          const files = await getGitFiles()
+          app.pages.forEach(page => {
+            sleep(1)
+            wpEditPost(wpRpc, page, files)
+          })
+        })()
       }
     }]
   ]

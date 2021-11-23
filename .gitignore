@@ -3,3 +3,4 @@
 /docs/.vuepress/dist
 /modify_author.sh
 /.idea
+.env

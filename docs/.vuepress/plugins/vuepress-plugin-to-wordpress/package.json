@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-to-wordpress",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.11",
   "author": {
     "name": "lzw."
   },
@@ -11,13 +11,13 @@
     "test"
   ],
   "keywords": [
-    "vuepress-to-wordpress"
+    "vuepress-plugin-to-wordpress"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lzwdot/mdpress/tree/main/docs/.vuepress/plugins/vuepress-to-wordpress"
+    "url": "https://github.com/lzwdot/mdpress/tree/main/docs/.vuepress/plugins/vuepress-plugin-to-wordpress"
   },
-  "homepage": "https://github.com/lzwdot/mdpress/tree/main/docs/.vuepress/plugins/vuepress-to-wordpress",
+  "homepage": "https://github.com/lzwdot/mdpress/tree/main/docs/.vuepress/plugins/vuepress-plugin-to-wordpress",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lzwdot/mdpress/issues"

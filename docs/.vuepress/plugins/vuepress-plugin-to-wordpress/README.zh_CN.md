@@ -6,32 +6,32 @@ WordPress，实现了 [XML-RPC_WordPress_API](http://codex.wordpress.org/XML-RPC
 ### 使用：
 
 ```js
- plugins: [
+plugins: [
   //...
-    ['vuepress-to-wordpress', {
-      username: 'root',
-      password: 'password',
-      options: {
-        https : false,
-        host : 'localhost',
-        port : 80,
-        path : "/xmlrpc.php"
-      },
-      onPrepared: (wpRpc, app) => {
-        app.pages.forEach(page => {
-          const content = {
-            post_author: 1,
-            post_type: 'post',
-            post_title: page.frontmatter.title,
-            post_content: page.frontmatter.content,
-          }
-          
-          wpRpc.newPost(blogId, content).send((err, data) => {
-            // ...
-          })
-        })
-      }
-    }]
+     ['vuepress-plugin-to-wordpress', {
+       username: 'root',
+       password: 'root',
+       options: {
+         https: false,
+         host: 'localhost',
+         port: 80,
+         path: "/wordpress/xmlrpc.php"
+       },
+       onPrepared: (wpRpc, app) => {
+         app.pages.forEach(page => {
+           const content = {
+             post_author: 1,
+             post_type: 'post',
+             post_title: page.frontmatter.title,
+             post_content: page.frontmatter.content,
+           }
+           wpRpc.newPost(1, content).send((err, data) => {
+             console.log(err, data)
+             // ...
+           })
+         })
+       }
+     }]
   //...
 ]
 ```
