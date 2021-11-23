@@ -7,9 +7,9 @@ const core = require('@actions/core')
 const gitPath = path.join(__dirname, '../../../')
 const blogId = 1 // 没啥用
 const rpcConf = {
-  username: process.env.WP_USER || core.getInput('WP_USER') || null,
-  password: process.env.WP_PASS || core.getInput('WP_PASS') || null,
-  options: eval('(' + (process.env.OPTIONS || core.getInput('OPTIONS') || null) + ')'),
+  username: process.env.RPC_USERNAME || core.getInput('RPC_USERNAME') || null,
+  password: process.env.RPC_PASSWORD || core.getInput('RPC_PASSWORD') || null,
+  options: eval('(' + (process.env.RPC_OPTIONS || core.getInput('RPC_OPTIONS') || null) + ')'),
 }
 logCallback('rpcConf', rpcConf)
 const sleep = (time = 0) => new Promise(resolve => setTimeout(resolve, time))
