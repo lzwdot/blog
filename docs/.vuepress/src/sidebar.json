@@ -191,6 +191,15 @@
             ]
         }
     ],
+    "/learns/vue-study/": [
+        {
+            "text": "导航",
+            "children": [
+                "/learns/vue-study/27988.md",
+                "/learns/vue-study/27990.md"
+            ]
+        }
+    ],
     "/learns/vuejs-faq/": [
         {
             "text": "vuejs 常见问题",

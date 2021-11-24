@@ -189,6 +189,14 @@
                 "path": "/learns/project"
             },
             {
+                "name": "vue-study",
+                "data": [
+                    "27988.md",
+                    "27990.md"
+                ],
+                "path": "/learns/vue-study"
+            },
+            {
                 "name": "vuejs-faq",
                 "data": [
                     "27125.md",

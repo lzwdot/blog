@@ -9,7 +9,7 @@ const docPath = path.join(__dirname, '../../') // 获取文档目录
 
 /*******新建文章 -start*******/
 
-const dirPath = `codes/demos`
+const dirPath = `learns/vue-study`
 const title = '标题'
 
 createMd(dirPath, title)
@@ -69,8 +69,9 @@ function writeReadMe(path) {
   if (fs.existsSync(filePath)) {
     const frontMatter = matter.read(filePath);
     const {title} = frontMatter.data
+    if (!title) frontMatter.data['title'] = '导航'
 
-    content = matter.stringify(`# ${title || '导航'}\n\n${content}`, frontMatter.data)
+    content = matter.stringify(`# ${frontMatter.data['title']}\n\n${content}`, frontMatter.data)
 
     // 删除 README.md 文件
     fs.unlinkSync(filePath)
