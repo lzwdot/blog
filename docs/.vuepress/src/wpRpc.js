@@ -78,6 +78,7 @@ async function wpEditPost(wpRpc, page, files = []) {
       'category': post_category,
       'post_tag': post_tag
     },
+    comment_status:'open'
   }
   // 更新
   wpRpc.editPost(blogId, post_id, content).send((err, data) => {
