@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { gitToJs } = require('git-parse')
+const {gitToJs} = require('git-parse')
 const path = require('path')
 const matter = require('gray-matter');
 const core = require('@actions/core')
@@ -24,7 +24,7 @@ async function getGitFiles() {
   const gitFiles = [...commits[0].filesAdded, ...commits[0].filesModified]
   gitFiles.forEach(item => {
     const frontMatter = matter.read(`${gitPath}/${item.path}`)
-    const { ID } = frontMatter.data
+    const {ID} = frontMatter.data
     if (ID) files.push(ID)
   })
 
@@ -38,7 +38,7 @@ async function getGitFiles() {
  * @param data
  */
 function logCallback(tips, error, data) {
-  console.log(`[${tips}]`, require('util').inspect(error ? error : data, { showHidden: true, colors: true, depth: 10 }));
+  console.log(`[${tips}]`, require('util').inspect(error ? error : data, {showHidden: true, colors: true, depth: 10}));
 }
 
 /**
@@ -54,6 +54,9 @@ async function wpEditPost(wpRpc, page, files = []) {
   const post_content = page.contentRendered.replace(
     /<html-demo>([\s\S]*?)<\/html-demo>/ig,
     '<div class="html-demo">$1</div>'
+  ).replace(
+    /<a(.*?)>#<\/a>/ig,
+    ''
   )
 
   const post_id = frontMatter.ID
