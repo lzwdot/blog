@@ -121,7 +121,7 @@ module.exports = {
         (async function () {
           const files = await getGitFiles()
           app.pages.forEach(async page => {
-            sleep(5)
+            sleep(10)
             await wpEditPost(wpRpc, page, files)
           })
         })()

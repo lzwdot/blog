@@ -18,18 +18,19 @@ createMd(dirPath, title)
 /*******新建文章 -end*******/
 
 
-/**
+/** (5,'','','','','','','2020-12-02','2020-12-02','2020-12-02','2020-12-02')
  * 获取最大的文章 id
  * @returns
  */
 function getMaxId() {
   const rootPath = docPath// 当前目录的绝对路径
   let maxId = 0// 最大的文章 id
+  const res = []
 
   function recursion(path) {
     const curPath = `${rootPath}/${path}` // 当前目录
     const dirs = fs.readdirSync(curPath) //所有目录和文件
-    const res = []
+
 
     // 目录循环
     dirs.forEach(item => {
@@ -43,8 +44,9 @@ function getMaxId() {
         // 是 .md 文件，排除 .DS_Store & README.md & about.md
         if (item.includes('.md') && !/^\.|index|README/.test(item)) {
           const frontMatter = matter.read(`${curPath}/${item}`)
-          const {ID} = frontMatter.data
+          const {ID, date} = frontMatter.data
           maxId = Math.max(maxId, ID)
+          res.push(`(${ID},'','','','','','','${date}','${date}','${date}','${date}')`)
         }
       }
     })
@@ -53,6 +55,7 @@ function getMaxId() {
   }
 
   recursion('')
+  // fs.writeFileSync(path.join(__dirname) + '/ids.txt', res.join(',\n'))
 
   return maxId
 }

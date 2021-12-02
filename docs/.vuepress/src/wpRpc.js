@@ -1,6 +1,7 @@
 require('dotenv').config()
 const {gitToJs} = require('git-parse')
 const path = require('path')
+const fs = require('fs')
 const matter = require('gray-matter');
 const core = require('@actions/core')
 const tags = require('./tags.json')
@@ -24,14 +25,15 @@ async function getGitFiles() {
   const commits = await gitToJs(gitPath);
   const gitFiles = [...commits[0].filesAdded, ...commits[0].filesModified]
   gitFiles.forEach(item => {
-    const frontMatter = matter.read(`${gitPath}/${item.path}`)
-    const {ID} = frontMatter.data
-    if (ID) files.push(ID)
+    if (fs.existsSync(`${gitPath}/${item.path}`)) {
+      const frontMatter = matter.read(`${gitPath}/${item.path}`)
+      const {ID} = frontMatter.data
+      if (ID) files.push(ID)
+    }
   })
 
   return files
 }
-
 
 
 /**
@@ -64,28 +66,26 @@ async function wpEditPost(wpRpc, page, files = []) {
 
   const post_id = frontMatter.ID
   const post_title = frontMatter.title
-  const post_date = frontMatter.date
-  const post_category = {} // frontMatter.categories
-  const post_tag = {}// frontMatter.tags
+  const post_category = [] // frontMatter.categories
+  const post_tag = []// frontMatter.tags
 
   // 处理分类  slug => '标签'
   if (frontMatter.categories) {
     for (const key of frontMatter.categories) {
-      if (tags[key]) post_category[key] = tags[key]
+      if (tags[key]) post_category.push(tags[key])
     }
   }
 
   // 处理标签  slug => '标签'
   if (frontMatter.tags) {
     for (const key of frontMatter.tags) {
-      if (tags[key]) post_tag[key] = tags[key]
+      if (tags[key]) post_tag.push(tags[key])
     }
   }
 
-  // 控制需要更新的文章
-  // if (!files.includes(post_id)) return
 
-  if(post_id != 27138) return
+  // 控制需要更新的文章
+  if (!files.includes(post_id)) return
 
   const content = {
     ID: post_id,
@@ -98,8 +98,7 @@ async function wpEditPost(wpRpc, page, files = []) {
       'category': post_category,
       'post_tag': post_tag
     },
-    comment_status: 'open',
-    post_date: '2020-12-02 14:10:57'
+    comment_status: 'open'
   }
   // 更新
   wpRpc.editPost(blogId, post_id, content).send((err, data) => {
@@ -132,10 +131,42 @@ function wpNewPost(wpRpc, callback) {
   })
 }
 
+async function wpNewTerm(wpRpc) {
+  // 处理分类  slug => '标签'
+  for (const key in tags) {
+    if (tags[key]) {
+      const content = {
+        name: '<![CDATA[' + tags[key] + ']]>',
+        taxonomy: 'category',
+        slug: key
+      }
+      wpRpc.newTerm(blogId, content).send((err, data) => {
+        logCallback(key + ' category：editPost', err, data)
+      })
+    }
+    sleep(5)
+  }
+  // 处理标签  slug => '标签'
+  for (const key in tags) {
+    if (tags[key]) {
+      const content = {
+        name: '<![CDATA[' + tags[key] + ']]>',
+        taxonomy: 'post_tag',
+        slug: key
+      }
+      wpRpc.newTerm(blogId, content).send((err, data) => {
+        logCallback(key + ' post_tag：editPost', err, data)
+      })
+    }
+    sleep(5)
+  }
+}
+
 module.exports = {
   rpcConf,
   sleep,
   getGitFiles,
   wpEditPost,
-  wpNewPost
+  wpNewPost,
+  wpNewTerm
 }
