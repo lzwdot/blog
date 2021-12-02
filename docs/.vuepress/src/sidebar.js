@@ -338,10 +338,10 @@ function createSidebar(dirTree, baseUrl) {
             content += buildMdLink(`${rootPath}/${_path}`, `${baseUrl}${_path}`)
 
             //============重新构建下tags和categories=================
-            // const fileData = matter.read(`${rootPath}/${_path}`)
-            // fileData.data.categories = curNode.path.slice(1).split('/')
-            // fileData.data.tags = curNode.path.slice(1).split('/')
-            // fs.writeFileSync(`${rootPath}/${_path}`, matter.stringify(fileData.content, fileData.data))
+            const fileData = matter.read(`${rootPath}/${_path}`)
+            fileData.data.categories = curNode.path.slice(1).split('/')
+            fileData.data.tags = curNode.path.slice(1).split('/')
+            fs.writeFileSync(`${rootPath}/${_path}`, matter.stringify(fileData.content + ' ', fileData.data))
             //=====================================================
 
             // 推入文件构成目录
@@ -373,6 +373,7 @@ function createSidebar(dirTree, baseUrl) {
       }
     }
   }
+
   recursion(dirTree)
 
   // 写入json

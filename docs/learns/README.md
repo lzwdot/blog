@@ -11,7 +11,7 @@ title: 学习
 - [js 常见问题](/mdpress/learns/js-faq)    
 - [js web api问题](/mdpress/learns/js-web-api)    
 - [项目](/mdpress/learns/project)    
-- [导航](/mdpress/learns/vue-study)    
+- [vue 学习](/mdpress/learns/vue-study)    
 - [vuejs 常见问题](/mdpress/learns/vuejs-faq)    
 - [vuejs 原理解说](/mdpress/learns/vuejs-principle)    
 - [vuejs 使用问题](/mdpress/learns/vuejs-use)    
