@@ -32,6 +32,8 @@ async function getGitFiles() {
   return files
 }
 
+
+
 /**
  *  回调打印
  * @param tips
@@ -62,13 +64,28 @@ async function wpEditPost(wpRpc, page, files = []) {
 
   const post_id = frontMatter.ID
   const post_title = frontMatter.title
-  const post_category = frontMatter.categories
-  const post_tag = frontMatter.tags
+  const post_date = frontMatter.date
+  const post_category = {} // frontMatter.categories
+  const post_tag = {}// frontMatter.tags
 
-  console.log(post_category)
+  // 处理分类  slug => '标签'
+  if (frontMatter.categories) {
+    for (const key of frontMatter.categories) {
+      if (tags[key]) post_category[key] = tags[key]
+    }
+  }
+
+  // 处理标签  slug => '标签'
+  if (frontMatter.tags) {
+    for (const key of frontMatter.tags) {
+      if (tags[key]) post_tag[key] = tags[key]
+    }
+  }
 
   // 控制需要更新的文章
-  if (!files.includes(post_id)) return
+  // if (!files.includes(post_id)) return
+
+  if(post_id != 27138) return
 
   const content = {
     ID: post_id,
@@ -81,7 +98,8 @@ async function wpEditPost(wpRpc, page, files = []) {
       'category': post_category,
       'post_tag': post_tag
     },
-    comment_status: 'open'
+    comment_status: 'open',
+    post_date: '2020-12-02 14:10:57'
   }
   // 更新
   wpRpc.editPost(blogId, post_id, content).send((err, data) => {
@@ -110,7 +128,7 @@ function wpNewPost(wpRpc, callback) {
     if (data) {
       post_id = data
     }
-    callback(post_id)
+    typeof callback === 'function' && callback(post_id)
   })
 }
 
