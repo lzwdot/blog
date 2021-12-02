@@ -115,7 +115,7 @@ module.exports = {
     }],
     [require('./plugins/vuepress-plugin-to-wordpress'), {
       ...rpcConf,
-      onPrepared: (wpRpc, app) => {
+      onGenerated: (wpRpc, app) => {
         if (!rpcConf.username) return
 
         (async function () {
