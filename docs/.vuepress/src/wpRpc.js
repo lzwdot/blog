@@ -3,6 +3,7 @@ const {gitToJs} = require('git-parse')
 const path = require('path')
 const matter = require('gray-matter');
 const core = require('@actions/core')
+const tags = require('./tags.json')
 
 const sleep = (time = 0) => new Promise(resolve => setTimeout(resolve, time))
 const gitPath = path.join(__dirname, '../../../')
@@ -64,6 +65,8 @@ async function wpEditPost(wpRpc, page, files = []) {
   const post_category = frontMatter.categories
   const post_tag = frontMatter.tags
 
+  console.log(post_category)
+
   // 控制需要更新的文章
   if (!files.includes(post_id)) return
 
@@ -78,7 +81,7 @@ async function wpEditPost(wpRpc, page, files = []) {
       'category': post_category,
       'post_tag': post_tag
     },
-    comment_status:'open'
+    comment_status: 'open'
   }
   // 更新
   wpRpc.editPost(blogId, post_id, content).send((err, data) => {

@@ -298,6 +298,7 @@ function createSidebar(dirTree, baseUrl) {
   const sidebarData = {} // 边栏目录
   const categories = [] // 类别
   const archives = [] // 归档
+  const tags = {} // 标签，{code:'代码'} 格式
 
   function recursion(tree) {
 
@@ -357,13 +358,16 @@ function createSidebar(dirTree, baseUrl) {
           children: sortById(rootPath, children)  //排序
         })
 
+        // 标签对象
+        if (title) tags[curNode.name] = title
+
         // 该路径下的目录
         sidebarData[`${curNode.path}/`] = sidebar
       }
     }
   }
-
   recursion(dirTree)
+
   // 写入json
   writeFile(`${srcPath}/sidebar.json`, JSON.stringify(sidebarData, null, 4))
 
@@ -371,6 +375,8 @@ function createSidebar(dirTree, baseUrl) {
   writeArchive(rootPath, archives, baseUrl)
   // 写入分类
   writeCategory(rootPath, categories, baseUrl)
+  // 写入标签
+  writeFile(`${srcPath}/tags.json`, JSON.stringify(tags, null, 4))
 
   return sidebarData
 }
