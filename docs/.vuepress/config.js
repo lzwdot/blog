@@ -2,7 +2,7 @@ const {path} = require('@vuepress/utils')
 
 const {getNavbar} = require('./src/navbar')
 const {getSidebar} = require('./src/sidebar')
-const {rpcConf, sleep, getGitFiles, wpEditPost} = require('./src/wpRpc')
+const {rpcConf, sleep, getGitFiles, wpEditPost, wpDeletePost, wpEditTerm} = require('./src/wpRpc')
 
 let baseUrl = '/mdpress';
 
@@ -115,19 +115,17 @@ module.exports = {
     }],
     [require('./plugins/vuepress-plugin-to-wordpress'), {
       ...rpcConf,
-      onPrepared: (wpRpc, app) => {
+      onGenerated: async (wpRpc, app) => {
         if (!rpcConf.username) return
 
-        (async function () {
-          const files = await getGitFiles()
-          app.pages.forEach(async page => {
-            await sleep(3000)
+        const files = await getGitFiles()
 
-            // 控制需要更新的文章
-            // if (!files.includes(post_id)) return
-            // await wpEditPost(wpRpc, page, files)
-          })
-        })()
+        await wpDeletePost(wpRpc, files['delete'])
+        for (const page of app.pages) {
+          await sleep(100)
+          await wpEditPost(wpRpc, page, files['edit'])
+        }
+        await wpEditTerm(wpRpc)
       }
     }]
   ]

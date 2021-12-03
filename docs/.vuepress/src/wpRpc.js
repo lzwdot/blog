@@ -18,18 +18,29 @@ logCallback('rpcConf', rpcConf.username)
 
 /**
  * 获取 git 中最近一次修改的文章
- * @returns {Promise<[]>}
+ * @returns {Promise<{edit: *[], delete: *[]}>}
  */
 async function getGitFiles() {
-  const files = []
+  const files = {
+    'edit': [],
+    'delete': []
+  }
   const commits = await gitToJs(gitPath);
-  const gitFiles = [...commits[0].filesAdded, ...commits[0].filesModified]
-  gitFiles.forEach(item => {
+  const editFiles = [...commits[0].filesAdded, ...commits[0].filesModified]
+  const deleteFiles = [...commits[0].filesDeleted]
+
+  // 修改的
+  editFiles.forEach(item => {
     if (fs.existsSync(`${gitPath}/${item.path}`)) {
       const frontMatter = matter.read(`${gitPath}/${item.path}`)
       const {ID} = frontMatter.data
-      if (ID) files.push(ID)
+      if (ID) files['edit'].push(ID)
     }
+  })
+  // 删除的
+  deleteFiles.forEach(item => {
+    const ID = item.path.slice(item.path.lastIndexOf('/') + 1, item.path.lastIndexOf('.'))
+    if (parseInt(ID)) files['delete'].push(ID)
   })
 
   return files
@@ -51,9 +62,10 @@ function logCallback(tips, error, data) {
  * update 内容
  * @param wpRpc
  * @param page
+ * @param files
  * @returns {Promise<void>}
  */
-async function wpEditPost(wpRpc, page) {
+async function wpEditPost(wpRpc, page, files = []) {
   const frontMatter = page.frontmatter;
   const post_content = page.contentRendered.replace(
     /<html-demo>([\s\S]*?)<\/html-demo>/ig,
@@ -67,6 +79,9 @@ async function wpEditPost(wpRpc, page) {
   const post_title = frontMatter.title
   const post_category = [] // frontMatter.categories
   const post_tag = []// frontMatter.tags
+
+  // 控制需要更新的文章
+  if (!files.includes(post_id)) return
 
   // 处理分类  slug => '标签'
   if (frontMatter.categories) {
@@ -126,52 +141,69 @@ function wpNewPost(wpRpc, callback) {
   })
 }
 
-async function wpNewTerm(wpRpc) {
-  // 处理分类  slug => '标签'
-  for (const key in tags) {
-    if (tags[key]) {
-      const content = {
-        name: '<![CDATA[' + tags[key] + ']]>',
-        taxonomy: 'category',
-        slug: key
-      }
-      wpRpc.newTerm(blogId, content).send((err, data) => {
-        logCallback(key + ' category：editPost', err, data)
-      })
-    }
-    sleep(5)
-  }
-  // 处理标签  slug => '标签'
-  for (const key in tags) {
-    if (tags[key]) {
-      const content = {
-        name: '<![CDATA[' + tags[key] + ']]>',
-        taxonomy: 'post_tag',
-        slug: key
-      }
-      wpRpc.newTerm(blogId, content).send((err, data) => {
-        logCallback(key + ' post_tag：editPost', err, data)
-      })
-    }
-    sleep(5)
+async function wpEditTerm(wpRpc) {
+  // // 处理分类  slug => '标签'
+  // for (const key in tags) {
+  //   if (tags[key]) {
+  //     const content = {
+  //       name: '<![CDATA[' + tags[key] + ']]>',
+  //       taxonomy: 'category',
+  //       slug: key
+  //     }
+  //     wpRpc.newTerm(blogId, content).send((err, data) => {
+  //       logCallback(key + ' category：editPost', err, data)
+  //     })
+  //   }
+  //   sleep(5)
+  // }
+  // // 处理标签  slug => '标签'
+  // for (const key in tags) {
+  //   if (tags[key]) {
+  //     const content = {
+  //       name: '<![CDATA[' + tags[key] + ']]>',
+  //       taxonomy: 'post_tag',
+  //       slug: key
+  //     }
+  //     wpRpc.newTerm(blogId, content).send((err, data) => {
+  //       logCallback(key + ' post_tag：editPost', err, data)
+  //     })
+  //   }
+  //   sleep(5)
+  // }
+  const terms = []
+  wpRpc.getTerms(blogId, 'post_tag').send((err, data) => {
+    // logCallback('post_tag ：getTerms', err, data)
+    if (data) terms.push(...data)
+  })
+  wpRpc.getTerms(blogId, 'category').send((err, data) => {
+    // logCallback('category ：getTerms', err, data)
+    if (data) terms.push(...data)
+  })
+
+  await sleep(10000)
+  // console.log(terms)
+  for (const term of terms) {
+    await sleep(100)
+    if (tags[term.name]) wpRpc.editTerm(blogId, term.term_id, {taxonomy:term.taxonomy,slug: tags[term.name]}).send((err, data) => {
+      logCallback(term.name + ' ：editTerm', err, data)
+    })
   }
 }
 
 /**
  * delete 文章
  * @param wpRpc
- * @param page
+ * @param IDs
  * @returns {Promise<void>}
  */
-async function wpDeletePost(wpRpc, page) {
-  const frontMatter = page.frontmatter;
-  const post_id = frontMatter.ID
-  const post_title = frontMatter.title
-
-  // 删除
-  wpRpc.deletePost(blogId, post_id).send((err, data) => {
-    logCallback(post_title + '：deletePost', err, data)
-  })
+async function wpDeletePost(wpRpc, IDs = []) {
+  for (const id of IDs) {
+    await sleep(100)
+    // 删除
+    wpRpc.deletePost(blogId, id).send((err, data) => {
+      logCallback(id + '：deletePost', err, data)
+    })
+  }
 }
 
 module.exports = {
@@ -180,5 +212,6 @@ module.exports = {
   getGitFiles,
   wpEditPost,
   wpNewPost,
-  wpNewTerm
+  wpEditTerm,
+  wpDeletePost
 }

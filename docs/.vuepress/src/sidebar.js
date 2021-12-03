@@ -366,7 +366,7 @@ function createSidebar(dirTree, baseUrl) {
         })
 
         // 标签对象
-        if (title) tags[curNode.name] = title
+        if (title) tags[title] = curNode.name
 
         // 该路径下的目录
         sidebarData[`${curNode.path}/`] = sidebar
