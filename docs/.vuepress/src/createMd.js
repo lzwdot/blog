@@ -12,6 +12,8 @@ const docPath = path.join(__dirname, '../../') // 获取文档目录
 const dirPath = `learns/vue-study`
 const title = '标题'
 
+getMaxId()
+return
 createMd(dirPath, title)
 
 
@@ -44,9 +46,9 @@ function getMaxId() {
         // 是 .md 文件，排除 .DS_Store & README.md & about.md
         if (item.includes('.md') && !/^\.|index|README/.test(item)) {
           const frontMatter = matter.read(`${curPath}/${item}`)
-          const {ID, date} = frontMatter.data
+          const {ID, title, date} = frontMatter.data
           maxId = Math.max(maxId, ID)
-          res.push(`(${ID},'','','','','','','${date}','${date}','${date}','${date}')`)
+          res.push(`(${ID},'${title}','draft','','','','','','${date}','${date}','${date}','${date}')`)
         }
       }
     })
@@ -55,7 +57,9 @@ function getMaxId() {
   }
 
   recursion('')
-  // fs.writeFileSync(path.join(__dirname) + '/ids.txt', res.join(',\n'))
+  fs.writeFileSync(path.join(__dirname) + '/insert.sql', 'INSERT INTO `wp_posts` \n' +
+    '(id,post_title,post_status,post_content,post_excerpt,to_ping,pinged,post_content_filtered,post_date,post_date_gmt,post_modified,post_modified_gmt) \n' +
+    'VALUES' + res.join(',\n'))
 
   return maxId
 }

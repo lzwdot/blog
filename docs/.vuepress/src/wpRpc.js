@@ -46,15 +46,14 @@ function logCallback(tips, error, data) {
   console.log(`[${tips}]`, require('util').inspect(error ? error : data, {showHidden: true, colors: true, depth: 10}));
 }
 
+
 /**
  * update 内容
- *
  * @param wpRpc
  * @param page
- * @param files
  * @returns {Promise<void>}
  */
-async function wpEditPost(wpRpc, page, files = []) {
+async function wpEditPost(wpRpc, page) {
   const frontMatter = page.frontmatter;
   const post_content = page.contentRendered.replace(
     /<html-demo>([\s\S]*?)<\/html-demo>/ig,
@@ -82,10 +81,6 @@ async function wpEditPost(wpRpc, page, files = []) {
       if (tags[key]) post_tag.push(tags[key])
     }
   }
-
-
-  // 控制需要更新的文章
-  if (!files.includes(post_id)) return
 
   const content = {
     ID: post_id,
@@ -160,6 +155,23 @@ async function wpNewTerm(wpRpc) {
     }
     sleep(5)
   }
+}
+
+/**
+ * delete 文章
+ * @param wpRpc
+ * @param page
+ * @returns {Promise<void>}
+ */
+async function wpDeletePost(wpRpc, page) {
+  const frontMatter = page.frontmatter;
+  const post_id = frontMatter.ID
+  const post_title = frontMatter.title
+
+  // 删除
+  wpRpc.deletePost(blogId, post_id).send((err, data) => {
+    logCallback(post_title + '：deletePost', err, data)
+  })
 }
 
 module.exports = {

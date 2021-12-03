@@ -236,8 +236,6 @@ title: 归档
 - [crypto-js与php通过aes加密传输](/mdpress/posts/php-usage/24382.md)<span class="date">（2020.01.17）</span>    
 - [监听url的location.hash（即#值）变化](/mdpress/posts/js-css/24370.md)<span class="date">（2020.01.15）</span>    
 - [git push处于writing objects进度不变](/mdpress/posts/git/24367.md)<span class="date">（2020.01.15）</span>    
-- [WPTavern一个专注于WordPress的网站](/mdpress/posts/php-usage/24360.md)<span class="date">（2020.01.14）</span>    
-- [免费获取ThemeBeans所有商业主题](/mdpress/posts/php-usage/24293.md)<span class="date">（2020.01.08）</span>    
 - [Laravel 正确的注销方式](/mdpress/posts/laravel/24287.md)<span class="date">（2020.01.08）</span>    
 - [开源的SQL可视化工具HeidiSQL](/mdpress/posts/notes/24227.md)<span class="date">（2020.01.04）</span>    
 - [WordPress导入测试数据(sample data)](/mdpress/posts/php-usage/24213.md)<span class="date">（2020.01.02）</span>    
@@ -256,7 +254,6 @@ title: 归档
 - [解决chrome不支持form.submit的问题](/mdpress/posts/js-css/23600.md)<span class="date">（2019.08.14）</span>    
 - [Security AppScan Standard常见漏洞](/mdpress/posts/notes/23583.md)<span class="date">（2019.08.12）</span>    
 - [进程与线程的通俗理解](/mdpress/posts/notes/23595.md)<span class="date">（2019.08.12）</span>    
-- [【急】域名转让](/mdpress/posts/others/23553.md)<span class="date">（2019.08.10）</span>    
 - [简单的js倒计时函数](/mdpress/posts/js-css/23524.md)<span class="date">（2019.07.18）</span>    
 - [js 执行字符串函数](/mdpress/posts/js-css/23520.md)<span class="date">（2019.07.10）</span>    
 - [阿里云，腾讯云Composer 全量镜像](/mdpress/posts/composer/23513.md)<span class="date">（2019.07.05）</span>    

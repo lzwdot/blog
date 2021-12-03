@@ -28,8 +28,6 @@ title: PHP应用
 - [wordpress.org 出现429 Too Many Requests](/mdpress/posts/php-usage/24146.md)    
 - [排名前50的WP插件和主题](/mdpress/posts/php-usage/24150.md)    
 - [WordPress导入测试数据(sample data)](/mdpress/posts/php-usage/24213.md)    
-- [免费获取ThemeBeans所有商业主题](/mdpress/posts/php-usage/24293.md)    
-- [WPTavern一个专注于WordPress的网站](/mdpress/posts/php-usage/24360.md)    
 - [crypto-js与php通过aes加密传输](/mdpress/posts/php-usage/24382.md)    
 - [记录从 WordPress 迁移到 Typecho](/mdpress/posts/php-usage/24606.md)    
 - [Typecho 免插件生成文章目录](/mdpress/posts/php-usage/24613.md)    

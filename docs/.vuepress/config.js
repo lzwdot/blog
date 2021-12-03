@@ -115,14 +115,17 @@ module.exports = {
     }],
     [require('./plugins/vuepress-plugin-to-wordpress'), {
       ...rpcConf,
-      onGenerated: (wpRpc, app) => {
+      onPrepared: (wpRpc, app) => {
         if (!rpcConf.username) return
 
         (async function () {
           const files = await getGitFiles()
           app.pages.forEach(async page => {
-            sleep(10)
-            await wpEditPost(wpRpc, page, files)
+            await sleep(3000)
+
+            // 控制需要更新的文章
+            // if (!files.includes(post_id)) return
+            // await wpEditPost(wpRpc, page, files)
           })
         })()
       }
