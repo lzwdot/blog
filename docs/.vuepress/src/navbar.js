@@ -7,7 +7,7 @@ function getNavbar(baseUrl) {
     {text: '归档', link: '/pages/archive'},
     {text: '分类', link: '/pages/category'},
     {text: '关于', link: '/pages/about'},
-    {text: 'GitHub', link: `https://lzwdot.github.io${baseUrl}`}
+    {text: 'GitHub主页', link: `https://lzwdot.github.io`}
   ]
 
   return navTree

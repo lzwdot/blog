@@ -7,7 +7,7 @@ set -e
 git init
 git add -A
 git commit -m 'update'
-git push -f origin master
+git push -f origin main
 
 # 生成静态文件
 # npm run docs:build

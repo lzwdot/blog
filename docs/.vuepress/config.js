@@ -55,7 +55,7 @@ module.exports = {
     editLinkText: '编辑页面',
     docsRepo: 'lzwdot/blogs',
     docsDir: 'docs',
-    docsBranch: 'master',
+    docsBranch: 'main',
 
     backToHome: '回到首页',
     notFound: ['什么都没找到'],
