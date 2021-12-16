@@ -10,7 +10,7 @@ img{
 
 # 关于
 
-lzw. 码农，长期从事互联网开发工作，涉及LAMP，前端，小程序等方面。爱生活，爱技术！欢迎交流，可通过以下方式联系我：
+lzw. 一个 web 开发者！欢迎交流，可通过以下方式联系我：
 
 GitHub：[打开GitHub](https://github.com/lzwdot)  
 邮箱：[发送邮件](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kf3r5vX_5dHg4L-y-vw)   

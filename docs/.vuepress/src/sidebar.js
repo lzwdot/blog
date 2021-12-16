@@ -85,7 +85,7 @@ function writeArchive(path, archives, baseUrl) {
   fs.writeFileSync(filePath, content)
 
   // 写入最新文章
-  writeReadMe(path, recentPosts)
+  writeReadMe(path, recentPosts, `<span class="el-link el-link--info"><span class="el-link--inner">与 <a href="//lzwdot.com/${baseUrl}">lzwdot.com</a> 同步中...</span></span>`)
 }
 
 /**
@@ -118,12 +118,14 @@ function writeCategory(path, categories, baseUrl) {
   fs.writeFileSync(filePath, content)
 }
 
+
 /**
  * 创建 README.md 文件
- * @param {*} path
- * @param {*} content
+ * @param path
+ * @param content
+ * @param extra
  */
-function writeReadMe(path, content) {
+function writeReadMe(path, content, extra = '') {
   const filePath = `${path}/README.md`
 
   // 先删除文件，重建
@@ -131,7 +133,7 @@ function writeReadMe(path, content) {
     const frontMatter = matter.read(filePath);
     const {title} = frontMatter.data
 
-    content = matter.stringify(`# ${title || '文章'}\n\n${content}`, frontMatter.data)
+    content = matter.stringify(`# ${title || '文章'} ${extra}\n\n${content}`, frontMatter.data)
 
     // 删除 README.md 文件
     fs.unlinkSync(filePath)

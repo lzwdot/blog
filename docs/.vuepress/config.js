@@ -4,7 +4,7 @@ const {getNavbar} = require('./src/navbar')
 const {getSidebar} = require('./src/sidebar')
 const {rpcConf, sleep, getGitFiles, wpEditPost, wpDeletePost, wpEditTerm} = require('./src/wpRpc')
 
-let baseUrl = '/mdpress';
+let baseUrl = '/blog';
 
 try {
   if (process.env.VERCEL) baseUrl = ''
