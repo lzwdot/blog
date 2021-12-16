@@ -99,11 +99,11 @@ async function wpEditPost(wpRpc, page, files = []) {
 
   const content = {
     ID: post_id,
-    post_title: '<![CDATA[' + post_title + ']]>',
+    post_title: `<![CDATA[${post_title}]]>`,
     post_author: blogId,
     post_type: 'post',
     post_status: 'publish',
-    post_content: '<![CDATA[' + post_content + ']]>',
+    post_content: `<![CDATA[${post_content}]]>`,
     terms_names: {
       'category': post_category,
       'post_tag': post_tag
@@ -184,7 +184,10 @@ async function wpEditTerm(wpRpc) {
   // console.log(terms)
   for (const term of terms) {
     await sleep(100)
-    if (tags[term.name]) wpRpc.editTerm(blogId, term.term_id, {taxonomy:term.taxonomy,slug: tags[term.name]}).send((err, data) => {
+    if (tags[term.name]) wpRpc.editTerm(blogId, term.term_id, {
+      taxonomy: term.taxonomy,
+      slug: `<![CDATA[${tags[term.name]}]]>`,
+    }).send((err, data) => {
       logCallback(term.name + ' ：editTerm', err, data)
     })
   }
