@@ -12,8 +12,8 @@ const docPath = path.join(__dirname, '../../') // 获取文档目录
 const dirPath = `learns/vue-study`
 const title = '标题'
 
-getMaxId()
-return
+// getMaxId()
+// return
 createMd(dirPath, title)
 
 
