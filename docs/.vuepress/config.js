@@ -115,7 +115,7 @@ module.exports = {
     }],
     [require('./plugins/vuepress-plugin-to-wordpress'), {
       ...rpcConf,
-      onGenerated: async (wpRpc, app) => {
+      onPrepared: async (wpRpc, app) => {
         if (!rpcConf.username) return
 
         const files = await getGitFiles()

@@ -103,7 +103,8 @@
             "text": "vue 学习",
             "children": [
                 "/frame/vue-study/27988.md",
-                "/frame/vue-study/27990.md"
+                "/frame/vue-study/27990.md",
+                "/frame/vue-study/28654.md"
             ]
         }
     ],
@@ -284,12 +285,6 @@
                 "/javascript/js-faq/26717.md",
                 "/javascript/js-faq/26719.md"
             ]
-        }
-    ],
-    "/learns/vue-study/": [
-        {
-            "text": "vue-study",
-            "children": []
         }
     ],
     "/network/http/": [

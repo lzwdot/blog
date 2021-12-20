@@ -142,7 +142,7 @@ function wpNewPost(wpRpc, callback) {
 }
 
 async function wpEditTerm(wpRpc) {
-  // // 处理分类  slug => '标签'
+  // 处理分类  slug => '标签'
   // for (const key in tags) {
   //   if (tags[key]) {
   //     const content = {
@@ -151,7 +151,7 @@ async function wpEditTerm(wpRpc) {
   //       slug: key
   //     }
   //     wpRpc.newTerm(blogId, content).send((err, data) => {
-  //       logCallback(key + ' category：editPost', err, data)
+  //       logCallback(key + ' category：newTerm', err, data)
   //     })
   //   }
   //   sleep(5)
@@ -165,11 +165,13 @@ async function wpEditTerm(wpRpc) {
   //       slug: key
   //     }
   //     wpRpc.newTerm(blogId, content).send((err, data) => {
-  //       logCallback(key + ' post_tag：editPost', err, data)
+  //       logCallback(key + ' post_tag：newTerm', err, data)
   //     })
   //   }
   //   sleep(5)
   // }
+
+
   const terms = []
   wpRpc.getTerms(blogId, 'post_tag').send((err, data) => {
     // logCallback('post_tag ：getTerms', err, data)

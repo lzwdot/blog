@@ -5,3 +5,4 @@ title: vue 学习
 
 - [手写简易版 VueRouter](/blog/frame/vue-study/27988.md)    
 - [手写简易版 Vuex](/blog/frame/vue-study/27990.md)    
+- [手写简易版 Vue 2.0](/blog/frame/vue-study/28654.md)    

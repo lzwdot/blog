@@ -21,17 +21,16 @@ title: 分类
 - [vuejs 原理解说](/blog/frame/vuejs-principle/)    
 - [vuejs 使用问题](/blog/frame/vuejs-use/)    
 - [vuejs 3 基本了解](/blog/frame/vuejs3-base/)    
-#### 工程化   
-- [开发运行环境](/blog/engineering/dev-prod-env/)    
-- [Git](/blog/engineering/git/)    
-- [webpack](/blog/engineering/webpack/)    
-- [webpack 常见问题](/blog/engineering/webpack-faq/)    
-- [undefined](/blog/learns/vue-study/)    
 #### 编程   
 - [数据结构与算法](/blog/program/algorithm/)    
 - [数据可视化](/blog/program/charts/)    
 - [演示](/blog/program/demos/)    
 - [Web Components](/blog/program/web-components/)    
+#### 工程化   
+- [开发运行环境](/blog/engineering/dev-prod-env/)    
+- [Git](/blog/engineering/git/)    
+- [webpack](/blog/engineering/webpack/)    
+- [webpack 常见问题](/blog/engineering/webpack-faq/)    
 #### 产品   
 - [项目](/blog/product/project/)    
 - [工具](/blog/product/tools/)    

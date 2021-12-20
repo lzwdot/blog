@@ -4,6 +4,7 @@ title: 归档
 # 归档
 
 ## <span class="center">2021 年</span>   
+- [手写简易版 Vue 2.0](/blog/frame/vue-study/28654.md)<span class="date">（2021.12.16）</span>    
 - [手写简易版 VueRouter](/blog/frame/vue-study/27988.md)<span class="date">（2021.11.24）</span>    
 - [手写简易版 Vuex](/blog/frame/vue-study/27990.md)<span class="date">（2021.11.24）</span>    
 - [使用 canvas 实现滑动验证码](/blog/program/demos/27987.md)<span class="date">（2021.10.10）</span>    
