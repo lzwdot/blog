@@ -1,358 +1,307 @@
 {
-    "/codes/algorithm/": [
-        {
-            "text": "数据结构与算法",
-            "children": [
-                "/codes/algorithm/27969.md",
-                "/codes/algorithm/27970.md"
-            ]
-        }
-    ],
-    "/codes/charts/": [
-        {
-            "text": "数据可视化",
-            "children": [
-                "/codes/charts/27971.md",
-                "/codes/charts/27972.md",
-                "/codes/charts/27973.md",
-                "/codes/charts/27975.md",
-                "/codes/charts/27976.md",
-                "/codes/charts/27981.md",
-                "/codes/charts/27983.md"
-            ]
-        }
-    ],
-    "/codes/demos/": [
-        {
-            "text": "演示",
-            "children": [
-                "/codes/demos/27987.md"
-            ]
-        }
-    ],
-    "/codes/web-components/": [
-        {
-            "text": "Web Components",
-            "children": [
-                "/codes/web-components/27982.md"
-            ]
-        }
-    ],
-    "/learns/dev-prod-env/": [
-        {
-            "text": "开发运行环境",
-            "children": [
-                "/learns/dev-prod-env/26337.md",
-                "/learns/dev-prod-env/26347.md",
-                "/learns/dev-prod-env/26350.md",
-                "/learns/dev-prod-env/26372.md",
-                "/learns/dev-prod-env/26378.md",
-                "/learns/dev-prod-env/26380.md",
-                "/learns/dev-prod-env/26438.md",
-                "/learns/dev-prod-env/26473.md",
-                "/learns/dev-prod-env/26484.md",
-                "/learns/dev-prod-env/26487.md"
-            ]
-        }
-    ],
-    "/learns/html-css/": [
-        {
-            "text": "html/css 基础问题",
-            "children": [
-                "/learns/html-css/25179.md",
-                "/learns/html-css/25181.md",
-                "/learns/html-css/25183.md",
-                "/learns/html-css/25185.md",
-                "/learns/html-css/25187.md",
-                "/learns/html-css/25189.md",
-                "/learns/html-css/25241.md",
-                "/learns/html-css/25247.md",
-                "/learns/html-css/25253.md",
-                "/learns/html-css/25258.md",
-                "/learns/html-css/25260.md",
-                "/learns/html-css/25262.md",
-                "/learns/html-css/25264.md"
-            ]
-        }
-    ],
-    "/learns/http/": [
-        {
-            "text": "http 问题",
-            "children": [
-                "/learns/http/24523.md",
-                "/learns/http/26282.md",
-                "/learns/http/26284.md",
-                "/learns/http/26286.md",
-                "/learns/http/26288.md"
-            ]
-        }
-    ],
-    "/learns/js-asyn/": [
+    "/async/js-asyn/": [
         {
             "text": "js 异步问题",
             "children": [
-                "/learns/js-asyn/25763.md",
-                "/learns/js-asyn/25811.md",
-                "/learns/js-asyn/25813.md",
-                "/learns/js-asyn/25815.md",
-                "/learns/js-asyn/25817.md",
-                "/learns/js-asyn/25819.md",
-                "/learns/js-asyn/25821.md",
-                "/learns/js-asyn/26026.md"
+                "/async/js-asyn/25763.md",
+                "/async/js-asyn/25811.md",
+                "/async/js-asyn/25813.md",
+                "/async/js-asyn/25815.md",
+                "/async/js-asyn/25817.md",
+                "/async/js-asyn/25819.md",
+                "/async/js-asyn/25821.md",
+                "/async/js-asyn/26026.md"
             ]
         }
     ],
-    "/learns/js-base/": [
-        {
-            "text": "js 基础问题",
-            "children": [
-                "/learns/js-base/25272.md",
-                "/learns/js-base/25274.md",
-                "/learns/js-base/25277.md",
-                "/learns/js-base/25673.md",
-                "/learns/js-base/25680.md",
-                "/learns/js-base/25686.md",
-                "/learns/js-base/25694.md",
-                "/learns/js-base/25696.md",
-                "/learns/js-base/25698.md",
-                "/learns/js-base/25702.md",
-                "/learns/js-base/25704.md",
-                "/learns/js-base/25756.md",
-                "/learns/js-base/25760.md"
-            ]
-        }
-    ],
-    "/learns/js-faq/": [
-        {
-            "text": "js 常见问题",
-            "children": [
-                "/learns/js-faq/26500.md",
-                "/learns/js-faq/26510.md",
-                "/learns/js-faq/26562.md",
-                "/learns/js-faq/26564.md",
-                "/learns/js-faq/26573.md",
-                "/learns/js-faq/26575.md",
-                "/learns/js-faq/26577.md",
-                "/learns/js-faq/26592.md",
-                "/learns/js-faq/26594.md",
-                "/learns/js-faq/26596.md",
-                "/learns/js-faq/26614.md",
-                "/learns/js-faq/26616.md",
-                "/learns/js-faq/26618.md",
-                "/learns/js-faq/26625.md",
-                "/learns/js-faq/26630.md",
-                "/learns/js-faq/26633.md",
-                "/learns/js-faq/26636.md",
-                "/learns/js-faq/26638.md",
-                "/learns/js-faq/26640.md",
-                "/learns/js-faq/26648.md",
-                "/learns/js-faq/26650.md",
-                "/learns/js-faq/26666.md",
-                "/learns/js-faq/26668.md",
-                "/learns/js-faq/26670.md",
-                "/learns/js-faq/26678.md",
-                "/learns/js-faq/26680.md",
-                "/learns/js-faq/26682.md",
-                "/learns/js-faq/26695.md",
-                "/learns/js-faq/26698.md",
-                "/learns/js-faq/26700.md",
-                "/learns/js-faq/26715.md",
-                "/learns/js-faq/26717.md",
-                "/learns/js-faq/26719.md"
-            ]
-        }
-    ],
-    "/learns/js-web-api/": [
+    "/browser/js-web-api/": [
         {
             "text": "js web api问题",
             "children": [
-                "/learns/js-web-api/26038.md",
-                "/learns/js-web-api/26041.md",
-                "/learns/js-web-api/26043.md",
-                "/learns/js-web-api/26045.md",
-                "/learns/js-web-api/26136.md",
-                "/learns/js-web-api/26138.md",
-                "/learns/js-web-api/26149.md",
-                "/learns/js-web-api/26152.md",
-                "/learns/js-web-api/26154.md",
-                "/learns/js-web-api/26171.md",
-                "/learns/js-web-api/26186.md",
-                "/learns/js-web-api/26265.md"
+                "/browser/js-web-api/26038.md",
+                "/browser/js-web-api/26041.md",
+                "/browser/js-web-api/26043.md",
+                "/browser/js-web-api/26045.md",
+                "/browser/js-web-api/26136.md",
+                "/browser/js-web-api/26138.md",
+                "/browser/js-web-api/26149.md",
+                "/browser/js-web-api/26152.md",
+                "/browser/js-web-api/26154.md",
+                "/browser/js-web-api/26171.md",
+                "/browser/js-web-api/26186.md",
+                "/browser/js-web-api/26265.md"
             ]
         }
     ],
-    "/learns/project/": [
+    "/design/": [
         {
-            "text": "项目",
-            "children": [
-                "/learns/project/27226.md",
-                "/learns/project/27231.md",
-                "/learns/project/27238.md"
-            ]
+            "text": "设计模式",
+            "children": []
         }
     ],
-    "/learns/vue-study/": [
+    "/engineering/dev-prod-env/": [
         {
-            "text": "vue 学习",
+            "text": "开发运行环境",
             "children": [
-                "/learns/vue-study/27988.md",
-                "/learns/vue-study/27990.md"
+                "/engineering/dev-prod-env/26337.md",
+                "/engineering/dev-prod-env/26347.md",
+                "/engineering/dev-prod-env/26350.md",
+                "/engineering/dev-prod-env/26372.md",
+                "/engineering/dev-prod-env/26378.md",
+                "/engineering/dev-prod-env/26380.md",
+                "/engineering/dev-prod-env/26438.md",
+                "/engineering/dev-prod-env/26473.md",
+                "/engineering/dev-prod-env/26484.md",
+                "/engineering/dev-prod-env/26487.md"
             ]
         }
     ],
-    "/learns/vuejs-faq/": [
-        {
-            "text": "vuejs 常见问题",
-            "children": [
-                "/learns/vuejs-faq/27125.md",
-                "/learns/vuejs-faq/27127.md",
-                "/learns/vuejs-faq/27128.md",
-                "/learns/vuejs-faq/27129.md",
-                "/learns/vuejs-faq/27131.md",
-                "/learns/vuejs-faq/27132.md",
-                "/learns/vuejs-faq/27134.md",
-                "/learns/vuejs-faq/27137.md",
-                "/learns/vuejs-faq/27138.md",
-                "/learns/vuejs-faq/27139.md",
-                "/learns/vuejs-faq/27141.md",
-                "/learns/vuejs-faq/27142.md",
-                "/learns/vuejs-faq/27143.md",
-                "/learns/vuejs-faq/27144.md",
-                "/learns/vuejs-faq/27145.md",
-                "/learns/vuejs-faq/27147.md",
-                "/learns/vuejs-faq/27148.md",
-                "/learns/vuejs-faq/27150.md",
-                "/learns/vuejs-faq/27151.md",
-                "/learns/vuejs-faq/27152.md",
-                "/learns/vuejs-faq/27153.md",
-                "/learns/vuejs-faq/27154.md",
-                "/learns/vuejs-faq/27156.md",
-                "/learns/vuejs-faq/27157.md",
-                "/learns/vuejs-faq/27158.md",
-                "/learns/vuejs-faq/27159.md",
-                "/learns/vuejs-faq/27161.md",
-                "/learns/vuejs-faq/27163.md",
-                "/learns/vuejs-faq/27958.md"
-            ]
-        }
-    ],
-    "/learns/vuejs-principle/": [
-        {
-            "text": "vuejs 原理解说",
-            "children": [
-                "/learns/vuejs-principle/26955.md",
-                "/learns/vuejs-principle/26963.md",
-                "/learns/vuejs-principle/26981.md",
-                "/learns/vuejs-principle/27005.md",
-                "/learns/vuejs-principle/27026.md",
-                "/learns/vuejs-principle/27051.md",
-                "/learns/vuejs-principle/27062.md",
-                "/learns/vuejs-principle/27116.md",
-                "/learns/vuejs-principle/27119.md",
-                "/learns/vuejs-principle/27120.md",
-                "/learns/vuejs-principle/27121.md",
-                "/learns/vuejs-principle/27122.md"
-            ]
-        }
-    ],
-    "/learns/vuejs-use/": [
-        {
-            "text": "vuejs 使用问题",
-            "children": [
-                "/learns/vuejs-use/26733.md",
-                "/learns/vuejs-use/26735.md",
-                "/learns/vuejs-use/26743.md",
-                "/learns/vuejs-use/26747.md",
-                "/learns/vuejs-use/26752.md",
-                "/learns/vuejs-use/26756.md",
-                "/learns/vuejs-use/26763.md",
-                "/learns/vuejs-use/26811.md",
-                "/learns/vuejs-use/26831.md",
-                "/learns/vuejs-use/26879.md",
-                "/learns/vuejs-use/26888.md",
-                "/learns/vuejs-use/26893.md",
-                "/learns/vuejs-use/26902.md",
-                "/learns/vuejs-use/26919.md",
-                "/learns/vuejs-use/26924.md",
-                "/learns/vuejs-use/26929.md",
-                "/learns/vuejs-use/26941.md",
-                "/learns/vuejs-use/26946.md"
-            ]
-        }
-    ],
-    "/learns/vuejs3-base/": [
-        {
-            "text": "vuejs 3 基本了解",
-            "children": [
-                "/learns/vuejs3-base/27166.md",
-                "/learns/vuejs3-base/27167.md",
-                "/learns/vuejs3-base/27175.md",
-                "/learns/vuejs3-base/27891.md",
-                "/learns/vuejs3-base/27897.md"
-            ]
-        }
-    ],
-    "/learns/webpack/": [
-        {
-            "text": "webpack",
-            "children": [
-                "/learns/webpack/27178.md",
-                "/learns/webpack/27184.md",
-                "/learns/webpack/27186.md",
-                "/learns/webpack/27187.md",
-                "/learns/webpack/27190.md",
-                "/learns/webpack/27191.md",
-                "/learns/webpack/27195.md",
-                "/learns/webpack/27202.md",
-                "/learns/webpack/27204.md"
-            ]
-        }
-    ],
-    "/learns/webpack-faq/": [
-        {
-            "text": "webpack 常见问题",
-            "children": [
-                "/learns/webpack-faq/27209.md",
-                "/learns/webpack-faq/27211.md",
-                "/learns/webpack-faq/27212.md",
-                "/learns/webpack-faq/27214.md",
-                "/learns/webpack-faq/27215.md",
-                "/learns/webpack-faq/27216.md",
-                "/learns/webpack-faq/27220.md",
-                "/learns/webpack-faq/27222.md",
-                "/learns/webpack-faq/27223.md",
-                "/learns/webpack-faq/27224.md"
-            ]
-        }
-    ],
-    "/posts/composer/": [
-        {
-            "text": "Composer",
-            "children": [
-                "/posts/composer/22760.md",
-                "/posts/composer/23513.md"
-            ]
-        }
-    ],
-    "/posts/git/": [
+    "/engineering/git/": [
         {
             "text": "Git",
             "children": [
-                "/posts/git/24367.md",
-                "/posts/git/24766.md"
+                "/engineering/git/24367.md",
+                "/engineering/git/24766.md"
             ]
         }
     ],
-    "/posts/go-usage/": [
+    "/engineering/webpack/": [
         {
-            "text": "Go使用",
+            "text": "webpack",
             "children": [
-                "/posts/go-usage/24541.md",
-                "/posts/go-usage/24549.md",
-                "/posts/go-usage/24552.md",
-                "/posts/go-usage/24560.md",
-                "/posts/go-usage/24599.md"
+                "/engineering/webpack/27178.md",
+                "/engineering/webpack/27184.md",
+                "/engineering/webpack/27186.md",
+                "/engineering/webpack/27187.md",
+                "/engineering/webpack/27190.md",
+                "/engineering/webpack/27191.md",
+                "/engineering/webpack/27195.md",
+                "/engineering/webpack/27202.md",
+                "/engineering/webpack/27204.md"
             ]
+        }
+    ],
+    "/engineering/webpack-faq/": [
+        {
+            "text": "webpack 常见问题",
+            "children": [
+                "/engineering/webpack-faq/27209.md",
+                "/engineering/webpack-faq/27211.md",
+                "/engineering/webpack-faq/27212.md",
+                "/engineering/webpack-faq/27214.md",
+                "/engineering/webpack-faq/27215.md",
+                "/engineering/webpack-faq/27216.md",
+                "/engineering/webpack-faq/27220.md",
+                "/engineering/webpack-faq/27222.md",
+                "/engineering/webpack-faq/27223.md",
+                "/engineering/webpack-faq/27224.md"
+            ]
+        }
+    ],
+    "/frame/vue-study/": [
+        {
+            "text": "vue 学习",
+            "children": [
+                "/frame/vue-study/27988.md",
+                "/frame/vue-study/27990.md"
+            ]
+        }
+    ],
+    "/frame/vuejs-faq/": [
+        {
+            "text": "vuejs 常见问题",
+            "children": [
+                "/frame/vuejs-faq/27125.md",
+                "/frame/vuejs-faq/27127.md",
+                "/frame/vuejs-faq/27128.md",
+                "/frame/vuejs-faq/27129.md",
+                "/frame/vuejs-faq/27131.md",
+                "/frame/vuejs-faq/27132.md",
+                "/frame/vuejs-faq/27134.md",
+                "/frame/vuejs-faq/27137.md",
+                "/frame/vuejs-faq/27138.md",
+                "/frame/vuejs-faq/27139.md",
+                "/frame/vuejs-faq/27141.md",
+                "/frame/vuejs-faq/27142.md",
+                "/frame/vuejs-faq/27143.md",
+                "/frame/vuejs-faq/27144.md",
+                "/frame/vuejs-faq/27145.md",
+                "/frame/vuejs-faq/27147.md",
+                "/frame/vuejs-faq/27148.md",
+                "/frame/vuejs-faq/27150.md",
+                "/frame/vuejs-faq/27151.md",
+                "/frame/vuejs-faq/27152.md",
+                "/frame/vuejs-faq/27153.md",
+                "/frame/vuejs-faq/27154.md",
+                "/frame/vuejs-faq/27156.md",
+                "/frame/vuejs-faq/27157.md",
+                "/frame/vuejs-faq/27158.md",
+                "/frame/vuejs-faq/27159.md",
+                "/frame/vuejs-faq/27161.md",
+                "/frame/vuejs-faq/27163.md",
+                "/frame/vuejs-faq/27958.md"
+            ]
+        }
+    ],
+    "/frame/vuejs-principle/": [
+        {
+            "text": "vuejs 原理解说",
+            "children": [
+                "/frame/vuejs-principle/26955.md",
+                "/frame/vuejs-principle/26963.md",
+                "/frame/vuejs-principle/26981.md",
+                "/frame/vuejs-principle/27005.md",
+                "/frame/vuejs-principle/27026.md",
+                "/frame/vuejs-principle/27051.md",
+                "/frame/vuejs-principle/27062.md",
+                "/frame/vuejs-principle/27116.md",
+                "/frame/vuejs-principle/27119.md",
+                "/frame/vuejs-principle/27120.md",
+                "/frame/vuejs-principle/27121.md",
+                "/frame/vuejs-principle/27122.md"
+            ]
+        }
+    ],
+    "/frame/vuejs-use/": [
+        {
+            "text": "vuejs 使用问题",
+            "children": [
+                "/frame/vuejs-use/26733.md",
+                "/frame/vuejs-use/26735.md",
+                "/frame/vuejs-use/26743.md",
+                "/frame/vuejs-use/26747.md",
+                "/frame/vuejs-use/26752.md",
+                "/frame/vuejs-use/26756.md",
+                "/frame/vuejs-use/26763.md",
+                "/frame/vuejs-use/26811.md",
+                "/frame/vuejs-use/26831.md",
+                "/frame/vuejs-use/26879.md",
+                "/frame/vuejs-use/26888.md",
+                "/frame/vuejs-use/26893.md",
+                "/frame/vuejs-use/26902.md",
+                "/frame/vuejs-use/26919.md",
+                "/frame/vuejs-use/26924.md",
+                "/frame/vuejs-use/26929.md",
+                "/frame/vuejs-use/26941.md",
+                "/frame/vuejs-use/26946.md"
+            ]
+        }
+    ],
+    "/frame/vuejs3-base/": [
+        {
+            "text": "vuejs 3 基本了解",
+            "children": [
+                "/frame/vuejs3-base/27166.md",
+                "/frame/vuejs3-base/27167.md",
+                "/frame/vuejs3-base/27175.md",
+                "/frame/vuejs3-base/27891.md",
+                "/frame/vuejs3-base/27897.md"
+            ]
+        }
+    ],
+    "/htmlcss/css/": [
+        {
+            "text": "css 基础",
+            "children": [
+                "/htmlcss/css/25181.md",
+                "/htmlcss/css/25183.md",
+                "/htmlcss/css/25185.md",
+                "/htmlcss/css/25187.md",
+                "/htmlcss/css/25189.md",
+                "/htmlcss/css/25241.md",
+                "/htmlcss/css/25247.md",
+                "/htmlcss/css/25253.md",
+                "/htmlcss/css/25258.md",
+                "/htmlcss/css/25260.md",
+                "/htmlcss/css/25262.md",
+                "/htmlcss/css/25264.md"
+            ]
+        }
+    ],
+    "/htmlcss/html/": [
+        {
+            "text": "html 基础",
+            "children": [
+                "/htmlcss/html/25179.md"
+            ]
+        }
+    ],
+    "/javascript/js-base/": [
+        {
+            "text": "js 基础问题",
+            "children": [
+                "/javascript/js-base/25272.md",
+                "/javascript/js-base/25274.md",
+                "/javascript/js-base/25277.md",
+                "/javascript/js-base/25673.md",
+                "/javascript/js-base/25680.md",
+                "/javascript/js-base/25686.md",
+                "/javascript/js-base/25694.md",
+                "/javascript/js-base/25696.md",
+                "/javascript/js-base/25698.md",
+                "/javascript/js-base/25702.md",
+                "/javascript/js-base/25704.md",
+                "/javascript/js-base/25756.md",
+                "/javascript/js-base/25760.md"
+            ]
+        }
+    ],
+    "/javascript/js-faq/": [
+        {
+            "text": "js 常见问题",
+            "children": [
+                "/javascript/js-faq/26500.md",
+                "/javascript/js-faq/26510.md",
+                "/javascript/js-faq/26562.md",
+                "/javascript/js-faq/26564.md",
+                "/javascript/js-faq/26573.md",
+                "/javascript/js-faq/26575.md",
+                "/javascript/js-faq/26577.md",
+                "/javascript/js-faq/26592.md",
+                "/javascript/js-faq/26594.md",
+                "/javascript/js-faq/26596.md",
+                "/javascript/js-faq/26614.md",
+                "/javascript/js-faq/26616.md",
+                "/javascript/js-faq/26618.md",
+                "/javascript/js-faq/26625.md",
+                "/javascript/js-faq/26630.md",
+                "/javascript/js-faq/26633.md",
+                "/javascript/js-faq/26636.md",
+                "/javascript/js-faq/26638.md",
+                "/javascript/js-faq/26640.md",
+                "/javascript/js-faq/26648.md",
+                "/javascript/js-faq/26650.md",
+                "/javascript/js-faq/26666.md",
+                "/javascript/js-faq/26668.md",
+                "/javascript/js-faq/26670.md",
+                "/javascript/js-faq/26678.md",
+                "/javascript/js-faq/26680.md",
+                "/javascript/js-faq/26682.md",
+                "/javascript/js-faq/26695.md",
+                "/javascript/js-faq/26698.md",
+                "/javascript/js-faq/26700.md",
+                "/javascript/js-faq/26715.md",
+                "/javascript/js-faq/26717.md",
+                "/javascript/js-faq/26719.md"
+            ]
+        }
+    ],
+    "/network/http/": [
+        {
+            "text": "http 问题",
+            "children": [
+                "/network/http/24523.md",
+                "/network/http/26282.md",
+                "/network/http/26284.md",
+                "/network/http/26286.md",
+                "/network/http/26288.md"
+            ]
+        }
+    ],
+    "/performance/": [
+        {
+            "text": "性能优化",
+            "children": []
         }
     ],
     "/posts/js-css/": [
@@ -391,65 +340,6 @@
             ]
         }
     ],
-    "/posts/laravel/": [
-        {
-            "text": "Laravel",
-            "children": [
-                "/posts/laravel/15545.md",
-                "/posts/laravel/20070.md",
-                "/posts/laravel/21907.md",
-                "/posts/laravel/22648.md",
-                "/posts/laravel/22672.md",
-                "/posts/laravel/22704.md",
-                "/posts/laravel/22773.md",
-                "/posts/laravel/22778.md",
-                "/posts/laravel/22793.md",
-                "/posts/laravel/22837.md",
-                "/posts/laravel/22849.md",
-                "/posts/laravel/23710.md",
-                "/posts/laravel/24287.md",
-                "/posts/laravel/24409.md",
-                "/posts/laravel/24435.md",
-                "/posts/laravel/24449.md",
-                "/posts/laravel/24451.md"
-            ]
-        }
-    ],
-    "/posts/linux/": [
-        {
-            "text": "Linux",
-            "children": [
-                "/posts/linux/15878.md",
-                "/posts/linux/20415.md",
-                "/posts/linux/22789.md",
-                "/posts/linux/24469.md",
-                "/posts/linux/24486.md"
-            ]
-        }
-    ],
-    "/posts/mysql/": [
-        {
-            "text": "MySQL",
-            "children": [
-                "/posts/mysql/15882.md",
-                "/posts/mysql/22696.md",
-                "/posts/mysql/22754.md",
-                "/posts/mysql/23618.md",
-                "/posts/mysql/24555.md"
-            ]
-        }
-    ],
-    "/posts/nginx/": [
-        {
-            "text": "Nginx",
-            "children": [
-                "/posts/nginx/17121.md",
-                "/posts/nginx/22650.md",
-                "/posts/nginx/23915.md",
-                "/posts/nginx/24990.md"
-            ]
-        }
-    ],
     "/posts/notes/": [
         {
             "text": "随笔",
@@ -466,52 +356,6 @@
             ]
         }
     ],
-    "/posts/others/": [
-        {
-            "text": "其他",
-            "children": []
-        }
-    ],
-    "/posts/php-usage/": [
-        {
-            "text": "PHP应用",
-            "children": [
-                "/posts/php-usage/15915.md",
-                "/posts/php-usage/20413.md",
-                "/posts/php-usage/22177.md",
-                "/posts/php-usage/22393.md",
-                "/posts/php-usage/22398.md",
-                "/posts/php-usage/22679.md",
-                "/posts/php-usage/22692.md",
-                "/posts/php-usage/22722.md",
-                "/posts/php-usage/22731.md",
-                "/posts/php-usage/22733.md",
-                "/posts/php-usage/22736.md",
-                "/posts/php-usage/22738.md",
-                "/posts/php-usage/22740.md",
-                "/posts/php-usage/22742.md",
-                "/posts/php-usage/22744.md",
-                "/posts/php-usage/22746.md",
-                "/posts/php-usage/22750.md",
-                "/posts/php-usage/22752.md",
-                "/posts/php-usage/22756.md",
-                "/posts/php-usage/23500.md",
-                "/posts/php-usage/24121.md",
-                "/posts/php-usage/24140.md",
-                "/posts/php-usage/24146.md",
-                "/posts/php-usage/24150.md",
-                "/posts/php-usage/24213.md",
-                "/posts/php-usage/24382.md",
-                "/posts/php-usage/24606.md",
-                "/posts/php-usage/24613.md",
-                "/posts/php-usage/24626.md",
-                "/posts/php-usage/24680.md",
-                "/posts/php-usage/24747.md",
-                "/posts/php-usage/27169.md",
-                "/posts/php-usage/27174.md"
-            ]
-        }
-    ],
     "/posts/reprinted/": [
         {
             "text": "转载",
@@ -522,13 +366,182 @@
             ]
         }
     ],
-    "/tools/": [
+    "/product/project/": [
+        {
+            "text": "项目",
+            "children": [
+                "/product/project/27226.md",
+                "/product/project/27231.md",
+                "/product/project/27238.md"
+            ]
+        }
+    ],
+    "/product/tools/": [
         {
             "text": "工具",
             "children": [
-                "/tools/27984.md",
-                "/tools/27985.md",
-                "/tools/27986.md"
+                "/product/tools/27984.md",
+                "/product/tools/27985.md",
+                "/product/tools/27986.md"
+            ]
+        }
+    ],
+    "/program/algorithm/": [
+        {
+            "text": "数据结构与算法",
+            "children": [
+                "/program/algorithm/27969.md",
+                "/program/algorithm/27970.md"
+            ]
+        }
+    ],
+    "/program/charts/": [
+        {
+            "text": "数据可视化",
+            "children": [
+                "/program/charts/27971.md",
+                "/program/charts/27972.md",
+                "/program/charts/27973.md",
+                "/program/charts/27975.md",
+                "/program/charts/27976.md",
+                "/program/charts/27981.md",
+                "/program/charts/27983.md"
+            ]
+        }
+    ],
+    "/program/demos/": [
+        {
+            "text": "演示",
+            "children": [
+                "/program/demos/27987.md"
+            ]
+        }
+    ],
+    "/program/web-components/": [
+        {
+            "text": "Web Components",
+            "children": [
+                "/program/web-components/27982.md"
+            ]
+        }
+    ],
+    "/server/composer/": [
+        {
+            "text": "Composer",
+            "children": [
+                "/server/composer/22760.md",
+                "/server/composer/23513.md"
+            ]
+        }
+    ],
+    "/server/go-usage/": [
+        {
+            "text": "Go使用",
+            "children": [
+                "/server/go-usage/24541.md",
+                "/server/go-usage/24549.md",
+                "/server/go-usage/24552.md",
+                "/server/go-usage/24560.md",
+                "/server/go-usage/24599.md"
+            ]
+        }
+    ],
+    "/server/laravel/": [
+        {
+            "text": "Laravel",
+            "children": [
+                "/server/laravel/15545.md",
+                "/server/laravel/20070.md",
+                "/server/laravel/21907.md",
+                "/server/laravel/22648.md",
+                "/server/laravel/22672.md",
+                "/server/laravel/22704.md",
+                "/server/laravel/22773.md",
+                "/server/laravel/22778.md",
+                "/server/laravel/22793.md",
+                "/server/laravel/22837.md",
+                "/server/laravel/22849.md",
+                "/server/laravel/23710.md",
+                "/server/laravel/24287.md",
+                "/server/laravel/24409.md",
+                "/server/laravel/24435.md",
+                "/server/laravel/24449.md",
+                "/server/laravel/24451.md"
+            ]
+        }
+    ],
+    "/server/linux/": [
+        {
+            "text": "Linux",
+            "children": [
+                "/server/linux/15878.md",
+                "/server/linux/20415.md",
+                "/server/linux/22789.md",
+                "/server/linux/24469.md",
+                "/server/linux/24486.md"
+            ]
+        }
+    ],
+    "/server/mysql/": [
+        {
+            "text": "MySQL",
+            "children": [
+                "/server/mysql/15882.md",
+                "/server/mysql/22696.md",
+                "/server/mysql/22754.md",
+                "/server/mysql/23618.md",
+                "/server/mysql/24555.md"
+            ]
+        }
+    ],
+    "/server/nginx/": [
+        {
+            "text": "Nginx",
+            "children": [
+                "/server/nginx/17121.md",
+                "/server/nginx/22650.md",
+                "/server/nginx/23915.md",
+                "/server/nginx/24990.md"
+            ]
+        }
+    ],
+    "/server/php-usage/": [
+        {
+            "text": "PHP应用",
+            "children": [
+                "/server/php-usage/15915.md",
+                "/server/php-usage/20413.md",
+                "/server/php-usage/22177.md",
+                "/server/php-usage/22393.md",
+                "/server/php-usage/22398.md",
+                "/server/php-usage/22679.md",
+                "/server/php-usage/22692.md",
+                "/server/php-usage/22722.md",
+                "/server/php-usage/22731.md",
+                "/server/php-usage/22733.md",
+                "/server/php-usage/22736.md",
+                "/server/php-usage/22738.md",
+                "/server/php-usage/22740.md",
+                "/server/php-usage/22742.md",
+                "/server/php-usage/22744.md",
+                "/server/php-usage/22746.md",
+                "/server/php-usage/22750.md",
+                "/server/php-usage/22752.md",
+                "/server/php-usage/22756.md",
+                "/server/php-usage/23500.md",
+                "/server/php-usage/24121.md",
+                "/server/php-usage/24140.md",
+                "/server/php-usage/24146.md",
+                "/server/php-usage/24150.md",
+                "/server/php-usage/24213.md",
+                "/server/php-usage/24382.md",
+                "/server/php-usage/24606.md",
+                "/server/php-usage/24613.md",
+                "/server/php-usage/24626.md",
+                "/server/php-usage/24680.md",
+                "/server/php-usage/24747.md",
+                "/server/php-usage/27169.md",
+                "/server/php-usage/27174.md"
             ]
         }
     ]

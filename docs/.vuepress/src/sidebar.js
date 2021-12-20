@@ -95,13 +95,18 @@ function writeArchive(path, archives, baseUrl) {
  */
 function writeCategory(path, categories, baseUrl) {
   const filePath = `${path}/pages/category.md`
-  const tagColor = ['success', 'info', 'warning', 'danger']
 
   let content = ''
+  // 排序
+  const cates = sortByOrder(path, Object.keys(categories))
   // 循环
-  categories.forEach((item, index) => {
-    content += buildMdLink(`${path}/${item}/README.md`, `${baseUrl}${item}`, `<span class="el-tag el-tag--${tagColor[index % 4]}">`, '</span>')
-  })
+  for (const key of cates) {
+    const readMe = getReadMe(`${path}/${key}`)
+    if (readMe.title) content += `#### ${readMe.title}   \n`
+    categories[key].forEach(item => {
+      content += buildMdLink(`${path}/${item}/README.md`, `${baseUrl}${item}`)
+    })
+  }
 
   // 先删除文件，重建
   if (fs.existsSync(filePath)) {
@@ -234,6 +239,27 @@ function sortByDate(path, data) {
 }
 
 /**
+ * 根据 order 正序排序
+ * @param {*} path
+ * @param {*} data
+ * @returns
+ */
+function sortByOrder(path, data) {
+  data.sort((a, b) => {
+    const {order: orderA} = getReadMe(`${path}/${a}`)
+    const {order: orderB} = getReadMe(`${path}/${b}`)
+
+    if (orderA && orderB) {
+      return orderA - orderB
+    }
+
+    return false
+  })
+
+  return data
+}
+
+/**
  * 遍历文件夹，生成 真实文件对象树
  * @returns  { name: '文件夹名称', data: [ {...}, {...} ], path: '路径'}
  */
@@ -329,6 +355,11 @@ function createSidebar(dirTree, baseUrl) {
 
         // 写入 readme
         writeReadMe(curPath, content)
+
+        // 获取文件夹 readme 内容
+        const {title} = getReadMe(curPath)
+        // 标签对象
+        if (title) tags[title] = curNode.name
       } else {
         // 把文件永久链接 写入到 readme 中，做成文件归档目录
         let content = ''
@@ -355,7 +386,11 @@ function createSidebar(dirTree, baseUrl) {
         }
 
         // 文件的父级目录插入到分类数组
-        categories.push(`${curNode.path}/`)
+        const catePath = curNode.path.split('/')
+        if (catePath.length > 2) {
+          if (!categories[catePath[1]]) categories[catePath[1]] = []
+          categories[catePath[1]].push(`${curNode.path}/`)
+        }
 
         // 写入内容到 readme 文件
         writeReadMe(curPath, content)

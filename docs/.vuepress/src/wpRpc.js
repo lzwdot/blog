@@ -40,7 +40,7 @@ async function getGitFiles() {
   // 删除的
   deleteFiles.forEach(item => {
     const ID = item.path.slice(item.path.lastIndexOf('/') + 1, item.path.lastIndexOf('.'))
-    if (parseInt(ID)) files['delete'].push(ID)
+    // if (parseInt(ID)) files['delete'].push(ID)
   })
 
   return files
