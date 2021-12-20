@@ -358,8 +358,13 @@ function createSidebar(dirTree, baseUrl) {
 
         // 获取文件夹 readme 内容
         const {title} = getReadMe(curPath)
+
         // 标签对象
-        if (title) tags[title] = curNode.name
+        const catePath = curNode.path.split('/')
+        if (title) tags[curNode.name] = {
+          title: title,
+          parent: catePath.length > 2 ? catePath[catePath.length - 2] : ''
+        }
       } else {
         // 把文件永久链接 写入到 readme 中，做成文件归档目录
         let content = ''
@@ -385,13 +390,6 @@ function createSidebar(dirTree, baseUrl) {
           }
         }
 
-        // 文件的父级目录插入到分类数组
-        const catePath = curNode.path.split('/')
-        if (catePath.length > 2) {
-          if (!categories[catePath[1]]) categories[catePath[1]] = []
-          categories[catePath[1]].push(`${curNode.path}/`)
-        }
-
         // 写入内容到 readme 文件
         writeReadMe(curPath, content)
 
@@ -402,8 +400,18 @@ function createSidebar(dirTree, baseUrl) {
           children: sortById(rootPath, children)  //排序
         })
 
+        // 文件的父级目录插入到分类数组
+        const catePath = curNode.path.split('/')
+        if (catePath.length > 2) {
+          if (!categories[catePath[catePath.length - 2]]) categories[catePath[catePath.length - 2]] = []
+          categories[catePath[catePath.length - 2]].push(`${curNode.path}/`)
+        }
+
         // 标签对象
-        if (title) tags[title] = curNode.name
+        if (title) tags[curNode.name] = {
+          title: title,
+          parent: catePath[catePath.length - 2]
+        }
 
         // 该路径下的目录
         sidebarData[`${curNode.path}/`] = sidebar

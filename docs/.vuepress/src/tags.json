@@ -1,47 +1,182 @@
 {
-    "js 异步问题": "js-asyn",
-    "异步": "async",
-    "js web api问题": "js-web-api",
-    "浏览器": "browser",
-    "设计模式": "design",
-    "开发运行环境": "dev-prod-env",
-    "Git": "git",
-    "webpack": "webpack",
-    "webpack 常见问题": "webpack-faq",
-    "工程化": "engineering",
-    "vue 学习": "vue-study",
-    "vuejs 常见问题": "vuejs-faq",
-    "vuejs 原理解说": "vuejs-principle",
-    "vuejs 使用问题": "vuejs-use",
-    "vuejs 3 基本了解": "vuejs3-base",
-    "框架": "frame",
-    "css 基础": "css",
-    "html 基础": "html",
-    "HTML/CSS": "htmlcss",
-    "js 基础问题": "js-base",
-    "js 常见问题": "js-faq",
-    "JS基础": "javascript",
-    "http 问题": "http",
-    "网络": "network",
-    "性能优化": "performance",
-    "JS/CSS": "js-css",
-    "随笔": "notes",
-    "转载": "reprinted",
-    "文章": "posts",
-    "项目": "project",
-    "工具": "tools",
-    "产品": "product",
-    "数据结构与算法": "algorithm",
-    "数据可视化": "charts",
-    "演示": "demos",
-    "Web Components": "web-components",
-    "编程": "program",
-    "Composer": "composer",
-    "Go使用": "go-usage",
-    "Laravel": "laravel",
-    "Linux": "linux",
-    "MySQL": "mysql",
-    "Nginx": "nginx",
-    "PHP应用": "php-usage",
-    "服务端": "server"
+    "js-asyn": {
+        "title": "js 异步问题",
+        "parent": "async"
+    },
+    "async": {
+        "title": "异步",
+        "parent": ""
+    },
+    "js-web-api": {
+        "title": "js web api问题",
+        "parent": "browser"
+    },
+    "browser": {
+        "title": "浏览器",
+        "parent": ""
+    },
+    "design": {
+        "title": "设计模式",
+        "parent": ""
+    },
+    "dev-prod-env": {
+        "title": "开发运行环境",
+        "parent": "engineering"
+    },
+    "git": {
+        "title": "Git",
+        "parent": "engineering"
+    },
+    "webpack": {
+        "title": "webpack",
+        "parent": "engineering"
+    },
+    "webpack-faq": {
+        "title": "webpack 常见问题",
+        "parent": "engineering"
+    },
+    "engineering": {
+        "title": "工程化",
+        "parent": ""
+    },
+    "vue-study": {
+        "title": "vue 学习",
+        "parent": "frame"
+    },
+    "vuejs-faq": {
+        "title": "vuejs 常见问题",
+        "parent": "frame"
+    },
+    "vuejs-principle": {
+        "title": "vuejs 原理解说",
+        "parent": "frame"
+    },
+    "vuejs-use": {
+        "title": "vuejs 使用问题",
+        "parent": "frame"
+    },
+    "vuejs3-base": {
+        "title": "vuejs 3 基本了解",
+        "parent": "frame"
+    },
+    "frame": {
+        "title": "框架",
+        "parent": ""
+    },
+    "css": {
+        "title": "css 基础",
+        "parent": "htmlcss"
+    },
+    "html": {
+        "title": "html 基础",
+        "parent": "htmlcss"
+    },
+    "htmlcss": {
+        "title": "HTML/CSS",
+        "parent": ""
+    },
+    "js-base": {
+        "title": "js 基础问题",
+        "parent": "javascript"
+    },
+    "js-faq": {
+        "title": "js 常见问题",
+        "parent": "javascript"
+    },
+    "javascript": {
+        "title": "JS基础",
+        "parent": ""
+    },
+    "http": {
+        "title": "http 问题",
+        "parent": "network"
+    },
+    "network": {
+        "title": "网络",
+        "parent": ""
+    },
+    "performance": {
+        "title": "性能优化",
+        "parent": ""
+    },
+    "js-css": {
+        "title": "JS/CSS",
+        "parent": "posts"
+    },
+    "notes": {
+        "title": "随笔",
+        "parent": "posts"
+    },
+    "reprinted": {
+        "title": "转载",
+        "parent": "posts"
+    },
+    "posts": {
+        "title": "文章",
+        "parent": ""
+    },
+    "project": {
+        "title": "项目",
+        "parent": "product"
+    },
+    "tools": {
+        "title": "工具",
+        "parent": "product"
+    },
+    "product": {
+        "title": "产品",
+        "parent": ""
+    },
+    "algorithm": {
+        "title": "数据结构与算法",
+        "parent": "program"
+    },
+    "charts": {
+        "title": "数据可视化",
+        "parent": "program"
+    },
+    "demos": {
+        "title": "演示",
+        "parent": "program"
+    },
+    "web-components": {
+        "title": "Web Components",
+        "parent": "program"
+    },
+    "program": {
+        "title": "编程",
+        "parent": ""
+    },
+    "composer": {
+        "title": "Composer",
+        "parent": "server"
+    },
+    "go-usage": {
+        "title": "Go使用",
+        "parent": "server"
+    },
+    "laravel": {
+        "title": "Laravel",
+        "parent": "server"
+    },
+    "linux": {
+        "title": "Linux",
+        "parent": "server"
+    },
+    "mysql": {
+        "title": "MySQL",
+        "parent": "server"
+    },
+    "nginx": {
+        "title": "Nginx",
+        "parent": "server"
+    },
+    "php-usage": {
+        "title": "PHP应用",
+        "parent": "server"
+    },
+    "server": {
+        "title": "服务端",
+        "parent": ""
+    }
 }

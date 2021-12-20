@@ -40,7 +40,7 @@ async function getGitFiles() {
   // 删除的
   deleteFiles.forEach(item => {
     const ID = item.path.slice(item.path.lastIndexOf('/') + 1, item.path.lastIndexOf('.'))
-    // if (parseInt(ID)) files['delete'].push(ID)
+    if (parseInt(ID)) files['delete'].push(ID)
   })
 
   return files
@@ -86,14 +86,14 @@ async function wpEditPost(wpRpc, page, files = []) {
   // 处理分类  slug => '标签'
   if (frontMatter.categories) {
     for (const key of frontMatter.categories) {
-      if (tags[key]) post_category.push(tags[key])
+      if (tags[key]) post_category.push(tags[key].title)
     }
   }
 
   // 处理标签  slug => '标签'
   if (frontMatter.tags) {
     for (const key of frontMatter.tags) {
-      if (tags[key]) post_tag.push(tags[key])
+      if (tags[key]) post_tag.push(tags[key].title)
     }
   }
 
@@ -142,35 +142,11 @@ function wpNewPost(wpRpc, callback) {
 }
 
 async function wpEditTerm(wpRpc) {
-  // 处理分类  slug => '标签'
-  // for (const key in tags) {
-  //   if (tags[key]) {
-  //     const content = {
-  //       name: '<![CDATA[' + tags[key] + ']]>',
-  //       taxonomy: 'category',
-  //       slug: key
-  //     }
-  //     wpRpc.newTerm(blogId, content).send((err, data) => {
-  //       logCallback(key + ' category：newTerm', err, data)
-  //     })
-  //   }
-  //   sleep(5)
-  // }
-  // // 处理标签  slug => '标签'
-  // for (const key in tags) {
-  //   if (tags[key]) {
-  //     const content = {
-  //       name: '<![CDATA[' + tags[key] + ']]>',
-  //       taxonomy: 'post_tag',
-  //       slug: key
-  //     }
-  //     wpRpc.newTerm(blogId, content).send((err, data) => {
-  //       logCallback(key + ' post_tag：newTerm', err, data)
-  //     })
-  //   }
-  //   sleep(5)
-  // }
-
+  // 反转下
+  const _tags = {}
+  for (const key in tags) {
+    _tags[tags[key].title] = key;
+  }
 
   const terms = []
   wpRpc.getTerms(blogId, 'post_tag').send((err, data) => {
@@ -182,14 +158,20 @@ async function wpEditTerm(wpRpc) {
     if (data) terms.push(...data)
   })
 
-  await sleep(10000)
+  await sleep(1000)
   // console.log(terms)
   for (const term of terms) {
     await sleep(100)
-    if (tags[term.name]) wpRpc.editTerm(blogId, term.term_id, {
-      taxonomy: term.taxonomy,
-      slug: `<![CDATA[${tags[term.name]}]]>`,
-    }).send((err, data) => {
+
+    let parent = tags[_tags[term.name]] ? tags[_tags[term.name]].parent : ''
+    if (parent) parent = terms.find(item => item.slug === parent)
+
+    if (_tags[term.name]) wpRpc.editTerm(blogId, term.term_id, Object.assign({
+        taxonomy: term.taxonomy,
+        slug: `<![CDATA[${_tags[term.name]}]]>`
+      },
+      term.taxonomy == 'category' && parent ? {parent: parent.term_id} : {}
+    )).send((err, data) => {
       logCallback(term.name + ' ：editTerm', err, data)
     })
   }
