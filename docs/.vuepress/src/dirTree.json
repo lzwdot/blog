@@ -116,8 +116,7 @@
                 "name": "vue-study",
                 "data": [
                     "27988.md",
-                    "27990.md",
-                    "28654.md"
+                    "27990.md"
                 ],
                 "path": "/frame/vue-study"
             },
@@ -306,6 +305,17 @@
             }
         ],
         "path": "/javascript"
+    },
+    {
+        "name": "learns",
+        "data": [
+            {
+                "name": "vue-study",
+                "data": [],
+                "path": "/learns/vue-study"
+            }
+        ],
+        "path": "/learns"
     },
     {
         "name": "network",
