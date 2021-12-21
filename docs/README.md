@@ -14,7 +14,7 @@ features:
 footerHtml: true
 footer: MIT Licensed | Copyright © 2021-present <a href="/">Lzw.</a>
 ---
-# 首页 <span class="el-link el-link--info"><span class="el-link--inner">与 <a href="//lzwdot.com//blog">lzwdot.com</a> 同步中...</span></span>
+# 首页 <span class="el-link el-link--info"><span class="el-link--inner">与 <a href="//lzwdot.com/blog">lzwdot.com</a> 同步中...</span></span>
 
 - <span class="date">2021年12月16日</span>&raquo; [手写简易版 Vue 2.0](/blog/frame/vue-study/28654.md)    
 - <span class="date">2021年11月24日</span>&raquo; [手写简易版 VueRouter](/blog/frame/vue-study/27988.md)    
