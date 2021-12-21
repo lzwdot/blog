@@ -115,14 +115,14 @@ module.exports = {
     }],
     [require('vuepress-plugin-to-wordpress'), {
       ...rpcConf,
-      onGenerated: async (wpRpc, app) => {
+      onPrepared: async (wpRpc, app) => {
         if (!rpcConf.username) return
 
         const files = await getGitFiles()
 
         await wpDeletePost(wpRpc, files['delete'])
         for (const page of app.pages) {
-          await sleep(100)
+          await sleep(200)
           await wpEditPost(wpRpc, page, files['edit'])
         }
         await wpEditTerm(wpRpc)

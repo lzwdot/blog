@@ -158,7 +158,7 @@ async function wpEditTerm(wpRpc) {
     if (data) terms.push(...data)
   })
 
-  await sleep(1000)
+  await sleep(2000)
   // console.log(terms)
   for (const term of terms) {
     await sleep(100)
