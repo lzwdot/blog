@@ -85,7 +85,7 @@ function writeArchive(path, archives, baseUrl) {
   fs.writeFileSync(filePath, content)
 
   // 写入最新文章
-  writeReadMe(path, recentPosts, `<span class="el-link el-link--info"><span class="el-link--inner">与 <a href="//lzwdot.com/${baseUrl}">lzwdot.com</a> 同步中...</span></span>`)
+  writeReadMe(path, recentPosts, `<span class="el-link el-link--info"><span class="el-link--inner">与 <a href="//lzwdot.com/blog/">lzwdot.com</a> 同步中...</span></span>`)
 }
 
 /**
