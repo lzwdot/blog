@@ -43,6 +43,10 @@
         "title": "vue 学习",
         "parent": "frame"
     },
+    "vue2-src": {
+        "title": "vue2 源码学习",
+        "parent": "frame"
+    },
     "vuejs-faq": {
         "title": "vuejs 常见问题",
         "parent": "frame"

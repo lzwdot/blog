@@ -4,6 +4,9 @@ title: 归档
 # 归档
 
 ## <span class="center">2021 年</span>   
+- [vue2 响应式原理](/blog/frame/vue2-src/28757.md)<span class="date">（2021.12.22）</span>    
+- [vue2 入口文件](/blog/frame/vue2-src/28755.md)<span class="date">（2021.12.22）</span>    
+- [vue2 源码初探](/blog/frame/vue2-src/28753.md)<span class="date">（2021.12.22）</span>    
 - [手写简易版 Vue 2.0](/blog/frame/vue-study/28654.md)<span class="date">（2021.12.16）</span>    
 - [手写简易版 VueRouter](/blog/frame/vue-study/27988.md)<span class="date">（2021.11.24）</span>    
 - [手写简易版 Vuex](/blog/frame/vue-study/27990.md)<span class="date">（2021.11.24）</span>    

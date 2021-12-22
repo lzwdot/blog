@@ -108,6 +108,16 @@
             ]
         }
     ],
+    "/frame/vue2-src/": [
+        {
+            "text": "vue2 源码学习",
+            "children": [
+                "/frame/vue2-src/28753.md",
+                "/frame/vue2-src/28755.md",
+                "/frame/vue2-src/28757.md"
+            ]
+        }
+    ],
     "/frame/vuejs-faq/": [
         {
             "text": "vuejs 常见问题",

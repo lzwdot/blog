@@ -122,6 +122,15 @@
                 "path": "/frame/vue-study"
             },
             {
+                "name": "vue2-src",
+                "data": [
+                    "28753.md",
+                    "28755.md",
+                    "28757.md"
+                ],
+                "path": "/frame/vue2-src"
+            },
+            {
                 "name": "vuejs-faq",
                 "data": [
                     "27125.md",
