@@ -16,7 +16,7 @@ fs.readFile('config.js', (err, data) => {
 // promise 风格
 !(async () => {
   const fs = require('fs')
-  const {promisify} = require('util')
+  const { promisify } = require('util')
   const readFile = promisify(fs.readFile)
   data = await readFile('./index.ts')
   // console.log(data.toString())
@@ -40,7 +40,7 @@ const data3 = Buffer.concat([data1, data2])
 const server = http.createServer((request, response) => {
   // console.log(getPrototypeChain(request), getPrototypeChain(response))
   // response.end('hello world')
-  const {url, method, headers} = request
+  const { url, method, headers } = request
   if (url === '/' && method === 'GET') {
     fs.readFile('./index.html', (err, data) => {
       if (err) {
@@ -89,7 +89,7 @@ function getPrototypeChain(obj) {
 
 初始安装
 
-```
+  ```
 npm init -y
 npm i commander download-git-repo ora handlebars figlet clear chalk open -D
 ```
@@ -97,19 +97,19 @@ npm i commander download-git-repo ora handlebars figlet clear chalk open -D
 
 配置 package.josn
 
-```
+  ```
 "bin": {
   "kkb":"./bin/index.js"
 },
 ```
 
-编辑 /bin/index.js 制定解释器
-```
+编辑 / bin / index.js 制定解释器
+  ```
 #!/usr/bin/env node
 ```
 
 链接
 
-```
+  ```
 npm link
 ```
