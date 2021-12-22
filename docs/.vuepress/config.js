@@ -53,7 +53,7 @@ module.exports = {
 
     // 编辑此页链接
     editLinkText: '编辑页面',
-    docsRepo: 'lzwdot/blogs',
+    docsRepo: 'lzwdot/blog',
     docsDir: 'docs',
     docsBranch: 'main',
 
