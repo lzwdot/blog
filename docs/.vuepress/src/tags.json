@@ -35,6 +35,10 @@
         "title": "webpack 常见问题",
         "parent": "engineering"
     },
+    "webpack-study": {
+        "title": "webpack 学习",
+        "parent": "engineering"
+    },
     "engineering": {
         "title": "工程化",
         "parent": ""

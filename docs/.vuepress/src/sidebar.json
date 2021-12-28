@@ -98,13 +98,22 @@
             ]
         }
     ],
+    "/engineering/webpack-study/": [
+        {
+            "text": "webpack 学习",
+            "children": [
+                "/engineering/webpack-study/28782.md"
+            ]
+        }
+    ],
     "/frame/vue-study/": [
         {
             "text": "vue 学习",
             "children": [
                 "/frame/vue-study/27988.md",
                 "/frame/vue-study/27990.md",
-                "/frame/vue-study/28654.md"
+                "/frame/vue-study/28654.md",
+                "/frame/vue-study/28778.md"
             ]
         }
     ],
@@ -114,7 +123,10 @@
             "children": [
                 "/frame/vue2-src/28753.md",
                 "/frame/vue2-src/28755.md",
-                "/frame/vue2-src/28757.md"
+                "/frame/vue2-src/28757.md",
+                "/frame/vue2-src/28765.md",
+                "/frame/vue2-src/28767.md",
+                "/frame/vue2-src/28775.md"
             ]
         }
     ],

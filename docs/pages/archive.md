@@ -4,10 +4,15 @@ title: 归档
 # 归档
 
 ## <span class="center">2021 年</span>   
+- [webpack 基础](/blog/engineering/webpack-study/28782.md)<span class="date">（2021.12.27）</span>    
+- [手写简易版 Vue 2.0.2](/blog/frame/vue-study/28778.md)<span class="date">（2021.12.27）</span>    
+- [vue2 组件化机制](/blog/frame/vue2-src/28775.md)<span class="date">（2021.12.24）</span>    
+- [Vue2 虚拟 dom 和 diff 算法](/blog/frame/vue2-src/28767.md)<span class="date">（2021.12.23）</span>    
+- [Vue2 异步更新过程](/blog/frame/vue2-src/28765.md)<span class="date">（2021.12.23）</span>    
 - [vue2 响应式原理](/blog/frame/vue2-src/28757.md)<span class="date">（2021.12.22）</span>    
-- [vue2 入口文件](/blog/frame/vue2-src/28755.md)<span class="date">（2021.12.22）</span>    
+- [vue2 入口文件分析](/blog/frame/vue2-src/28755.md)<span class="date">（2021.12.22）</span>    
 - [vue2 源码初探](/blog/frame/vue2-src/28753.md)<span class="date">（2021.12.22）</span>    
-- [手写简易版 Vue 2.0](/blog/frame/vue-study/28654.md)<span class="date">（2021.12.16）</span>    
+- [手写简易版 Vue 2.0.1](/blog/frame/vue-study/28654.md)<span class="date">（2021.12.16）</span>    
 - [手写简易版 VueRouter](/blog/frame/vue-study/27988.md)<span class="date">（2021.11.24）</span>    
 - [手写简易版 Vuex](/blog/frame/vue-study/27990.md)<span class="date">（2021.11.24）</span>    
 - [使用 canvas 实现滑动验证码](/blog/program/demos/27987.md)<span class="date">（2021.10.10）</span>    

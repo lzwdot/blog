@@ -105,6 +105,13 @@
                     "27224.md"
                 ],
                 "path": "/engineering/webpack-faq"
+            },
+            {
+                "name": "webpack-study",
+                "data": [
+                    "28782.md"
+                ],
+                "path": "/engineering/webpack-study"
             }
         ],
         "path": "/engineering"
@@ -117,7 +124,8 @@
                 "data": [
                     "27988.md",
                     "27990.md",
-                    "28654.md"
+                    "28654.md",
+                    "28778.md"
                 ],
                 "path": "/frame/vue-study"
             },
@@ -126,7 +134,10 @@
                 "data": [
                     "28753.md",
                     "28755.md",
-                    "28757.md"
+                    "28757.md",
+                    "28765.md",
+                    "28767.md",
+                    "28775.md"
                 ],
                 "path": "/frame/vue2-src"
             },
