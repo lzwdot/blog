@@ -3,13 +3,13 @@ const matter = require('gray-matter');
 const moment = require('moment')
 const path = require('path')
 const vueToWp = require('../plugins/vuepress-plugin-to-wordpress')
-const {rpcConf, wpNewPost} = require('./wpRpc')
+const { rpcConf, wpNewPost } = require('./wpRpc')
 
 const docPath = path.join(__dirname, '../../') // 获取文档目录
 
 /*******新建文章 -start*******/
 
-const dirPath = `frame/vue2-src`
+const dirPath = `engineering/webpack-study`
 const title = '标题'
 
 // getMaxId()
@@ -46,7 +46,7 @@ function getMaxId() {
         // 是 .md 文件，排除 .DS_Store & README.md & about.md
         if (item.includes('.md') && !/^\.|index|README/.test(item)) {
           const frontMatter = matter.read(`${curPath}/${item}`)
-          const {ID, title, date} = frontMatter.data
+          const { ID, title, date } = frontMatter.data
           maxId = Math.max(maxId, ID)
           res.push(`(${ID},'${title}','draft','','','','','','${date}','${date}','${date}','${date}')`)
         }
@@ -75,7 +75,7 @@ function writeReadMe(path) {
   // 先删除文件，重建
   if (fs.existsSync(filePath)) {
     const frontMatter = matter.read(filePath);
-    const {title} = frontMatter.data
+    const { title } = frontMatter.data
     if (!title) frontMatter.data['title'] = '导航'
 
     content = matter.stringify(`# ${frontMatter.data['title']}\n\n${content}`, frontMatter.data)
@@ -95,7 +95,7 @@ function writeReadMe(path) {
  * @param {*} author
  */
 function createMd(dirname, title, author = 'lzw.') {
-  wpNewPost(vueToWp({...rpcConf}).getWpRpc(), (post_id) => {
+  wpNewPost(vueToWp({ ...rpcConf }).getWpRpc(), (post_id) => {
     const maxId = post_id || getMaxId() + 1
     const path = `${docPath}/${dirname}`
     const filePath = `${path}/${maxId}.md`
@@ -110,6 +110,6 @@ function createMd(dirname, title, author = 'lzw.') {
 
     //创建 md 文件
     fs.writeFileSync(filePath, content)
-    console.log(require('util').inspect(filePath, {colors: true}));
+    console.log(require('util').inspect(filePath, { colors: true }));
   })
 }
