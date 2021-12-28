@@ -1,8 +1,8 @@
-const {path} = require('@vuepress/utils')
+const { path } = require('@vuepress/utils')
 
-const {getNavbar} = require('./src/navbar')
-const {getSidebar} = require('./src/sidebar')
-const {rpcConf, sleep, getGitFiles, wpEditPost, wpDeletePost, wpEditTerm} = require('./src/wpRpc')
+const { getNavbar } = require('./src/navbar')
+const { getSidebar } = require('./src/sidebar')
+const { rpcConf, sleep, getGitFiles, wpEditPost, wpDeletePost, wpEditTerm } = require('./src/wpRpc')
 
 let baseUrl = '/blog';
 
@@ -25,14 +25,14 @@ module.exports = {
 
   // header 标签内的
   head: [
-    ['link', {rel: 'stylesheet', href: `//unpkg.com/element-ui@2.15.5/lib/theme-chalk/index.css`}],
-    ['link', {rel: 'apple-touch-icon', sizes: '180x180', href: `${baseUrl}/apple-touch-icon.png`}],
-    ['link', {rel: 'icon', type: 'image/png', sizes: '32x32', href: `${baseUrl}/favicon-32x32.png`}],
-    ['link', {rel: 'icon', type: 'image/png', sizes: '16x16', href: `${baseUrl}/favicon-16x16.png`}],
-    ['link', {rel: 'manifest', href: `${baseUrl}/site.webmanifest`}],
-    ['link', {rel: 'mask-icon', href: `${baseUrl}/safari-pinned-tab.svg`, color: '#5bbad5'}],
-    ['meta', {name: 'msapplication-TileColor', content: '#da532c'}],
-    ['meta', {name: 'theme-color', content: '#ffffff'}],
+    ['link', { rel: 'stylesheet', href: `//unpkg.com/element-ui@2.15.5/lib/theme-chalk/index.css` }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: `${baseUrl}/apple-touch-icon.png` }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: `${baseUrl}/favicon-32x32.png` }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: `${baseUrl}/favicon-16x16.png` }],
+    ['link', { rel: 'manifest', href: `${baseUrl}/site.webmanifest` }],
+    ['link', { rel: 'mask-icon', href: `${baseUrl}/safari-pinned-tab.svg`, color: '#5bbad5' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#da532c' }],
+    ['meta', { name: 'theme-color', content: '#ffffff' }],
 
     ["script", {},
       //百度统计
@@ -68,7 +68,7 @@ module.exports = {
 
     // 主题插件配置
     themePlugins: {
-      git: process.env.NODE_ENV === 'development' ? false : true // 启用 git 插件
+      git: true // 启用 git 插件
     },
   },
 
