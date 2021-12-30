@@ -102,7 +102,8 @@
         {
             "text": "webpack 学习",
             "children": [
-                "/engineering/webpack-study/28782.md"
+                "/engineering/webpack-study/28782.md",
+                "/engineering/webpack-study/28787.md"
             ]
         }
     ],

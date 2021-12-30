@@ -4,7 +4,8 @@ title: 归档
 # 归档
 
 ## <span class="center">2021 年</span>   
-- [webpack 基础](/blog/engineering/webpack-study/28782.md)<span class="date">（2021.12.27）</span>    
+- [webpack 工程环境](/blog/engineering/webpack-study/28787.md)<span class="date">（2021.12.28）</span>    
+- [webpack 基础知识](/blog/engineering/webpack-study/28782.md)<span class="date">（2021.12.27）</span>    
 - [手写简易版 Vue 2.0.2](/blog/frame/vue-study/28778.md)<span class="date">（2021.12.27）</span>    
 - [vue2 组件化机制](/blog/frame/vue2-src/28775.md)<span class="date">（2021.12.24）</span>    
 - [Vue2 虚拟 dom 和 diff 算法](/blog/frame/vue2-src/28767.md)<span class="date">（2021.12.23）</span>    

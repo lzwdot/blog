@@ -1,5 +1,5 @@
 require('dotenv').config()
-const {gitToJs} = require('git-parse')
+const { gitToJs } = require('git-parse')
 const path = require('path')
 const fs = require('fs')
 const matter = require('gray-matter');
@@ -33,7 +33,7 @@ async function getGitFiles() {
   editFiles.forEach(item => {
     if (fs.existsSync(`${gitPath}/${item.path}`)) {
       const frontMatter = matter.read(`${gitPath}/${item.path}`)
-      const {ID} = frontMatter.data
+      const { ID } = frontMatter.data
       if (ID) files['edit'].push(ID)
     }
   })
@@ -54,7 +54,7 @@ async function getGitFiles() {
  * @param data
  */
 function logCallback(tips, error, data) {
-  console.log(`[${tips}]`, require('util').inspect(error ? error : data, {showHidden: true, colors: true, depth: 10}));
+  console.log(`[${tips}]`, require('util').inspect(error ? error : data, { showHidden: true, colors: true, depth: 10 }));
 }
 
 
@@ -73,6 +73,9 @@ async function wpEditPost(wpRpc, page, files = []) {
   ).replace(
     /<a(.*?)>#<\/a>/ig,
     ''
+  ).replace(
+    /<h1.*?>(.*?)<\/h1>/ig,
+    '<blockquote>$1</blockquote>'
   )
 
   const post_id = frontMatter.ID
@@ -167,10 +170,10 @@ async function wpEditTerm(wpRpc) {
     if (parent) parent = terms.find(item => item.slug === parent)
 
     if (_tags[term.name]) wpRpc.editTerm(blogId, term.term_id, Object.assign({
-        taxonomy: term.taxonomy,
-        slug: `<![CDATA[${_tags[term.name]}]]>`
-      },
-      term.taxonomy == 'category' && parent ? {parent: parent.term_id} : {}
+      taxonomy: term.taxonomy,
+      slug: `<![CDATA[${_tags[term.name]}]]>`
+    },
+      term.taxonomy == 'category' && parent ? { parent: parent.term_id } : {}
     )).send((err, data) => {
       logCallback(term.name + ' ：editTerm', err, data)
     })

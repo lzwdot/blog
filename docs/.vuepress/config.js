@@ -68,7 +68,7 @@ module.exports = {
 
     // 主题插件配置
     themePlugins: {
-      git: true // 启用 git 插件
+      git: false // 启用 git 插件
     },
   },
 

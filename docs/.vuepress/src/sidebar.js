@@ -53,7 +53,7 @@ function writeArchive(path, archives, baseUrl) {
   // 归档循环
   data.forEach((item, index) => {
     const _path = `${path}/${item}`
-    const {date} = matter.read(_path).data;
+    const { date } = matter.read(_path).data;
     const curYear = moment(date).format('YYYY')
 
     // 归档年
@@ -73,7 +73,7 @@ function writeArchive(path, archives, baseUrl) {
   // 先删除文件，重建
   if (fs.existsSync(filePath)) {
     const frontMatter = matter.read(filePath);
-    const {title} = frontMatter.data
+    const { title } = frontMatter.data
 
     content = matter.stringify(`# ${title || '文章'}\n\n${content}`, frontMatter.data)
 
@@ -111,7 +111,7 @@ function writeCategory(path, categories, baseUrl) {
   // 先删除文件，重建
   if (fs.existsSync(filePath)) {
     const frontMatter = matter.read(filePath);
-    const {title} = frontMatter.data
+    const { title } = frontMatter.data
 
     content = matter.stringify(`# ${title || '文章'}\n\n${content}`, frontMatter.data)
 
@@ -136,7 +136,7 @@ function writeReadMe(path, content, extra = '') {
   // 先删除文件，重建
   if (fs.existsSync(filePath)) {
     const frontMatter = matter.read(filePath);
-    const {title} = frontMatter.data
+    const { title } = frontMatter.data
 
     content = matter.stringify(`# ${title || '文章'} ${extra}\n\n${content}`, frontMatter.data)
 
@@ -183,7 +183,7 @@ function buildMdLink(filePath, link, prefix = '-', suffix = '    \n') {
 
   // 拼接成链接
   if (frontMatter && frontMatter.data) {
-    const {title} = frontMatter.data
+    const { title } = frontMatter.data
     content += `${prefix} [${title}](${link})${suffix}`
   }
 
@@ -201,8 +201,8 @@ function sortById(path, data) {
     const frontMatterA = matter.read(`${path}/${a}`)
     const frontMatterB = matter.read(`${path}/${b}`)
 
-    const {ID: idA} = frontMatterA.data
-    const {ID: idB} = frontMatterB.data
+    const { ID: idA } = frontMatterA.data
+    const { ID: idB } = frontMatterB.data
 
     if (idA && idB) {
       return idA - idB
@@ -225,8 +225,8 @@ function sortByDate(path, data) {
     const frontMatterA = matter.read(`${path}/${a}`)
     const frontMatterB = matter.read(`${path}/${b}`)
 
-    const {date: dateA} = frontMatterA.data
-    const {date: dateB} = frontMatterB.data
+    const { date: dateA } = frontMatterA.data
+    const { date: dateB } = frontMatterB.data
 
     if (dateA && dateB) {
       return new Date(dateB).getTime() - new Date(dateA).getTime()
@@ -246,8 +246,8 @@ function sortByDate(path, data) {
  */
 function sortByOrder(path, data) {
   data.sort((a, b) => {
-    const {order: orderA} = getReadMe(`${path}/${a}`)
-    const {order: orderB} = getReadMe(`${path}/${b}`)
+    const { order: orderA } = getReadMe(`${path}/${a}`)
+    const { order: orderB } = getReadMe(`${path}/${b}`)
 
     if (orderA && orderB) {
       return orderA - orderB
@@ -357,7 +357,7 @@ function createSidebar(dirTree, baseUrl) {
         writeReadMe(curPath, content)
 
         // 获取文件夹 readme 内容
-        const {title} = getReadMe(curPath)
+        const { title } = getReadMe(curPath)
 
         // 标签对象
         const catePath = curNode.path.split('/')
@@ -394,7 +394,7 @@ function createSidebar(dirTree, baseUrl) {
         writeReadMe(curPath, content)
 
         // 获取文件夹 readme 内容
-        const {title} = getReadMe(curPath)
+        const { title } = getReadMe(curPath)
         sidebar.push({
           text: title || curNode.name,
           children: sortById(rootPath, children)  //排序
