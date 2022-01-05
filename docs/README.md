@@ -16,6 +16,7 @@ footer: MIT Licensed | Copyright © 2021-present <a href="/">Lzw.</a>
 ---
 # 首页 <span class="el-link el-link--info"><span class="el-link--inner">与 <a href="//lzwdot.com/blog/">lzwdot.com</a> 同步中...</span></span>
 
+- <span class="date">2022年01月05日</span>&raquo; [webpack 打包公共库](/blog/engineering/webpack-study/28964.md)    
 - <span class="date">2021年12月31日</span>&raquo; [webpack 打包 bundle 原理](/blog/engineering/webpack-study/28929.md)    
 - <span class="date">2021年12月30日</span>&raquo; [webpack 性能优化](/blog/engineering/webpack-study/28923.md)    
 - <span class="date">2021年12月29日</span>&raquo; [项目亮点实战](/blog/product/project/28802.md)    
@@ -25,5 +26,4 @@ footer: MIT Licensed | Copyright © 2021-present <a href="/">Lzw.</a>
 - <span class="date">2021年12月24日</span>&raquo; [vue2 组件化机制](/blog/frame/vue2-src/28775.md)    
 - <span class="date">2021年12月23日</span>&raquo; [Vue2 虚拟 dom 和 diff 算法](/blog/frame/vue2-src/28767.md)    
 - <span class="date">2021年12月23日</span>&raquo; [Vue2 异步更新过程](/blog/frame/vue2-src/28765.md)    
-- <span class="date">2021年12月22日</span>&raquo; [vue2 响应式原理](/blog/frame/vue2-src/28757.md)    
 - [更多文章](/blog/pages/archive)   

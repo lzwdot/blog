@@ -3,6 +3,8 @@ title: 归档
 ---
 # 归档
 
+## <span class="center">2022 年</span>   
+- [webpack 打包公共库](/blog/engineering/webpack-study/28964.md)<span class="date">（2022.01.05）</span>    
 ## <span class="center">2021 年</span>   
 - [webpack 打包 bundle 原理](/blog/engineering/webpack-study/28929.md)<span class="date">（2021.12.31）</span>    
 - [webpack 性能优化](/blog/engineering/webpack-study/28923.md)<span class="date">（2021.12.30）</span>    
