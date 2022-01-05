@@ -67,16 +67,10 @@ function logCallback(tips, error, data) {
  */
 async function wpEditPost(wpRpc, page, files = []) {
   const frontMatter = page.frontmatter;
-  const post_content = page.contentRendered.replace(
-    /<html-demo>([\s\S]*?)<\/html-demo>/ig,
-    '<div class="html-demo">$1</div>'
-  ).replace(
-    /<a(.*?)>#<\/a>/ig,
-    ''
-  ).replace(
-    /<h1.*?>(.*?)<\/h1>/ig,
-    '<blockquote>$1</blockquote>'
-  )
+  const post_content = page.contentRendered
+    .replace(/<html-demo>([\s\S]*?)<\/html-demo>/ig, '<div class="html-demo">$1</div>')
+    .replace(/<h1.*?>(.*?)<\/h1>/ig, '<blockquote>$1</blockquote>')
+    .replace(/<a(.*?)>#<\/a>/ig, '')
 
   const post_id = frontMatter.ID
   const post_title = frontMatter.title
