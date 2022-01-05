@@ -103,7 +103,9 @@
             "text": "webpack 学习",
             "children": [
                 "/engineering/webpack-study/28782.md",
-                "/engineering/webpack-study/28787.md"
+                "/engineering/webpack-study/28787.md",
+                "/engineering/webpack-study/28923.md",
+                "/engineering/webpack-study/28929.md"
             ]
         }
     ],
@@ -396,7 +398,8 @@
             "children": [
                 "/product/project/27226.md",
                 "/product/project/27231.md",
-                "/product/project/27238.md"
+                "/product/project/27238.md",
+                "/product/project/28802.md"
             ]
         }
     ],

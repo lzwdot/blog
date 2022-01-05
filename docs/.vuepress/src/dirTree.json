@@ -110,7 +110,9 @@
                 "name": "webpack-study",
                 "data": [
                     "28782.md",
-                    "28787.md"
+                    "28787.md",
+                    "28923.md",
+                    "28929.md"
                 ],
                 "path": "/engineering/webpack-study"
             }
@@ -423,7 +425,8 @@
                 "data": [
                     "27226.md",
                     "27231.md",
-                    "27238.md"
+                    "27238.md",
+                    "28802.md"
                 ],
                 "path": "/product/project"
             },
