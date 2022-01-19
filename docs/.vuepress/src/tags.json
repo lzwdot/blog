@@ -91,6 +91,10 @@
         "title": "js 常见问题",
         "parent": "javascript"
     },
+    "js-study": {
+        "title": "js 学习",
+        "parent": "javascript"
+    },
     "javascript": {
         "title": "JS基础",
         "parent": ""
@@ -141,10 +145,6 @@
     },
     "charts": {
         "title": "数据可视化",
-        "parent": "program"
-    },
-    "demos": {
-        "title": "演示",
         "parent": "program"
     },
     "web-components": {

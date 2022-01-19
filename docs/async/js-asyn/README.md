@@ -11,3 +11,4 @@ title: js 异步问题
 - [promise 和 setTimeout 的顺序](/blog/async/js-asyn/25819.md)    
 - [async/await 的顺序问题](/blog/async/js-asyn/25821.md)    
 - [async/await 语法问题](/blog/async/js-asyn/26026.md)    
+- [手写 Promise](/blog/async/js-asyn/29208.md)    

@@ -9,6 +9,7 @@ title: 分类
 #### JS基础   
 - [js 基础问题](/blog/javascript/js-base/)    
 - [js 常见问题](/blog/javascript/js-faq/)    
+- [js 学习](/blog/javascript/js-study/)    
 #### 异步   
 - [js 异步问题](/blog/async/js-asyn/)    
 #### 网络   
@@ -25,7 +26,6 @@ title: 分类
 #### 编程   
 - [数据结构与算法](/blog/program/algorithm/)    
 - [数据可视化](/blog/program/charts/)    
-- [演示](/blog/program/demos/)    
 - [Web Components](/blog/program/web-components/)    
 #### 工程化   
 - [开发运行环境](/blog/engineering/dev-prod-env/)    

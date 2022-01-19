@@ -65,6 +65,7 @@ iframe {
   border-left: none;
   border-top: none;
   box-sizing: border-box;
+  padding: 10px;
 }
 
 summary {

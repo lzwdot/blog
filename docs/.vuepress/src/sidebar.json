@@ -10,7 +10,8 @@
                 "/async/js-asyn/25817.md",
                 "/async/js-asyn/25819.md",
                 "/async/js-asyn/25821.md",
-                "/async/js-asyn/26026.md"
+                "/async/js-asyn/26026.md",
+                "/async/js-asyn/29208.md"
             ]
         }
     ],
@@ -117,7 +118,8 @@
                 "/frame/vue-study/27988.md",
                 "/frame/vue-study/27990.md",
                 "/frame/vue-study/28654.md",
-                "/frame/vue-study/28778.md"
+                "/frame/vue-study/28778.md",
+                "/frame/vue-study/29203.md"
             ]
         }
     ],
@@ -313,6 +315,15 @@
             ]
         }
     ],
+    "/javascript/js-study/": [
+        {
+            "text": "js 学习",
+            "children": [
+                "/javascript/js-study/27987.md",
+                "/javascript/js-study/29206.md"
+            ]
+        }
+    ],
     "/network/http/": [
         {
             "text": "http 问题",
@@ -434,14 +445,6 @@
                 "/program/charts/27976.md",
                 "/program/charts/27981.md",
                 "/program/charts/27983.md"
-            ]
-        }
-    ],
-    "/program/demos/": [
-        {
-            "text": "演示",
-            "children": [
-                "/program/demos/27987.md"
             ]
         }
     ],

@@ -4,6 +4,9 @@ title: 归档
 # 归档
 
 ## <span class="center">2022 年</span>   
+- [手写 Promise](/blog/async/js-asyn/29208.md)<span class="date">（2022.01.19）</span>    
+- [文件上传和优化](/blog/javascript/js-study/29206.md)<span class="date">（2022.01.18）</span>    
+- [长列表优化 vue 版](/blog/frame/vue-study/29203.md)<span class="date">（2022.01.13）</span>    
 - [webpack 打包公共库](/blog/engineering/webpack-study/28964.md)<span class="date">（2022.01.05）</span>    
 ## <span class="center">2021 年</span>   
 - [webpack 打包 bundle 原理](/blog/engineering/webpack-study/28929.md)<span class="date">（2021.12.31）</span>    
@@ -21,7 +24,7 @@ title: 归档
 - [手写简易版 Vue 2.0.1](/blog/frame/vue-study/28654.md)<span class="date">（2021.12.16）</span>    
 - [手写简易版 VueRouter](/blog/frame/vue-study/27988.md)<span class="date">（2021.11.24）</span>    
 - [手写简易版 Vuex](/blog/frame/vue-study/27990.md)<span class="date">（2021.11.24）</span>    
-- [使用 canvas 实现滑动验证码](/blog/program/demos/27987.md)<span class="date">（2021.10.10）</span>    
+- [使用 canvas 实现滑动验证码](/blog/javascript/js-study/27987.md)<span class="date">（2021.10.10）</span>    
 - [随机密码生成器](/blog/product/tools/27986.md)<span class="date">（2021.08.21）</span>    
 - [JS MD5加密](/blog/product/tools/27985.md)<span class="date">（2021.08.20）</span>    
 - [通过JSON数据获取Keys](/blog/product/tools/27984.md)<span class="date">（2021.08.14）</span>    

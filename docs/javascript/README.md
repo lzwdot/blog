@@ -6,3 +6,4 @@ order: 200
 
 - [js 基础问题](/blog/javascript/js-base)    
 - [js 常见问题](/blog/javascript/js-faq)    
+- [js 学习](/blog/javascript/js-study)    

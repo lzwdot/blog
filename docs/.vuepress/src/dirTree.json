@@ -12,7 +12,8 @@
                     "25817.md",
                     "25819.md",
                     "25821.md",
-                    "26026.md"
+                    "26026.md",
+                    "29208.md"
                 ],
                 "path": "/async/js-asyn"
             }
@@ -129,7 +130,8 @@
                     "27988.md",
                     "27990.md",
                     "28654.md",
-                    "28778.md"
+                    "28778.md",
+                    "29203.md"
                 ],
                 "path": "/frame/vue-study"
             },
@@ -327,6 +329,14 @@
                     "26719.md"
                 ],
                 "path": "/javascript/js-faq"
+            },
+            {
+                "name": "js-study",
+                "data": [
+                    "27987.md",
+                    "29206.md"
+                ],
+                "path": "/javascript/js-study"
             }
         ],
         "path": "/javascript"
@@ -466,13 +476,6 @@
                     "27983.md"
                 ],
                 "path": "/program/charts"
-            },
-            {
-                "name": "demos",
-                "data": [
-                    "27987.md"
-                ],
-                "path": "/program/demos"
             },
             {
                 "name": "web-components",
