@@ -4,6 +4,7 @@ title: 归档
 # 归档
 
 ## <span class="center">2022 年</span>   
+- [https 加密方式和过程解析](/blog/network/http/29213.md)<span class="date">（2022.01.19）</span>    
 - [手写 Promise](/blog/async/js-asyn/29208.md)<span class="date">（2022.01.19）</span>    
 - [文件上传和优化](/blog/javascript/js-study/29206.md)<span class="date">（2022.01.18）</span>    
 - [长列表优化 vue 版](/blog/frame/vue-study/29203.md)<span class="date">（2022.01.13）</span>    
