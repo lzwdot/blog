@@ -11,40 +11,40 @@
 
 <body>
 <h1>index</h1>
-<img src="./index.jpg" alt="">
 
-<script src="./index.js"></script>
 <script>
-  // 普通调用
-  const p1 = new MyPromise((resolve, reject) => {
-    // resolve(100)
-    // reject('错误...')
-    setTimeout(() => {
-      resolve(100)
-    }, 1000)
-  })
+  const arr = [1, 2, 3, 4]
+  const set = new Set([1, 2, 2, 3, 4])
 
-  // 链式调用
-  const p11 = p1.then(data1 => {
-    console.log('data1', data1) // data1 100
-    return data1 + 1
-  })
-  const p12 = p11.then(data2 => {
-    console.log('data2', data2) // data2 101
-    return data2 + 1
-  })
-  const p13 = p12.catch(err => console.error(err))
+  // Map Api: add,delete,has,forEach,
+  set.forEach(val => console.log(val))
 
-  // api 调用
-  const p2 = MyPromise.resolve(200)
-  const p3 = MyPromise.resolve(300)
-  const p4 = MyPromise.reject('错误...')
-  // 传入 promise 数组，等待所有的都 fulfilled 后，返回新的 promise 包含前面所有的结果
-  const p5 = MyPromise.all([p1, p2, p3])
-  p5.then(result => console.log('all result', result)) // all result (3)[200, 300, 100]
-  // 传入 promise 数组，只要有一个 fulfilled 即可返回
-  const p6 = MyPromise.race([p1, p2, p3])
-  p6.then(result => console.log('race result', result)) // race result 200
+  // Set 元素是不能重复的（数组去重）
+  console.log(set) // Set(4){1, 2, 3, 4}
+
+  // Set 是无序的（快），arr 是有序的（慢）
+  for (let i = 0; i < 100 * 10000; i++) {
+    arr.push(i)
+  }
+  console.time('arr unshift')
+  arr.unshift('a') // 导致所有元素后移，所以慢
+  console.timeEnd('arr unshift') // arr unshift: 0.25390625 ms
+  console.time('arr push')
+  arr.push('b')
+  console.timeEnd('arr push') // arr push: 0.005859375 ms
+  console.time('arr find')
+  arr.includes('20000')
+  console.timeEnd('arr find') // arr find: 0.89794921875 ms
+
+  for (let i = 0; i < 100 * 10000; i++) {
+    set.add(i)
+  }
+  console.time('set add')
+  set.add('a')
+  console.timeEnd('set add') // set add: 0.00390625 ms
+  console.time('set find')
+  set.has('20000')
+  console.timeEnd('set find') // set find: 0.005859375 ms
 </script>
 </body>
 
