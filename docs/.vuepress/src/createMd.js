@@ -9,7 +9,7 @@ const docPath = path.join(__dirname, '../../') // 获取文档目录
 
 /*******新建文章 -start*******/
 
-const dirPath = `javascript/js-faq`
+const dirPath = `frame/vuejs3-base`
 const title = '标题'
 
 // getMaxId()
