@@ -22,7 +22,7 @@ title: 分类
 - [vuejs 常见问题](/blog/frame/vuejs-faq/)    
 - [vuejs 原理解说](/blog/frame/vuejs-principle/)    
 - [vuejs 使用问题](/blog/frame/vuejs-use/)    
-- [vuejs 3 基本了解](/blog/frame/vuejs3-base/)    
+- [vue3 基础问题](/blog/frame/vuejs3-base/)    
 #### 编程   
 - [数据结构与算法](/blog/program/algorithm/)    
 - [数据可视化](/blog/program/charts/)    

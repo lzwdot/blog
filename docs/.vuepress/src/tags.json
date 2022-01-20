@@ -64,7 +64,7 @@
         "parent": "frame"
     },
     "vuejs3-base": {
-        "title": "vuejs 3 基本了解",
+        "title": "vue3 基础问题",
         "parent": "frame"
     },
     "frame": {

@@ -218,13 +218,15 @@
     ],
     "/frame/vuejs3-base/": [
         {
-            "text": "vuejs 3 基本了解",
+            "text": "vue3 基础问题",
             "children": [
                 "/frame/vuejs3-base/27166.md",
                 "/frame/vuejs3-base/27167.md",
                 "/frame/vuejs3-base/27175.md",
                 "/frame/vuejs3-base/27891.md",
-                "/frame/vuejs3-base/27897.md"
+                "/frame/vuejs3-base/27897.md",
+                "/frame/vuejs3-base/29226.md",
+                "/frame/vuejs3-base/29228.md"
             ]
         }
     ],
@@ -311,7 +313,10 @@
                 "/javascript/js-faq/26700.md",
                 "/javascript/js-faq/26715.md",
                 "/javascript/js-faq/26717.md",
-                "/javascript/js-faq/26719.md"
+                "/javascript/js-faq/26719.md",
+                "/javascript/js-faq/29217.md",
+                "/javascript/js-faq/29220.md",
+                "/javascript/js-faq/29222.md"
             ]
         }
     ],
