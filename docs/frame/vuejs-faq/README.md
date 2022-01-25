@@ -31,4 +31,4 @@ title: vuejs 常见问题
 - [简述 diff 算法过程](/blog/frame/vuejs-faq/27159.md)    
 - [Vue 为何是异步渲染，$nextTick 何用？](/blog/frame/vuejs-faq/27161.md)    
 - [Vue 常见性能优化方式](/blog/frame/vuejs-faq/27163.md)    
-- [Vue 和 React 的区别](/blog/frame/vuejs-faq/27958.md)    
+- [Vue2/Vue3 和 React 的区别](/blog/frame/vuejs-faq/27958.md)    
