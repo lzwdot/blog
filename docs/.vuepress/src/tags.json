@@ -43,6 +43,14 @@
         "title": "工程化",
         "parent": ""
     },
+    "react-faq": {
+        "title": "React 问题",
+        "parent": "frame"
+    },
+    "react-principle": {
+        "title": "React 原理",
+        "parent": "frame"
+    },
     "react-use": {
         "title": "React 使用问题",
         "parent": "frame"

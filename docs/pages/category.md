@@ -17,6 +17,8 @@ title: 分类
 #### 浏览器   
 - [js web api问题](/blog/browser/js-web-api/)    
 #### 框架   
+- [React 问题](/blog/frame/react-faq/)    
+- [React 原理](/blog/frame/react-principle/)    
 - [React 使用问题](/blog/frame/react-use/)    
 - [vue 学习](/blog/frame/vue-study/)    
 - [vue2 源码学习](/blog/frame/vue2-src/)    

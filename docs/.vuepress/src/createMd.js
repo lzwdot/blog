@@ -9,7 +9,7 @@ const docPath = path.join(__dirname, '../../') // 获取文档目录
 
 /*******新建文章 -start*******/
 
-const dirPath = `frame/react-principle`
+const dirPath = `frame/react-faq`
 const title = '标题'
 
 // getMaxId()
