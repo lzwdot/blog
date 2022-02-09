@@ -65,7 +65,8 @@ jobs:
       - name: Deploy to github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          #deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: lzwdot/lzwdot.github.io
           publish_branch: gh-pages  # default: gh-pages
           publish_dir: docs/.vuepress/dist
