@@ -61,14 +61,13 @@ jobs:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          # 发布到 github.io/gh-pages
-      - name: Deploy to github.io
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          #deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          personal_token: ${{ secrets.PERSONAL_TOKEN }}
-          external_repository: lzwdot/lzwdot.github.io
-          publish_branch: gh-pages  # default: gh-pages
-          publish_dir: docs/.vuepress/dist
-          #cname: lzwdot.com
+      # 发布到 github.io/gh-pages
+      # - name: Deploy to github.io
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+      #     external_repository: lzwdot/lzwdot.github.io
+      #     publish_branch: gh-pages  # default: gh-pages
+      #     publish_dir: docs/.vuepress/dist
+      # cname: lzwdot.com
     
