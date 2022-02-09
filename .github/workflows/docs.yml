@@ -69,5 +69,5 @@ jobs:
           external_repository: lzwdot/lzwdot.github.io
           publish_branch: gh-pages  # default: gh-pages
           publish_dir: docs/.vuepress/dist
-          # cname: lzwdot.com
+          #cname: lzwdot.com
     
