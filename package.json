@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "fundebug-javascript": "^2.8.0",
-    "fundebug-revideo": "^0.7.1",
     "fundebug-vue": "0.0.1"
   }
 }
