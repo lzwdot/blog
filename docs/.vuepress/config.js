@@ -4,8 +4,6 @@ const { getNavbar } = require('./src/navbar')
 const { getSidebar } = require('./src/sidebar')
 const { rpcConf, sleep, getGitFiles, wpEditPost, wpDeletePost, wpEditTerm } = require('./src/wpRpc')
 
-require('fundebug-revideo');
-
 let baseUrl = '/blog';
 
 try {
@@ -14,7 +12,7 @@ try {
   console.log(e);
 }
 
-module.exports = {  
+module.exports = {
   // 站点配置
   base: `${baseUrl}/`,
   locales: {
@@ -45,7 +43,8 @@ module.exports = {
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(hm, s);
             })();`
-    ]
+    ],
+    ["script", { src: 'https://js.fundebug.cn/fundebug.revideo.0.7.1.min.js', crossorigin: 'anonymous' }]
   ],
 
   // 主题配置
