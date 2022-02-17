@@ -44,6 +44,7 @@ module.exports = {
                 s.parentNode.insertBefore(hm, s);
             })();`
     ],
+    ["script", { src: 'https://js.fundebug.cn/fundebug.2.8.0.min.js', apikey: '7f891a468d3d3fc0e4b8834a2f81197422eacbdaf395bf3ec0a1c3622e35ad5c', crossorigin: 'anonymous' }]
     ["script", { src: 'https://js.fundebug.cn/fundebug.revideo.0.7.1.min.js', crossorigin: 'anonymous' }]
   ],
 
