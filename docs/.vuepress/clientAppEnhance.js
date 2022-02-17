@@ -5,8 +5,7 @@ import 'element-plus/lib/theme-chalk/index.css'
 // 监控
 import * as fundebug from "fundebug-javascript";
 import fundebugVue from "fundebug-vue";
-fundebug.apikey = "7f066c99228ca076b3eaed18791d7966a36e205f61c9762c7f803015a9454ace"
-
+fundebug.apikey = "7f891a468d3d3fc0e4b8834a2f81197422eacbdaf395bf3ec0a1c3622e35ad5c"
 
 export default defineClientAppEnhance(({ app, router, siteData }) => {
     // 使用 Element UI Vuejs 3.x 版本
