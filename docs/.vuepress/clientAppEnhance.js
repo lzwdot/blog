@@ -2,15 +2,9 @@ import { defineClientAppEnhance } from '@vuepress/client'
 import ElementPlus from 'element-plus'
 import 'element-plus/lib/theme-chalk/index.css'
 
-// 监控
-import fundebugVue from "fundebug-vue";
-
 export default defineClientAppEnhance(({ app, router, siteData }) => {
     // 使用 Element UI Vuejs 3.x 版本
-    app.use(ElementPlus) 
-    
-    // 监控
-    fundebugVue(fundebug, app);
+    app.use(ElementPlus)
 
     // 路由切换事件处理
     router.beforeEach((to, from, next) => {
