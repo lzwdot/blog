@@ -1,0 +1,1 @@
+const e={key:"v-78b69c60",path:"/server/go-usage/",title:"Go\u4F7F\u7528",lang:"zh-CN",frontmatter:{title:"Go\u4F7F\u7528"},excerpt:"",headers:[],filePathRelative:"server/go-usage/README.md"};export{e as data};

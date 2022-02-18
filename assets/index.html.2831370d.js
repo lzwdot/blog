@@ -1,0 +1,1 @@
+const t={key:"v-ca5689ce",path:"/product/",title:"\u4EA7\u54C1",lang:"zh-CN",frontmatter:{title:"\u4EA7\u54C1",order:1100},excerpt:"",headers:[],filePathRelative:"product/README.md"};export{t as data};

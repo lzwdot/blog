@@ -1,0 +1,1 @@
+const e={key:"v-58418f28",path:"/frame/react-faq/29402.html",title:"PureComponent \u6709\u4F55\u533A\u522B",lang:"zh-CN",frontmatter:{title:"PureComponent \u6709\u4F55\u533A\u522B",ID:"29402",date:"2022-01-28 14:46:39",author:"lzw.",categories:["frame","react-faq"],tags:["frame","react-faq"]},excerpt:"",headers:[],filePathRelative:"frame/react-faq/29402.md"};export{e as data};

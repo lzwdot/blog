@@ -1,0 +1,1 @@
+const a={key:"v-82becf88",path:"/javascript/js-faq/26500.html",title:"\u4F55\u4E3A\u53D8\u91CF\u63D0\u5347\uFF1F",lang:"zh-CN",frontmatter:{title:"\u4F55\u4E3A\u53D8\u91CF\u63D0\u5347\uFF1F",ID:"26500",date:"2020-10-29 16:50:08",categories:["javascript","js-faq"],tags:["javascript","js-faq"]},excerpt:"",headers:[],filePathRelative:"javascript/js-faq/26500.md"};export{a as data};

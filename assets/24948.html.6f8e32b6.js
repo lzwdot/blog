@@ -1,0 +1,1 @@
+const s={key:"v-1505ae0e",path:"/posts/js-css/24948.html",title:"\u4E86\u89E3 npm install -S -D -g \u7684\u7528\u6CD5",lang:"zh-CN",frontmatter:{title:"\u4E86\u89E3 npm install -S -D -g \u7684\u7528\u6CD5",ID:"24948",date:"2020-07-08 18:18:57",categories:["posts","js-css"],tags:["posts","js-css"]},excerpt:"",headers:[],filePathRelative:"posts/js-css/24948.md"};export{s as data};

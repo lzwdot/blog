@@ -1,0 +1,1 @@
+const a={key:"v-a4d255b8",path:"/javascript/js-faq/29220.html",title:"WeakMap \u548C WeakSet",lang:"zh-CN",frontmatter:{title:"WeakMap \u548C WeakSet",ID:"29220",date:"2022-01-20 09:44:55",author:"lzw.",categories:["javascript","js-faq"],tags:["javascript","js-faq"]},excerpt:"",headers:[],filePathRelative:"javascript/js-faq/29220.md"};export{a as data};

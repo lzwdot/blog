@@ -1,0 +1,1 @@
+const e={key:"v-17512e04",path:"/frame/vuejs-faq/27134.html",title:"\u5BF9 MVVM \u7684\u7406\u89E3",lang:"zh-CN",frontmatter:{title:"\u5BF9 MVVM \u7684\u7406\u89E3",ID:"27134",date:"2020-12-04 17:35:00",categories:["frame","vuejs-faq"],tags:["frame","vuejs-faq"]},excerpt:"",headers:[],filePathRelative:"frame/vuejs-faq/27134.md"};export{e as data};

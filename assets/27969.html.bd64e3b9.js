@@ -1,0 +1,1 @@
+const t={key:"v-35315ea6",path:"/program/algorithm/27969.html",title:"LeetCode\uFF1A133. \u514B\u9686\u56FE",lang:"zh-CN",frontmatter:{title:"LeetCode\uFF1A133. \u514B\u9686\u56FE",ID:"27969",date:"2021-08-14 15:56:47",categories:["program","algorithm"],tags:["program","algorithm"]},excerpt:"",headers:[],filePathRelative:"program/algorithm/27969.md"};export{t as data};

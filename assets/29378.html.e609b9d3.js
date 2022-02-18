@@ -1,0 +1,1 @@
+const e={key:"v-2ef283e4",path:"/frame/react-faq/29378.html",title:"redux \u5355\u9879\u6570\u636E\u6D41",lang:"zh-CN",frontmatter:{title:"redux \u5355\u9879\u6570\u636E\u6D41",ID:"29378",date:"2022-01-28 14:12:39",author:"lzw.",categories:["frame","react-faq"],tags:["frame","react-faq"]},excerpt:"",headers:[],filePathRelative:"frame/react-faq/29378.md"};export{e as data};

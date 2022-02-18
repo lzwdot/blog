@@ -1,0 +1,1 @@
+const e={key:"v-7a65a116",path:"/server/php-usage/",title:"PHP\u5E94\u7528",lang:"zh-CN",frontmatter:{title:"PHP\u5E94\u7528"},excerpt:"",headers:[],filePathRelative:"server/php-usage/README.md"};export{e as data};

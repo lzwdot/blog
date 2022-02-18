@@ -1,0 +1,1 @@
+const e={key:"v-87c75008",path:"/frame/vuejs3-base/27167.html",title:"Proxy \u57FA\u672C\u4F7F\u7528",lang:"zh-CN",frontmatter:{title:"Proxy \u57FA\u672C\u4F7F\u7528",ID:"27167",date:"2020-12-10 16:41:00",categories:["frame","vuejs3-base"],tags:["frame","vuejs3-base"]},excerpt:"",headers:[],filePathRelative:"frame/vuejs3-base/27167.md"};export{e as data};

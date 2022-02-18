@@ -1,0 +1,1 @@
+const e={key:"v-3df5d888",path:"/frame/vuejs3-base/29246.html",title:"\u4EC0\u4E48\u662F PatchFlag",lang:"zh-CN",frontmatter:{title:"\u4EC0\u4E48\u662F PatchFlag",ID:"29246",date:"2022-01-21 15:53:39",author:"lzw.",categories:["frame","vuejs3-base"],tags:["frame","vuejs3-base"]},excerpt:"",headers:[],filePathRelative:"frame/vuejs3-base/29246.md"};export{e as data};

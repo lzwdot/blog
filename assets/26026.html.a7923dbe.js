@@ -1,0 +1,1 @@
+const a={key:"v-11d0f359",path:"/async/js-asyn/26026.html",title:"async/await \u8BED\u6CD5\u95EE\u9898",lang:"zh-CN",frontmatter:{title:"async/await \u8BED\u6CD5\u95EE\u9898",ID:"26026",date:"2020-10-22 16:04:20",categories:["async","js-asyn"],tags:["async","js-asyn"]},excerpt:"",headers:[],filePathRelative:"async/js-asyn/26026.md"};export{a as data};

@@ -1,0 +1,1 @@
+const t={key:"v-18fd1943",path:"/htmlcss/css/25247.html",title:"flex \u5E03\u5C40",lang:"zh-CN",frontmatter:{title:"flex \u5E03\u5C40",ID:"25247",date:"2020-09-25 11:02:47",categories:["htmlcss","css"],tags:["htmlcss","css"]},excerpt:"",headers:[],filePathRelative:"htmlcss/css/25247.md"};export{t as data};

@@ -1,0 +1,1 @@
+const e={key:"v-6903fc1b",path:"/server/php-usage/22752.html",title:"WordPress\u5C0F\u5DE5\u5177\u5F00\u53D1",lang:"zh-CN",frontmatter:{title:"WordPress\u5C0F\u5DE5\u5177\u5F00\u53D1",ID:"22752",date:"2019-04-02 09:40:36",categories:["server","php-usage"],tags:["server","php-usage"]},excerpt:"",headers:[],filePathRelative:"server/php-usage/22752.md"};export{e as data};

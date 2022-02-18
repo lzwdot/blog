@@ -1,0 +1,1 @@
+const e={key:"v-75f064c5",path:"/frame/vuejs-use/26735.html",title:"Vue \u7684 computed \u548C watch",lang:"zh-CN",frontmatter:{title:"Vue \u7684 computed \u548C watch",ID:"26735",date:"2020-11-05 15:28:45",categories:["frame","vuejs-use"],tags:["frame","vuejs-use"]},excerpt:"",headers:[],filePathRelative:"frame/vuejs-use/26735.md"};export{e as data};

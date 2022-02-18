@@ -1,0 +1,1 @@
+const t={key:"v-9f0cce78",path:"/program/algorithm/",title:"\u6570\u636E\u7ED3\u6784\u4E0E\u7B97\u6CD5",lang:"zh-CN",frontmatter:{title:"\u6570\u636E\u7ED3\u6784\u4E0E\u7B97\u6CD5"},excerpt:"",headers:[],filePathRelative:"program/algorithm/README.md"};export{t as data};

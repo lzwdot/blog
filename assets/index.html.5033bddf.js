@@ -1,0 +1,1 @@
+const t={key:"v-cc469c18",path:"/javascript/js-faq/",title:"js \u5E38\u89C1\u95EE\u9898",lang:"zh-CN",frontmatter:{title:"js \u5E38\u89C1\u95EE\u9898"},excerpt:"",headers:[],filePathRelative:"javascript/js-faq/README.md"};export{t as data};

@@ -1,0 +1,1 @@
+const e={key:"v-6fd75e97",path:"/server/php-usage/22756.html",title:"window+nginx+php\u73AF\u5883\u914D\u7F6E",lang:"zh-CN",frontmatter:{title:"window+nginx+php\u73AF\u5883\u914D\u7F6E",ID:"22756",date:"2019-04-02 09:45:00",categories:["server","php-usage"],tags:["server","php-usage"]},excerpt:"",headers:[],filePathRelative:"server/php-usage/22756.md"};export{e as data};

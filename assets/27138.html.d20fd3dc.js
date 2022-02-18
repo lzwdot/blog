@@ -1,0 +1,10 @@
+import{h as a}from"./app.4ca8afde.js";import{_ as n}from"./plugin-vue_export-helper.21dcd24c.js";const s={},t=a(`<h1 id="\u4E3A\u4F55\u7EC4\u4EF6-data-\u5FC5\u987B\u662F\u4E00\u4E2A\u51FD\u6570" tabindex="-1"><a class="header-anchor" href="#\u4E3A\u4F55\u7EC4\u4EF6-data-\u5FC5\u987B\u662F\u4E00\u4E2A\u51FD\u6570" aria-hidden="true">#</a> \u4E3A\u4F55\u7EC4\u4EF6 data \u5FC5\u987B\u662F\u4E00\u4E2A\u51FD\u6570\uFF1F</h1><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">&#39;app&#39;</span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">&#39;vue&#39;</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">list</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">&#39;a&#39;</span><span class="token punctuation">,</span><span class="token string">&#39;b&#39;</span><span class="token punctuation">,</span><span class="token string">&#39;c&#39;</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>\u6839\u672C\u539F\u56E0\u662F .vue \u7EC4\u4EF6 export \u51FA\u6765\u540E\u662F\u4E00\u4E2A class \u7C7B\uFF0C\u6240\u4EE5 data \u5FC5\u987B\u662F\u4E00\u4E2A\u51FD\u6570\uFF0C\u5426\u5219 data \u6240\u6709\u6570\u636E\u90FD\u5171\u4EAB\u4E86\u4E00\u6837\u4E86</p>`,3);function p(e,o){return t}var l=n(s,[["render",p]]);export{l as default};

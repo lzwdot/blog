@@ -1,0 +1,45 @@
+import{h as n}from"./app.4ca8afde.js";import{_ as a}from"./react-20220128104511.fa19cf9d.js";import{_ as s}from"./plugin-vue_export-helper.21dcd24c.js";var t="/blog/assets/react-20220128112454.58e3b929.png";const p={},c=n('<h1 id="react-\u7684-batchupdate-\u548C-transaction-\u673A\u5236" tabindex="-1"><a class="header-anchor" href="#react-\u7684-batchupdate-\u548C-transaction-\u673A\u5236" aria-hidden="true">#</a> React \u7684 batchUpdate \u548C transaction \u673A\u5236</h1><p>setState \u548C batchUpdate</p><ul><li>\u6709\u65F6\u5F02\u6B65\uFF08\u666E\u901A\u4F7F\u7528\uFF09\uFF0C\u6709\u65F6\u540C\u6B65\uFF08setTimeout\u3001DOM \u4E8B\u4EF6\uFF09</li><li>\u6709\u65F6\u5408\u5E76\uFF08\u5BF9\u8C61\u5F62\u5F0F\uFF09\uFF0C\u6709\u65F6\u4E0D\u5408\u5E76\uFF08\u51FD\u6570\u5F62\u5F0F\uFF09</li><li>\u540E\u8005\u6BD4\u8F83\u597D\u7406\u89E3\uFF08\u50CF Object.assign\uFF09\uFF0C\u4E3B\u8981\u8BB2\u89E3\u524D\u8005</li></ul><p>\u6838\u5FC3\u8981\u70B9</p><ul><li>setState \u4E3B\u6D41\u7A0B</li><li>batchUpdate \u673A\u5236</li><li>transaction \u4E8B\u7269\u673A\u5236</li></ul><h2 id="setstate-\u4E3B\u6D41\u7A0B" tabindex="-1"><a class="header-anchor" href="#setstate-\u4E3B\u6D41\u7A0B" aria-hidden="true">#</a> setState \u4E3B\u6D41\u7A0B</h2><p><img src="'+a+`" alt="react"></p><p>\u5DE6\u8FB9\u5206\u652F - \u5F02\u6B65\u6D41\u7A0B\uFF08isBatchingUpdates=true\uFF09</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token comment">// \u5F00\u59CB\uFF1A\u5904\u4E8E batchUpdate</span>
+<span class="token comment">// isBatchingUpdates = true</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">count</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;count&#39;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">)</span> <span class="token comment">// \u5F02\u6B65\u7684\uFF0C\u62FF\u4E0D\u5230\u6700\u65B0\u503C</span>
+<span class="token comment">// \u7ED3\u675F</span>
+<span class="token comment">// isBatchingUpdates = false</span>
+</code></pre></div><p>\u53F3\u8FB9\u5206\u652F - \u540C\u6B65\u6D41\u7A0B\uFF08isBatchingUpdates=false\uFF09</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token comment">// setTimeout \u4E2D setState \u662F\u540C\u6B65\u7684</span>
+<span class="token comment">// \u5F00\u59CB\uFF1A\u5904\u4E8E batchUpdate</span>
+<span class="token comment">// isBatchingUpdates = true</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// \u6B64\u65F6 isBatchingUpdates \u662F false</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">count</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;count in setTimeout&#39;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// \u7ED3\u675F</span>
+<span class="token comment">// isBatchingUpdates = false</span>
+</code></pre></div><p>setState \u5F02\u6B65\u8FD8\u662F\u540C\u6B65\uFF1F</p><ul><li>setState \u65E0\u6240\u8C13\u5F02\u6B65\u8FD8\u662F\u540C\u6B65</li><li>\u770B\u662F\u5426\u80FD\u547D\u4E2D batchUpdate \u673A\u5236</li><li>\u5224\u65AD isBatchingUpdates \u6761\u4EF6</li></ul><h2 id="batchupdate-\u673A\u5236" tabindex="-1"><a class="header-anchor" href="#batchupdate-\u673A\u5236" aria-hidden="true">#</a> batchUpdate \u673A\u5236</h2><p>\u54EA\u4E9B\u80FD\u547D\u4E2D batchUpdate \u673A\u5236</p><ul><li>\u751F\u547D\u5468\u671F\uFF08\u548C\u5B83\u8C03\u7528\u7684\u51FD\u6570\uFF09</li><li>React \u4E2D\u6CE8\u518C\u7684\u4E8B\u4EF6\uFF08\u548C\u5B83\u8C03\u7528\u7684\u51FD\u6570\uFF09</li><li>React \u53EF\u4EE5\u201C\u7BA1\u7406\u201D\u7684\u5165\u53E3</li></ul><p>\u54EA\u4E9B\u4E0D\u80FD\u547D\u4E2D batchUpdate \u673A\u5236</p><ul><li>setTimeout setInterval \u7B49\uFF08\u548C\u5B83\u8C03\u7528\u7684\u51FD\u6570\uFF09</li><li>\u81EA\u5B9A\u4E49\u7684 DOM \u4E8B\u4EF6\uFF08\u548C\u5B83\u8C03\u7528\u7684\u51FD\u6570\uFF09</li><li>React \u201C\u7BA1\u4E0D\u5230\u201D\u7684\u5165\u53E3</li></ul><h2 id="transaction-\u4E8B\u7269\u673A\u5236" tabindex="-1"><a class="header-anchor" href="#transaction-\u4E8B\u7269\u673A\u5236" aria-hidden="true">#</a> transaction \u4E8B\u7269\u673A\u5236</h2><p>\u6267\u884C\u8FC7\u7A0B</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token function-variable function">increase</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// \u5F00\u59CB\uFF1A\u5904\u4E8E batchUpdate</span>
+  <span class="token comment">// isBatchingUpdates = true</span>
+  
+  <span class="token comment">// \u5176\u4ED6\u64CD\u4F5C</span>
+
+  <span class="token comment">// \u7ED3\u675F</span>
+  <span class="token comment">// isBatchingUpdates = false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>\u6D41\u7A0B\u56FE</p><p><img src="`+t+`" alt="react"></p><p>\u6BD4\u5982</p><div class="language-javascript ext-js"><pre class="language-javascript"><code>transaction<span class="token punctuation">.</span><span class="token function">initialize</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;initialize&#39;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+transaction<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;close&#39;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;abc&#39;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+transaction<span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span>method<span class="token punctuation">)</span>
+
+<span class="token comment">// initialize </span>
+<span class="token comment">// abc</span>
+<span class="token comment">// close</span>
+</code></pre></div>`,25);function e(o,i){return c}var r=s(p,[["render",e]]);export{r as default};

@@ -1,0 +1,1 @@
+const e={key:"v-c99767be",path:"/frame/vuejs-use/",title:"vuejs \u4F7F\u7528\u95EE\u9898",lang:"zh-CN",frontmatter:{title:"vuejs \u4F7F\u7528\u95EE\u9898"},excerpt:"",headers:[],filePathRelative:"frame/vuejs-use/README.md"};export{e as data};

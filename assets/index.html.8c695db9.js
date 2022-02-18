@@ -1,0 +1,1 @@
+const e={key:"v-d7246f9c",path:"/browser/js-web-api/",title:"js web api\u95EE\u9898",lang:"zh-CN",frontmatter:{title:"js web api\u95EE\u9898"},excerpt:"",headers:[],filePathRelative:"browser/js-web-api/README.md"};export{e as data};

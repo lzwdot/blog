@@ -1,0 +1,1 @@
+const e={key:"v-35c5e660",path:"/frame/react-faq/29376.html",title:"shouldComponentUpdate \u7528\u9014",lang:"zh-CN",frontmatter:{title:"shouldComponentUpdate \u7528\u9014",ID:"29376",date:"2022-01-28 14:10:08",author:"lzw.",categories:["frame","react-faq"],tags:["frame","react-faq"]},excerpt:"",headers:[],filePathRelative:"frame/react-faq/29376.md"};export{e as data};

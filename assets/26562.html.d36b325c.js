@@ -1,0 +1,1 @@
+const a={key:"v-0120a600",path:"/javascript/js-faq/26562.html",title:"split \u548C join \u7684\u533A\u522B",lang:"zh-CN",frontmatter:{title:"split \u548C join \u7684\u533A\u522B",ID:"26562",date:"2020-10-30 16:01:23",categories:["javascript","js-faq"],tags:["javascript","js-faq"]},excerpt:"",headers:[],filePathRelative:"javascript/js-faq/26562.md"};export{a as data};

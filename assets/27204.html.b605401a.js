@@ -1,0 +1,1 @@
+const e={key:"v-18e22082",path:"/engineering/webpack/27204.html",title:"webpack \u4E4B babel \u4F7F\u7528",lang:"zh-CN",frontmatter:{title:"webpack \u4E4B babel \u4F7F\u7528",ID:"27204",date:"2020-12-28 16:51:00",categories:["engineering","webpack"],tags:["engineering","webpack"]},excerpt:"",headers:[],filePathRelative:"engineering/webpack/27204.md"};export{e as data};

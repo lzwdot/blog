@@ -1,0 +1,1 @@
+const e={key:"v-72582dd0",path:"/design/",title:"\u8BBE\u8BA1\u6A21\u5F0F",lang:"zh-CN",frontmatter:{title:"\u8BBE\u8BA1\u6A21\u5F0F",order:900},excerpt:"",headers:[],filePathRelative:"design/README.md"};export{e as data};

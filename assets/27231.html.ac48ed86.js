@@ -1,0 +1,29 @@
+import{h as s}from"./app.4ca8afde.js";import{_ as a}from"./plugin-vue_export-helper.21dcd24c.js";var n="/blog/assets/1991417951.937e230d.png",p="/blog/assets/1969078992.dafefe8b.png";const t={},o=s('<h1 id="\u5B9E\u73B0\u8D2D\u7269\u8F66\u529F\u80FD\u8BBE\u8BA1" tabindex="-1"><a class="header-anchor" href="#\u5B9E\u73B0\u8D2D\u7269\u8F66\u529F\u80FD\u8BBE\u8BA1" aria-hidden="true">#</a> \u5B9E\u73B0\u8D2D\u7269\u8F66\u529F\u80FD\u8BBE\u8BA1</h1><p>\u5B9E\u73B0\u8D2D\u7269\u8F66\u529F\u80FD\uFF0C\u6709\uFF1A\u5546\u54C1\u3001\u4EF7\u683C\u3001\u6570\u91CF\u548C\u603B\u4EF7\uFF0C\u6BD4\u5982\u8FD9\u6837\u4E00\u4E2A\u539F\u578B\u56FE</p><p><img src="'+n+`" alt=""></p><p>1\u3001data \u6570\u636E\u7ED3\u6784\u8BBE\u8BA1</p><ul><li>\u7528\u6570\u636E\u63CF\u8FF0\u6240\u6709\u7684\u5185\u5BB9</li><li>\u6570\u636E\u8981\u7ED3\u6784\u5316\uFF0C\u6613\u4E8E\u7A0B\u5E8F\u64CD\u4F5C\uFF08\u904D\u5386\u3001\u67E5\u627E\uFF09</li><li>\u6570\u636E\u8981\u53EF\u6269\u5C55\uFF0C\u4EE5\u4FBF\u589E\u52A0\u65B0\u7684\u529F\u80FD</li></ul><p>\u6BD4\u5982</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">productionList</span><span class="token operator">:</span><span class="token punctuation">[</span> <span class="token comment">// \u5BF9\u8C61\u548C\u6570\u7EC4\u6570\u636E\u662F\u53EF\u63CF\u8FF0\uFF0C\u7ED3\u6784\u5316\uFF0C\u53EF\u6269\u5C55\u7684</span>
+        <span class="token punctuation">{</span>
+            <span class="token literal-property property">id</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">title</span><span class="token operator">:</span><span class="token string">&#39;\u5546\u54C1&#39;</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">price</span><span class="token operator">:</span><span class="token number">10</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// ...</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">cartList</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token literal-property property">id</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// \u4F7F\u7528\u5546\u54C1 id\uFF0C\u53EF\u6269\u5C55</span>
+            <span class="token literal-property property">quantity</span><span class="token operator">:</span><span class="token number">1</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// ...</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>2\u3001\u7EC4\u4EF6\u8BBE\u8BA1</p><ul><li>\u4ECE\u529F\u80FD\u4E0A\u62C6\u5206\u5C42\u6B21</li><li>\u5C3D\u91CF\u8BA9\u7EC4\u4EF6\u539F\u5B50\u5316</li><li>\u5BB9\u5668\u7EC4\u4EF6\uFF08\u53EA\u7BA1\u7406\u6570\u636E\uFF09&amp; UI \u7EC4\u4EF6\uFF08\u53EA\u663E\u793A\u89C6\u56FE\uFF09</li></ul><p><img src="`+p+`" alt=""></p><p>\u4E0A\u56FE\uFF0C\u7B2C\u4E00\u5C42\u7EA2\u7EBF\u5BB9\u5668\u7EC4\u4EF6\uFF0C\u7B2C\u4E8C\u5C42\u84DD\u7EBF\u3001\u7EFF\u7EBF\u7B49 UI \u7EC4\u4EF6</p><p>\u6BD4\u5982</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token operator">&lt;</span>App<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>\u7BA1\u7406\u6240\u6709\u6570\u636E<span class="token operator">--</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>ProductionList<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>\u5546\u54C1\u5217\u8868<span class="token operator">--</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>ProductionListItem<span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>ProductionListItem<span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>ProductionListItem<span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>ProductionList<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>CartList<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>\u8D2D\u7269\u8F66\u5217\u8868\u548C\u603B\u4EF7<span class="token operator">--</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>CartItem<span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>CartItem<span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>CartList<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>App<span class="token operator">&gt;</span>
+</code></pre></div>`,13);function e(r,l){return o}var i=a(t,[["render",e]]);export{i as default};

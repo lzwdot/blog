@@ -1,0 +1,1 @@
+const e={key:"v-616316cb",path:"/server/mysql/15882.html",title:"MySQL\u5B57\u7B26\u96C6\u4FEE\u6539\u4E3Autf8mb4",lang:"zh-CN",frontmatter:{title:"MySQL\u5B57\u7B26\u96C6\u4FEE\u6539\u4E3Autf8mb4",ID:"15882",date:"2018-04-26 16:39:33",categories:["server","mysql"],tags:["server","mysql"]},excerpt:"",headers:[],filePathRelative:"server/mysql/15882.md"};export{e as data};

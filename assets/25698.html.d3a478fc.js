@@ -1,0 +1,36 @@
+import{h as n}from"./app.4ca8afde.js";import{_ as s}from"./plugin-vue_export-helper.21dcd24c.js";const a={},t=n(`<h1 id="\u4EC0\u4E48\u662F\u95ED\u5305-\u95ED\u5305\u4F1A\u7528\u5728\u54EA\u91CC-\u4E09\u5EA7\u5927\u5C71\u4E4B\u4E8C" tabindex="-1"><a class="header-anchor" href="#\u4EC0\u4E48\u662F\u95ED\u5305-\u95ED\u5305\u4F1A\u7528\u5728\u54EA\u91CC-\u4E09\u5EA7\u5927\u5C71\u4E4B\u4E8C" aria-hidden="true">#</a> \u4EC0\u4E48\u662F\u95ED\u5305?\u95ED\u5305\u4F1A\u7528\u5728\u54EA\u91CC?\uFF08\u4E09\u5EA7\u5927\u5C71\u4E4B\u4E8C\uFF09</h1><p>\u95ED\u5305\uFF0C\u4F5C\u7528\u57DF\u5E94\u7528\u7684\u7279\u6B8A\u60C5\u51B5\uFF0C\u6709\u4E24\u79CD\u8868\u73B0\uFF1A</p><ul><li>\u51FD\u6570\u4F5C\u4E3A\u53C2\u6570\u88AB\u4F20\u9012</li><li>\u51FD\u6570\u4F5C\u4E3A\u8FD4\u56DE\u503C\u88AB\u8FD4\u56DE</li></ul><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token comment">// \u51FD\u6570\u4F5C\u4E3A\u8FD4\u56DE\u503C</span>
+<span class="token keyword">function</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">100</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> fn <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">200</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//100</span>
+</code></pre></div><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token comment">//\u51FD\u6570\u4F5C\u4E3A\u53C2\u6570\u88AB\u4F20\u9012</span>
+<span class="token keyword">function</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token parameter">func</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token number">200</span>
+    <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span> <span class="token comment">// 100</span>
+</code></pre></div><blockquote><p>\u95ED\u5305\uFF1A\u81EA\u7531\u53D8\u91CF\u7684\u67E5\u627E\uFF0C\u662F\u5728\u51FD\u6570\u5B9A\u4E49\u7684\u5730\u65B9\uFF0C\u5411\u4E0A\u7EA7\u4F5C\u7528\u57DF\u67E5\u627E\uFF0C\u4E0D\u662F\u5728\u6267\u884C\u7684\u5730\u65B9\u67E5\u627E\uFF01\uFF01\uFF01</p></blockquote><p>\u5B9E\u9645\u5F00\u53D1\u4E2D\u95ED\u5305\u7684\u5E94\u7528</p><ul><li>\u9690\u85CF\u6570\u636E\uFF0C\u53EA\u63D0\u4F9B API</li><li>\u5982\u505A\u4E00\u4E2A\u7B80\u5355\u7684 cache \u5DE5\u5177</li></ul><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token comment">// \u95ED\u5305\u9690\u85CF\u6570\u636E\uFF0C\u53EA\u63D0\u4F9BAPI\uFF0C\u7C7B\u4F3C\u4E00\u4E2A\u7B80\u5355\u7684cache\u5DE5\u5177</span>
+<span class="token keyword">function</span> <span class="token function">createCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">//\u95ED\u5305\u4E2D\u7684\u6570\u636E\u88AB\u9690\u85CF\uFF0C\u4E0D\u88AB\u5916\u754C\u8BBF\u95EE</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            data<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> val <span class="token comment">//\u7F13\u5B58\u6570\u636E</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> data<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token function">createCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+c<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">&#39;a&#39;</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&#39;a&#39;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 100</span>
+</code></pre></div>`,9);function p(o,c){return t}var l=s(a,[["render",p]]);export{l as default};

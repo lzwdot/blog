@@ -1,0 +1,1 @@
+const a={key:"v-37fdd4d6",path:"/async/js-asyn/29208.html",title:"\u624B\u5199 Promise",lang:"zh-CN",frontmatter:{title:"\u624B\u5199 Promise",ID:"29208",date:"2022-01-19 10:28:15",author:"lzw.",categories:["async","js-asyn"],tags:["async","js-asyn"]},excerpt:"",headers:[],filePathRelative:"async/js-asyn/29208.md"};export{a as data};

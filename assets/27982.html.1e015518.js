@@ -1,0 +1,1 @@
+const e={key:"v-2a0d5047",path:"/program/web-components/27982.html",title:"Web Components \u5165\u95E8",lang:"zh-CN",frontmatter:{title:"Web Components \u5165\u95E8",ID:"27982",date:"2021-07-16 18:16:11",categories:["program","web-components"],tags:["program","web-components"]},excerpt:"",headers:[],filePathRelative:"program/web-components/27982.md"};export{e as data};

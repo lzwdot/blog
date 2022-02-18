@@ -1,0 +1,1 @@
+const s={key:"v-de4a60f6",path:"/posts/js-css/23297.html",title:"js\u4E2Dcontains\u548CindexOf\u7684\u4F7F\u7528",lang:"zh-CN",frontmatter:{title:"js\u4E2Dcontains\u548CindexOf\u7684\u4F7F\u7528",ID:"23297",date:"2019-05-26 15:51:15",categories:["posts","js-css"],tags:["posts","js-css"]},excerpt:"",headers:[],filePathRelative:"posts/js-css/23297.md"};export{s as data};

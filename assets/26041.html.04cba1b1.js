@@ -1,0 +1,1 @@
+const e={key:"v-06cd437c",path:"/browser/js-web-api/26041.html",title:"DOM \u64CD\u4F5C\u7684\u5E38\u7528 API",lang:"zh-CN",frontmatter:{title:"DOM \u64CD\u4F5C\u7684\u5E38\u7528 API",ID:"26041",date:"2020-10-22 16:58:20",categories:["browser","js-web-api"],tags:["browser","js-web-api"]},excerpt:"",headers:[],filePathRelative:"browser/js-web-api/26041.md"};export{e as data};

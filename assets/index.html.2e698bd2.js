@@ -1,0 +1,1 @@
+const t={key:"v-2b2e098b",path:"/posts/reprinted/",title:"\u8F6C\u8F7D",lang:"zh-CN",frontmatter:{title:"\u8F6C\u8F7D"},excerpt:"",headers:[],filePathRelative:"posts/reprinted/README.md"};export{t as data};

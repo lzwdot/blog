@@ -1,0 +1,1 @@
+const e={key:"v-00030f80",path:"/browser/js-web-api/26043.html",title:"attr \u548C property \u7684\u533A\u522B",lang:"zh-CN",frontmatter:{title:"attr \u548C property \u7684\u533A\u522B",ID:"26043",date:"2020-10-22 16:58:55",categories:["browser","js-web-api"],tags:["browser","js-web-api"]},excerpt:"",headers:[],filePathRelative:"browser/js-web-api/26043.md"};export{e as data};

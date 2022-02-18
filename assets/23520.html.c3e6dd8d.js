@@ -1,0 +1,1 @@
+const s={key:"v-4a40cb02",path:"/posts/js-css/23520.html",title:"js \u6267\u884C\u5B57\u7B26\u4E32\u51FD\u6570",lang:"zh-CN",frontmatter:{title:"js \u6267\u884C\u5B57\u7B26\u4E32\u51FD\u6570",ID:"23520",date:"2019-07-10 16:11:48",categories:["posts","js-css"],tags:["posts","js-css"]},excerpt:"",headers:[],filePathRelative:"posts/js-css/23520.md"};export{s as data};

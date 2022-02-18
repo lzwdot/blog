@@ -1,0 +1,1 @@
+const a={key:"v-38779020",path:"/javascript/js-base/25274.html",title:"\u624B\u5199 JS \u6DF1\u62F7\u8D1D",lang:"zh-CN",frontmatter:{title:"\u624B\u5199 JS \u6DF1\u62F7\u8D1D",ID:"25274",date:"2020-09-25 16:33:41",categories:["javascript","js-base"],tags:["javascript","js-base"]},excerpt:"",headers:[],filePathRelative:"javascript/js-base/25274.md"};export{a as data};

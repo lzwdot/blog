@@ -1,0 +1,1 @@
+const t={key:"v-44ab3934",path:"/htmlcss/html/",title:"html \u57FA\u7840",lang:"zh-CN",frontmatter:{title:"html \u57FA\u7840"},excerpt:"",headers:[],filePathRelative:"htmlcss/html/README.md"};export{t as data};

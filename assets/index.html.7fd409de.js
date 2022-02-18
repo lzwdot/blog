@@ -1,0 +1,1 @@
+const a={key:"v-75a50a42",path:"/frame/react-faq/",title:"React \u95EE\u9898",lang:"zh-CN",frontmatter:{title:"React \u95EE\u9898"},excerpt:"",headers:[],filePathRelative:"frame/react-faq/README.md"};export{a as data};

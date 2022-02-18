@@ -1,0 +1,1 @@
+const e={key:"v-b1556d46",path:"/server/php-usage/22398.html",title:"PHP-FPM\u914D\u7F6E\u7684\u4F18\u5316",lang:"zh-CN",frontmatter:{title:"PHP-FPM\u914D\u7F6E\u7684\u4F18\u5316",ID:"22398",date:"2018-11-14 16:03:56",categories:["server","php-usage"],tags:["server","php-usage"]},excerpt:"",headers:[],filePathRelative:"server/php-usage/22398.md"};export{e as data};

@@ -1,0 +1,1 @@
+const t={key:"v-c97dd800",path:"/program/charts/27983.html",title:"antv-g6 \u5165\u95E8",lang:"zh-CN",frontmatter:{title:"antv-g6 \u5165\u95E8",ID:"27983",date:"2021-07-18 21:57:33",author:"lzw.",tags:["program","charts"],categories:["program","charts"]},excerpt:"",headers:[],filePathRelative:"program/charts/27983.md"};export{t as data};

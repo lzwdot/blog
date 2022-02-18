@@ -1,0 +1,1 @@
+const a={key:"v-6498c1ba",path:"/javascript/js-faq/26680.html",title:"\u4EC0\u4E48\u662F JSON ?",lang:"zh-CN",frontmatter:{title:"\u4EC0\u4E48\u662F JSON ?",ID:"26680",date:"2020-11-04 14:10:23",categories:["javascript","js-faq"],tags:["javascript","js-faq"]},excerpt:"",headers:[],filePathRelative:"javascript/js-faq/26680.md"};export{a as data};

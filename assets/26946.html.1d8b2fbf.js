@@ -1,0 +1,1 @@
+const e={key:"v-7c4dd263",path:"/frame/vuejs-use/26946.html",title:"Vue-router \u4F7F\u7528",lang:"zh-CN",frontmatter:{title:"Vue-router \u4F7F\u7528",ID:"26946",date:"2020-11-12 15:05:24",categories:["frame","vuejs-use"],tags:["frame","vuejs-use"]},excerpt:"",headers:[],filePathRelative:"frame/vuejs-use/26946.md"};export{e as data};

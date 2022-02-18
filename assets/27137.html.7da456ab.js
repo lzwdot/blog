@@ -1,0 +1,1 @@
+const e={key:"v-0d141a4a",path:"/frame/vuejs-faq/27137.html",title:"computed \u6709\u4F55\u7279\u70B9",lang:"zh-CN",frontmatter:{title:"computed \u6709\u4F55\u7279\u70B9",ID:"27137",date:"2020-12-04 17:44:32",categories:["frame","vuejs-faq"],tags:["frame","vuejs-faq"]},excerpt:"",headers:[],filePathRelative:"frame/vuejs-faq/27137.md"};export{e as data};

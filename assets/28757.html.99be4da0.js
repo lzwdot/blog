@@ -1,0 +1,1 @@
+const e={key:"v-25a884b7",path:"/frame/vue2-src/28757.html",title:"vue2 \u54CD\u5E94\u5F0F\u539F\u7406",lang:"zh-CN",frontmatter:{title:"vue2 \u54CD\u5E94\u5F0F\u539F\u7406",ID:"28757",date:"2021-12-22 15:53:36",author:"lzw.",categories:["frame","vue2-src"],tags:["frame","vue2-src"]},excerpt:"",headers:[],filePathRelative:"frame/vue2-src/28757.md"};export{e as data};

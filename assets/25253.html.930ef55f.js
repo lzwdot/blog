@@ -1,0 +1,1 @@
+const t={key:"v-470ff208",path:"/htmlcss/css/25253.html",title:"absolute \u548C relative \u5B9A\u4F4D",lang:"zh-CN",frontmatter:{title:"absolute \u548C relative \u5B9A\u4F4D",ID:"25253",date:"2020-09-25 11:15:35",categories:["htmlcss","css"],tags:["htmlcss","css"]},excerpt:"",headers:[],filePathRelative:"htmlcss/css/25253.md"};export{t as data};

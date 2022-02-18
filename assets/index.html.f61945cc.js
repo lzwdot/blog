@@ -1,0 +1,1 @@
+const e={key:"v-599e7e30",path:"/async/js-asyn/",title:"js \u5F02\u6B65\u95EE\u9898",lang:"zh-CN",frontmatter:{title:"js \u5F02\u6B65\u95EE\u9898"},excerpt:"",headers:[],filePathRelative:"async/js-asyn/README.md"};export{e as data};

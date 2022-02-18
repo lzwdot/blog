@@ -1,0 +1,1 @@
+const e={key:"v-5637763c",path:"/program/web-components/",title:"Web Components",lang:"zh-CN",frontmatter:{title:"Web Components"},excerpt:"",headers:[],filePathRelative:"program/web-components/README.md"};export{e as data};

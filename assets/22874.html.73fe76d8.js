@@ -1,0 +1,1 @@
+const t={key:"v-061b2542",path:"/posts/js-css/22874.html",title:"DOMContentLoaded\u4E0Eload\u7684\u533A\u522B",lang:"zh-CN",frontmatter:{title:"DOMContentLoaded\u4E0Eload\u7684\u533A\u522B",ID:"22874",date:"2019-05-13 22:24:48",categories:["posts","js-css"],tags:["posts","js-css"]},excerpt:"",headers:[],filePathRelative:"posts/js-css/22874.md"};export{t as data};

@@ -1,0 +1,1 @@
+const e={key:"v-e6638c28",path:"/async/js-asyn/25819.html",title:"promise \u548C setTimeout \u7684\u987A\u5E8F",lang:"zh-CN",frontmatter:{title:"promise \u548C setTimeout \u7684\u987A\u5E8F",ID:"25819",date:"2020-10-20 17:01:06",categories:["async","js-asyn"],tags:["async","js-asyn"]},excerpt:"",headers:[],filePathRelative:"async/js-asyn/25819.md"};export{e as data};

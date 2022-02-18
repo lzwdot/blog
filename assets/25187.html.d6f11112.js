@@ -1,0 +1,1 @@
+const t={key:"v-f6964d30",path:"/htmlcss/css/25187.html",title:"margin \u8D1F\u503C\u95EE\u9898",lang:"zh-CN",frontmatter:{title:"margin \u8D1F\u503C\u95EE\u9898",ID:"25187",date:"2020-09-24 18:15:22",categories:["htmlcss","css"],tags:["htmlcss","css"]},excerpt:"",headers:[],filePathRelative:"htmlcss/css/25187.md"};export{t as data};

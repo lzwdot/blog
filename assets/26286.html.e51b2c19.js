@@ -1,0 +1,1 @@
+const t={key:"v-3318915a",path:"/network/http/26286.html",title:"\u4EC0\u4E48\u662F Restful API",lang:"zh-CN",frontmatter:{title:"\u4EC0\u4E48\u662F Restful API",ID:"26286",date:"2020-10-25 16:56:38",categories:["network","http"],tags:["network","http"]},excerpt:"",headers:[],filePathRelative:"network/http/26286.md"};export{t as data};

@@ -1,0 +1,1 @@
+const e={key:"v-5f85bddc",path:"/frame/react-principle/",title:"React \u539F\u7406",lang:"zh-CN",frontmatter:{title:"React \u539F\u7406"},excerpt:"",headers:[],filePathRelative:"frame/react-principle/README.md"};export{e as data};

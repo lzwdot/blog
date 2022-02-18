@@ -1,0 +1,1 @@
+const e={key:"v-5e3b43ae",path:"/engineering/webpack-faq/",title:"webpack \u5E38\u89C1\u95EE\u9898",lang:"zh-CN",frontmatter:{title:"webpack \u5E38\u89C1\u95EE\u9898"},excerpt:"",headers:[],filePathRelative:"engineering/webpack-faq/README.md"};export{e as data};
